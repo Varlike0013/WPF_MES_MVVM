@@ -7,6 +7,7 @@ public class WorkOrder
 {
     public string WorkOrderNo { get; set; } = string.Empty;
     public string PartNo { get; set; } = string.Empty;
+    public string PartDesc { get; set; } = string.Empty;
     public string WoRule { get; set; } = string.Empty;
     public string Version { get; set; } = string.Empty;
 
@@ -27,4 +28,6 @@ public class WorkOrder
     // 预定产线
     public int PdlineId { get; set; }
     public string PdlineName { get; set; } = string.Empty;
+
+    public int SnCount { get; set; }
 }

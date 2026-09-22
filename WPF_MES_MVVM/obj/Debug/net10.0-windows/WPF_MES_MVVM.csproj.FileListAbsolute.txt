@@ -29,3 +29,4 @@ E:\Git\WPF_MES\WPF_MES_MVVM\obj\Debug\net10.0-windows\Views\ShellWindow.baml
 E:\Git\WPF_MES\WPF_MES_MVVM\obj\Debug\net10.0-windows\Views\ShellWindow.g.cs
 E:\Git\WPF_MES\WPF_MES_MVVM\bin\Debug\net10.0-windows\WPF_MES.Shared.dll
 E:\Git\WPF_MES\WPF_MES_MVVM\bin\Debug\net10.0-windows\WPF_MES.Shared.pdb
+E:\Git\WPF_MES\WPF_MES_MVVM\obj\Debug\net10.0-windows\WPF_MES_MVVM.sourcelink.json

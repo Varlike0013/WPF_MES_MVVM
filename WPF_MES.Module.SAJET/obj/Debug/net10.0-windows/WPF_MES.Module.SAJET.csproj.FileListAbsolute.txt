@@ -32,3 +32,8 @@ E:\Git\WPF_MES\WPF_MES.Module.SAJET\bin\Debug\net10.0-windows\WPF_MES.Shared.dll
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\bin\Debug\net10.0-windows\WPF_MES_MVVM.dll
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\bin\Debug\net10.0-windows\WPF_MES_MVVM.pdb
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\bin\Debug\net10.0-windows\WPF_MES.Shared.pdb
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\WPF_MES.Module.SAJET.sourcelink.json
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\WorkOrderDetailView.baml
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\WorkOrderDetailView.g.cs
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\NetworkChatView.baml
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\NetworkChatView.g.cs

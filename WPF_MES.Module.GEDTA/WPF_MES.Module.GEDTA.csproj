@@ -5,6 +5,38 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
+	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.26.301" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WPF_MES.Contracts\WPF_MES.Contracts.csproj" />
+    <ProjectReference Include="..\WPF_MES.Shared\WPF_MES.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+	<Target Name="CopyToHostModules" AfterTargets="Build">
+		<PropertyGroup>
+			<!-- MSBuildThisFileDirectory 是 csproj 所在目录，非常可靠 -->
+			<HostBinDir>$(MSBuildThisFileDirectory)..\WPF_MES_MVVM\bin\$(Configuration)\$(TargetFramework)\</HostBinDir>
+			<HostModulesDir>$(HostBinDir)Modules\</HostModulesDir>
+		</PropertyGroup>
+
+		<MakeDir Directories="$(HostModulesDir)" />
+
+		<ItemGroup>
+			<ModuleFiles Include="$(TargetDir)*.dll" />
+			<ModuleFiles Include="$(TargetDir)*.pdb" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(ModuleFiles)" DestinationFolder="$(HostModulesDir)" SkipUnchangedFiles="true" />
+	</Target>
 
 </Project>

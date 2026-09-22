@@ -40,6 +40,7 @@ internal static class WorkOrderService
         string sql = @"
             SELECT W.WORK_ORDER,
                    P.PART_NO,
+                   P.SPEC1,
                    W.WO_RULE,
                    W.VERSION,
                    W.WO_STATUS,
@@ -83,6 +84,7 @@ internal static class WorkOrderService
             {
                 WorkOrderNo = GetStr(r, "WORK_ORDER"),
                 PartNo = GetStr(r, "PART_NO"),
+                PartDesc = GetStr(r, "SPEC1"),
                 WoRule = GetStr(r, "WO_RULE"),
                 Version = GetStr(r, "VERSION"),
                 StatusCode = GetInt(r, "WO_STATUS"),

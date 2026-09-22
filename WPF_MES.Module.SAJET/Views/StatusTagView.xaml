@@ -108,39 +108,57 @@
                     <RowDefinition Height="36"/>
                     <RowDefinition Height="36"/>
                     <RowDefinition Height="36"/>
+                    <RowDefinition Height="36"/>
                 </Grid.RowDefinitions>
 
                 <!-- 第 1 行 -->
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="序号："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding LblSN}"         Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding LblSN}"         Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="工单："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding LblWO}"         Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="0" Grid.Column="3" Text="{Binding LblWO}"         Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="0" Grid.Column="4" Text="流程名称：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding LblRoute}"      Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="0" Grid.Column="5" Text="{Binding LblRoute}"      Style="{StaticResource ValueLabel}"/>
 
                 <!-- 第 2 行 -->
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="料号："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LblPartNo}"     Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="1" Grid.Column="1" Text="{Binding LblPartNo}"     Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Text="料号描述：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding LblPartDesc}"   Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="1" Grid.Column="3" Text="{Binding LblPartDesc}"   Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="1" Grid.Column="4" Text="下一站位：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding LblNextProcess}" Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="1" Grid.Column="5" Text="{Binding LblNextProcess}" Style="{StaticResource ValueLabel}"/>
 
                 <!-- 第 3 行 -->
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Qrcode："   Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LblPPID}"       Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="2" Grid.Column="1" Text="{Binding LblPPID}"       Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Text="Mac："      Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding LblMac}"        Style="{StaticResource ValueLabel}"/>
-                <TextBlock Grid.Row="2" Grid.Column="4" Text="CustSSN：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="2" Grid.Column="5" Text="{Binding LblSSN}"        Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="2" Grid.Column="3" Text="{Binding LblMac}"        Style="{StaticResource ValueLabel}"/>
+                <TextBlock Grid.Row="2" Grid.Column="4" Text="CustSSN："  Style="{StaticResource CaptionLabel}"/>
+                <TextBox   Grid.Row="2" Grid.Column="5" Text="{Binding LblSSN}"        Style="{StaticResource ValueLabel}"/>
 
                 <!-- 第 4 行 -->
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="出货序号：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LblCSN}"        Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="3" Grid.Column="1" Text="{Binding LblCSN}"        Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Text="箱号："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding LblCarton}"     Style="{StaticResource ValueLabel}"/>
-                <TextBlock Grid.Row="3" Grid.Column="4" Text="状态："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox Grid.Row="3" Grid.Column="5" Text="{Binding LblWorkFlag}"   Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="3" Grid.Column="3" Text="{Binding LblCarton}"     Style="{StaticResource ValueLabel}"/>
+                <TextBlock Grid.Row="3" Grid.Column="4" Text="实物状态：" Style="{StaticResource CaptionLabel}"/>
+                <TextBox   Grid.Row="3" Grid.Column="5" Text="{Binding LblWorkFlag}"   Style="{StaticResource ValueLabel}"/>
+
+                <!-- 第 5 行：序号状态 + 重工编号（同行） -->
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="序号状态：" Style="{StaticResource CaptionLabel}"/>
+                <TextBox   Grid.Row="4" Grid.Column="1"
+                   Text="{Binding LblCurrentStatus}"
+                   FontSize="16"
+                   FontWeight="Bold"
+                   Foreground="{Binding CurrentStatusColor}"
+                   Background="Transparent"
+                   BorderThickness="0"
+                   IsReadOnly="True"
+                   VerticalContentAlignment="Center"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="2" Text="重工编号：" Style="{StaticResource CaptionLabel}"/>
+                <TextBox   Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3"
+                   Text="{Binding LblReworkNo}"
+                   Style="{StaticResource ValueLabel}"/>
             </Grid>
         </Border>
 

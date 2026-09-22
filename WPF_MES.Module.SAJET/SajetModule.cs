@@ -88,8 +88,8 @@ public class SajetModule : IModule
                     },
                     new ModuleMenuNode
                     {
-                        Title = "工单合并",
-                        ViewFactory = null,   // 未实现
+                        Title = "工单详情",
+                        ViewFactory = () => new WorkOrderDetailView(),
                     }
                 }
             },
@@ -132,8 +132,8 @@ public class SajetModule : IModule
                 {
                     new ModuleMenuNode
                     {
-                        Title = "程序1",
-                        ViewFactory = null,
+                        Title = "TCP网络通信",
+                        ViewFactory = () => new NetworkChatView(),
                     },
                     new ModuleMenuNode
                     {

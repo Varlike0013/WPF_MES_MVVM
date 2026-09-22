@@ -258,4 +258,53 @@ internal static class OracleHelper
         }
         return list;
     }
+    // ============ 通用取值辅助（DataRow → 类型） ============
+
+    /// <summary>读取字符串。NULL → ""</summary>
+    public static string GetStr(DataRow r, string col)
+        => r.Table.Columns.Contains(col) && r[col] != DBNull.Value
+            ? r[col].ToString()!.Trim()
+            : string.Empty;
+
+    /// <summary>读取 int。NULL 或转换失败 → 0</summary>
+    public static int GetInt(DataRow r, string col)
+    {
+        if (!r.Table.Columns.Contains(col) || r[col] == DBNull.Value) return 0;
+        return int.TryParse(r[col].ToString(), out var v) ? v : 0;
+    }
+
+    /// <summary>读取 long。NULL → 0</summary>
+    public static long GetLong(DataRow r, string col)
+    {
+        if (!r.Table.Columns.Contains(col) || r[col] == DBNull.Value) return 0;
+        return long.TryParse(r[col].ToString(), out var v) ? v : 0;
+    }
+
+    /// <summary>读取 decimal。NULL → 0</summary>
+    public static decimal GetDec(DataRow r, string col)
+    {
+        if (!r.Table.Columns.Contains(col) || r[col] == DBNull.Value) return 0m;
+        return decimal.TryParse(r[col].ToString(), out var v) ? v : 0m;
+    }
+
+    /// <summary>读取 double。NULL → 0</summary>
+    public static double GetDouble(DataRow r, string col)
+    {
+        if (!r.Table.Columns.Contains(col) || r[col] == DBNull.Value) return 0d;
+        return double.TryParse(r[col].ToString(), out var v) ? v : 0d;
+    }
+
+    /// <summary>读取 DateTime?。NULL → null</summary>
+    public static DateTime? GetDate(DataRow r, string col)
+    {
+        if (!r.Table.Columns.Contains(col) || r[col] == DBNull.Value) return null;
+        return r[col] is DateTime dt ? dt : null;
+    }
+
+    /// <summary>读取 DateTime 格式化字符串。NULL → ""</summary>
+    public static string GetDateStr(DataRow r, string col, string format = "yyyy/MM/dd HH:mm:ss")
+    {
+        var d = GetDate(r, col);
+        return d?.ToString(format) ?? string.Empty;
+    }
 }

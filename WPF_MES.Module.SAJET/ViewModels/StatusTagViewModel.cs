@@ -39,6 +39,9 @@ public partial class StatusTagViewModel : ObservableObject
     [ObservableProperty] private string _lblMac = string.Empty;
     [ObservableProperty] private string _lblSSN = string.Empty;
     [ObservableProperty] private string _lblPPID = string.Empty;
+    [ObservableProperty] private string _lblCurrentStatus = string.Empty;
+    [ObservableProperty] private string _currentStatusColor = "#C83232";
+    [ObservableProperty] private string _lblReworkNo = string.Empty;
 
     // ============ 表格数据 ============
 
@@ -113,9 +116,9 @@ public partial class StatusTagViewModel : ObservableObject
 
         LblSN = info.SerialNumber;
         LblWO = info.WorkOrder;
-        LblPartNo = info.PartNo;
-        LblPartDesc = info.PartDesc;
-        LblNextProcess = info.NextProcess;
+        LblPartNo = info.Part.PartNo;
+        LblPartDesc = info.Part.PartDesc;
+        LblNextProcess = info.NextProcess.ProcessName;
         LblWorkFlag = info.WorkFlagText;
         LblCSN = info.CustomerSN;
         LblCarton = info.CartonNo;
@@ -123,6 +126,15 @@ public partial class StatusTagViewModel : ObservableObject
         LblMac = info.Mac;
         LblSSN = info.SSN;
         LblPPID = info.PcbQrCode;
+        LblCurrentStatus = info.CurrentStatusText;
+        CurrentStatusColor = info.CurrentStatusCode switch
+        {
+            0 => "#00A000",  // GOOD 绿
+            1 => "#C83232",  // FAIL 红
+            2 => "#E8A000",  // HOLD 橙
+            _ => "#C83232",
+        };
+        LblReworkNo = info.ReworkNo;
     }
 
     private void LoadTravelRecords(string sn)
@@ -193,5 +205,8 @@ public partial class StatusTagViewModel : ObservableObject
         LblMac = string.Empty;
         LblSSN = string.Empty;
         LblPPID = string.Empty;
+        LblCurrentStatus = string.Empty;
+        CurrentStatusColor = "#C83232";
+        LblReworkNo = string.Empty;
     }
 }

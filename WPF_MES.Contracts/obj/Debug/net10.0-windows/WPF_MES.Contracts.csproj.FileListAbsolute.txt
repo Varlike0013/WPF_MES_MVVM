@@ -10,3 +10,4 @@ E:\Git\WPF_MES\WPF_MES.Contracts\obj\Debug\net10.0-windows\refint\WPF_MES.Contra
 E:\Git\WPF_MES\WPF_MES.Contracts\obj\Debug\net10.0-windows\WPF_MES.Contracts.pdb
 E:\Git\WPF_MES\WPF_MES.Contracts\obj\Debug\net10.0-windows\ref\WPF_MES.Contracts.dll
 E:\Git\WPF_MES\WPF_MES.Contracts\obj\Debug\net10.0-windows\WPF_MES..50715577.Up2Date
+E:\Git\WPF_MES\WPF_MES.Contracts\obj\Debug\net10.0-windows\WPF_MES.Contracts.sourcelink.json

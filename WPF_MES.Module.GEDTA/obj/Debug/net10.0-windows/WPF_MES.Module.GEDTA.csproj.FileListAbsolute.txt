@@ -10,3 +10,15 @@ E:\Git\WPF_MES\WPF_MES.Module.GEDTA\obj\Debug\net10.0-windows\refint\WPF_MES.Mod
 E:\Git\WPF_MES\WPF_MES.Module.GEDTA\obj\Debug\net10.0-windows\WPF_MES.Module.GEDTA.pdb
 E:\Git\WPF_MES\WPF_MES.Module.GEDTA\obj\Debug\net10.0-windows\ref\WPF_MES.Module.GEDTA.dll
 E:\Git\WPF_MES\WPF_MES.Module.GEDTA\obj\Debug\net10.0-windows\WPF_MES..CBC36C64.Up2Date
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\WPF_MES.Contracts.dll
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\WPF_MES.Shared.dll
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\WPF_MES.Contracts.pdb
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\WPF_MES.Shared.pdb
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\obj\Debug\net10.0-windows\WPF_MES.Module.GEDTA.csproj.AssemblyReference.cache
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\obj\Debug\net10.0-windows\WPF_MES.Module.GEDTA.sourcelink.json
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\CommunityToolkit.Mvvm.dll
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\Oracle.ManagedDataAccess.dll
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\System.DirectoryServices.Protocols.dll
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\runtimes\linux\lib\net8.0\System.DirectoryServices.Protocols.dll
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\runtimes\osx\lib\net8.0\System.DirectoryServices.Protocols.dll
+E:\Git\WPF_MES\WPF_MES.Module.GEDTA\bin\Debug\net10.0-windows\runtimes\win\lib\net8.0\System.DirectoryServices.Protocols.dll

@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using WPF_MES.Contracts;
 using WPF_MES.Contracts.Models;
+using WPF_MES.Contracts.Models.SnItem;
 
 namespace WPF_MES.Module.SAJET.Services;
 
@@ -55,46 +56,84 @@ internal static class StatusTagService
     public static StatusTagInfo? GetStatusTagInfo(string serialNumber)
     {
         const string sql = @"
-            SELECT S.WORK_ORDER, P.PART_NO, P.SPEC1,
-                   PR.PROCESS_NAME, S.WORK_FLAG, S.CUSTOMER_SN,
-                   S.CARTON_NO, R.ROUTE_NAME, M.MAC,
-                   M.CUSTOMER_SN AS SSN, PP.PCB_QRCODE
-            FROM SAJET.G_SN_STATUS S
-            LEFT JOIN SAJET.SYS_PART P ON P.PART_ID = S.MODEL_ID
-            LEFT JOIN SAJET.SYS_PROCESS PR ON PR.PROCESS_ID = S.WIP_PROCESS
-            LEFT JOIN SAJET.SYS_ROUTE R ON R.ROUTE_ID = S.ROUTE_ID
-            LEFT JOIN SAJET.G_WO_MAC M ON M.SERIAL_NUMBER = S.SERIAL_NUMBER
-            LEFT JOIN SAJET.ECS_PPID_PCB_CODE PP ON PP.STRSMTSN = S.SERIAL_NUMBER
-            WHERE S.SERIAL_NUMBER = :sn AND ROWNUM = 1";
+        SELECT S.WORK_ORDER,
+               S.SERIAL_NUMBER,
+
+               -- 料号
+               S.MODEL_ID       AS PART_ID,
+               P.PART_NO,
+               P.SPEC1          AS PART_DESC,
+
+               -- 三个工序
+               S.PROCESS_ID,
+               PR.PROCESS_NAME  AS PROCESS_NAME,
+               S.NEXT_PROCESS   AS NEXT_PROCESS_ID,
+               PN.PROCESS_NAME  AS NEXT_PROCESS_NAME,
+               S.WIP_PROCESS    AS WIP_PROCESS_ID,
+               PW.PROCESS_NAME  AS WIP_PROCESS_NAME,
+
+               -- 其他
+               S.WORK_FLAG,
+               S.CURRENT_STATUS,
+               S.CUSTOMER_SN,
+               S.CARTON_NO,
+               S.REWORK_NO,
+               R.ROUTE_NAME,
+               M.MAC,
+               M.CUSTOMER_SN    AS SSN,
+               PP.PCB_QRCODE
+        FROM SAJET.G_SN_STATUS S
+        LEFT JOIN SAJET.SYS_PART    P  ON P.PART_ID    = S.MODEL_ID
+        LEFT JOIN SAJET.SYS_PROCESS PR ON PR.PROCESS_ID = S.PROCESS_ID
+        LEFT JOIN SAJET.SYS_PROCESS PN ON PN.PROCESS_ID = S.NEXT_PROCESS
+        LEFT JOIN SAJET.SYS_PROCESS PW ON PW.PROCESS_ID = S.WIP_PROCESS
+        LEFT JOIN SAJET.SYS_ROUTE   R  ON R.ROUTE_ID    = S.ROUTE_ID
+        LEFT JOIN SAJET.G_WO_MAC    M  ON M.SERIAL_NUMBER = S.SERIAL_NUMBER
+        LEFT JOIN SAJET.ECS_PPID_PCB_CODE PP ON PP.STRSMTSN = S.SERIAL_NUMBER
+        WHERE S.SERIAL_NUMBER = :sn AND ROWNUM = 1";
 
         var ps = new Dictionary<string, object> { { "sn", serialNumber } };
         var dt = OracleHelper.QueryDataTable(sql, ps);
         if (dt.Rows.Count == 0) return null;
 
         var r = dt.Rows[0];
-        int workFlag = GetInt(r, "WORK_FLAG");
 
         return new StatusTagInfo
         {
             SerialNumber = serialNumber,
-            WorkOrder = GetStr(r, "WORK_ORDER"),
-            PartNo = GetStr(r, "PART_NO"),
-            PartDesc = GetStr(r, "SPEC1"),
-            NextProcess = GetStr(r, "PROCESS_NAME"),
-            WorkFlag = workFlag,
-            WorkFlagText = workFlag switch
-            {
-                0 => "Good",
-                1 => "Repair",
-                2 => "Hold",
-                _ => workFlag.ToString(),
-            },
-            CustomerSN = GetStr(r, "CUSTOMER_SN"),
-            CartonNo = GetStr(r, "CARTON_NO"),
-            RouteName = GetStr(r, "ROUTE_NAME"),
-            Mac = GetStr(r, "MAC"),
-            SSN = GetStr(r, "SSN"),
-            PcbQrCode = GetStr(r, "PCB_QRCODE"),
+            WorkOrder = OracleHelper.GetStr(r, "WORK_ORDER"),
+
+            // 料号
+            Part = new PartInfo(
+                OracleHelper.GetInt(r, "PART_ID"),
+                OracleHelper.GetStr(r, "PART_NO"),
+                OracleHelper.GetStr(r, "PART_DESC")),
+
+            // 三个工序
+            Process = new ProcessInfo(
+                OracleHelper.GetInt(r, "PROCESS_ID"),
+                OracleHelper.GetStr(r, "PROCESS_NAME")),
+
+            NextProcess = new ProcessInfo(
+                OracleHelper.GetInt(r, "NEXT_PROCESS_ID"),
+                OracleHelper.GetStr(r, "NEXT_PROCESS_NAME")),
+
+            WipProcess = new ProcessInfo(
+                OracleHelper.GetInt(r, "WIP_PROCESS_ID"),
+                OracleHelper.GetStr(r, "WIP_PROCESS_NAME")),
+
+            // 其他
+            CustomerSN = OracleHelper.GetStr(r, "CUSTOMER_SN"),
+            CartonNo = OracleHelper.GetStr(r, "CARTON_NO"),
+            RouteName = OracleHelper.GetStr(r, "ROUTE_NAME"),
+            Mac = OracleHelper.GetStr(r, "MAC"),
+            SSN = OracleHelper.GetStr(r, "SSN"),
+            PcbQrCode = OracleHelper.GetStr(r, "PCB_QRCODE"),
+            ReworkNo = OracleHelper.GetStr(r, "REWORK_NO"),
+
+            // 字符串形式（和数据库一致）
+            CurrentStatus = OracleHelper.GetStr(r, "CURRENT_STATUS"),
+            WorkFlag = OracleHelper.GetStr(r, "WORK_FLAG"),
         };
     }
 
@@ -121,23 +160,23 @@ internal static class StatusTagService
         var list = new List<TravelRecord>();
         foreach (DataRow r in dt.Rows)
         {
-            int status = GetInt(r, "CURRENT_STATUS");
+            int status = OracleHelper.GetInt(r, "CURRENT_STATUS");
             list.Add(new TravelRecord
             {
-                WorkOrder = GetStr(r, "WORK_ORDER"),
-                PartNo = GetStr(r, "PART_NO"),
-                PdlineName = GetStr(r, "PDLINE_NAME"),
-                ProcessName = GetStr(r, "PROCESS_NAME"),
+                WorkOrder = OracleHelper.GetStr(r, "WORK_ORDER"),
+                PartNo = OracleHelper.GetStr(r, "PART_NO"),
+                PdlineName = OracleHelper.GetStr(r, "PDLINE_NAME"),
+                ProcessName = OracleHelper.GetStr(r, "PROCESS_NAME"),
                 Status = status,
                 StatusText = status switch { 0 => "OK", 1 => "NG", _ => status.ToString() },
-                OutProcessTime = GetStr(r, "OUT_PROCESS_TIME"),
-                TerminalName = GetStr(r, "TERMINAL_NAME"),
-                EmpName = GetStr(r, "EMP_NAME"),
-                CustomerName = GetStr(r, "CUSTOMER_NAME"),
-                CustomerSN = GetStr(r, "CUSTOMER_SN"),
-                QcNo = GetStr(r, "QC_NO"),
-                ReworkNo = GetStr(r, "REWORK_NO"),
-                PanelNo = GetStr(r, "PANEL_NO"),
+                OutProcessTime = OracleHelper.GetStr(r, "OUT_PROCESS_TIME"),
+                TerminalName = OracleHelper.GetStr(r, "TERMINAL_NAME"),
+                EmpName = OracleHelper.GetStr(r, "EMP_NAME"),
+                CustomerName = OracleHelper.GetStr(r, "CUSTOMER_NAME"),
+                CustomerSN = OracleHelper.GetStr(r, "CUSTOMER_SN"),
+                QcNo = OracleHelper.GetStr(r, "QC_NO"),
+                ReworkNo = OracleHelper.GetStr(r, "REWORK_NO"),
+                PanelNo = OracleHelper.GetStr(r, "PANEL_NO"),
             });
         }
         return list;
@@ -164,14 +203,14 @@ internal static class StatusTagService
         {
             list.Add(new PartRecord
             {
-                PartNo = GetStr(r, "PART_NO"),
-                Version = GetStr(r, "VERSION"),
-                Spec = GetStr(r, "SPEC1"),
-                ItemPartSn = GetStr(r, "ITEM_PART_SN"),
-                PartType = GetStr(r, "PART_TYPE"),
-                ProcessName = GetStr(r, "PROCESS_NAME"),
-                EmpName = GetStr(r, "EMP_NAME"),
-                UpdateTime = GetStr(r, "UPDATE_TIME"),
+                PartNo = OracleHelper.GetStr(r, "PART_NO"),
+                Version = OracleHelper.GetStr(r, "VERSION"),
+                Spec = OracleHelper.GetStr(r, "SPEC1"),
+                ItemPartSn = OracleHelper.GetStr(r, "ITEM_PART_SN"),
+                PartType = OracleHelper.GetStr(r, "PART_TYPE"),
+                ProcessName = OracleHelper.GetStr(r, "PROCESS_NAME"),
+                EmpName = OracleHelper.GetStr(r, "EMP_NAME"),
+                UpdateTime = OracleHelper.GetStr(r, "UPDATE_TIME"),
             });
         }
         return list;
@@ -203,23 +242,12 @@ internal static class StatusTagService
         {
             list.Add(new ReworkRecord
             {
-                ReworkNo = GetStr(r, "REWORK_NO"),
-                EmpName = GetStr(r, "EMP_NAME"),
-                UpdateTime = GetStr(r, "UPDATE_TIME"),
-                Remark = GetStr(r, "REMARK"),
+                ReworkNo = OracleHelper.GetStr(r, "REWORK_NO"),
+                EmpName = OracleHelper.GetStr(r, "EMP_NAME"),
+                UpdateTime = OracleHelper.GetStr(r, "UPDATE_TIME"),
+                Remark = OracleHelper.GetStr(r, "REMARK"),
             });
         }
         return list;
     }
-    // ============ 辅助 ============
-
-    private static string GetStr(DataRow r, string col)
-        => r.Table.Columns.Contains(col) && r[col] != DBNull.Value
-            ? r[col].ToString()!.Trim()
-            : string.Empty;
-
-    private static int GetInt(DataRow r, string col)
-        => r.Table.Columns.Contains(col) && r[col] != DBNull.Value
-            ? Convert.ToInt32(r[col])
-            : 0;
 }

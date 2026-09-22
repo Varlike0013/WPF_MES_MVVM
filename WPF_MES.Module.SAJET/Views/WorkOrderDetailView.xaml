@@ -1,0 +1,212 @@
+<UserControl x:Class="WPF_MES.Module.SAJET.Views.WorkOrderDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Microsoft YaHei"
+             FontSize="13">
+
+    <UserControl.Resources>
+        <!-- 说明标签 -->
+        <Style x:Key="CaptionLabel" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,0,8,0"/>
+        </Style>
+
+        <!-- 值标签（只读 TextBox，可选中、可双击复制） -->
+        <Style x:Key="ValueLabel" TargetType="TextBox">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="IsReadOnlyCaretVisible" Value="True"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <!-- SN 数量（蓝色，突出） -->
+        <Style x:Key="CountLabel" TargetType="TextBox" BasedOn="{StaticResource ValueLabel}">
+            <Setter Property="Foreground" Value="#007ACC"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <!-- DataGrid 样式 -->
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="GridLinesVisibility" Value="All"/>
+            <Setter Property="RowHeight" Value="26"/>
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="AlternatingRowBackground" Value="#DFDFDF"/>
+        </Style>
+
+        <!-- 行样式：NG 红底、Hold 橙底 -->
+        <Style x:Key="DataGridRowStyle" TargetType="DataGridRow">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding WorkFlag}" Value="1">
+                    <Setter Property="Background" Value="#C83232"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding WorkFlag}" Value="2">
+                    <Setter Property="Background" Value="#E8A000"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ===== 顶部查询栏 ===== -->
+        <Border Grid.Row="0" Background="White" Padding="10,12,0,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="工单号" VerticalAlignment="Center" Margin="0,0,8,0"/>
+
+                <TextBox x:Name="txtWorkOrder"
+                 Text="{Binding InputWorkOrder, UpdateSourceTrigger=PropertyChanged}"
+                 Width="280" Height="26"
+                 VerticalContentAlignment="Center"
+                 KeyDown="TxtWorkOrder_KeyDown"/>
+                
+                <!-- 查询模式 -->
+                <TextBlock Text="查询类型" VerticalAlignment="Center" Margin="20,0,8,0"/>
+                <ComboBox ItemsSource="{Binding QueryModes}"
+                SelectedIndex="{Binding SelectedQueryMode}"
+                Width="110" Height="26"
+                VerticalContentAlignment="Center"/>
+                
+                <Button Content="查询"
+                Command="{Binding SearchCommand}"
+                Width="75" Height="26"
+                Margin="8,0,0,0"/>
+
+                <Button Content="清空"
+                Command="{Binding ClearCommand}"
+                Width="75" Height="26"
+                Margin="8,0,0,0"/>
+
+                <!-- 导出 -->
+                <Button Content="导出"
+                Command="{Binding ExportCommand}"
+                Width="75" Height="26"
+                Margin="8,0,0,0"/>
+            </StackPanel>
+        </Border>
+        <!-- ===== 左右分栏 ===== -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="340"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ===== 左侧：工单信息 ===== -->
+            <Border Grid.Column="0" Background="White" Padding="15,10">
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0"  Grid.Column="0" Text="工单："     Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="0"  Grid.Column="1" Text="{Binding LblWoNo}"         Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="1"  Grid.Column="0" Text="料号："     Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="1"  Grid.Column="1" Text="{Binding LblPartNo}"       Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="2"  Grid.Column="0" Text="料号描述：" Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="2"  Grid.Column="1" Text="{Binding LblPartDesc}"     Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="3"  Grid.Column="0" Text="版本："     Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="3"  Grid.Column="1" Text="{Binding LblVersion}"      Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="4"  Grid.Column="0" Text="状态："     Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="4"  Grid.Column="1" Text="{Binding LblStatus}"       Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="5"  Grid.Column="0" Text="流程："     Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="5"  Grid.Column="1" Text="{Binding LblRoute}"        Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="6"  Grid.Column="0" Text="起始工序：" Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="6"  Grid.Column="1" Text="{Binding LblStartProcess}" Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="7"  Grid.Column="0" Text="结束工序：" Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="7"  Grid.Column="1" Text="{Binding LblEndProcess}"   Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="8"  Grid.Column="0" Text="预定产线：" Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="8"  Grid.Column="1" Text="{Binding LblLine}"         Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="9"  Grid.Column="0" Text="目标数量：" Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="9"  Grid.Column="1" Text="{Binding LblTargetQty}"    Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="投入数量：" Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="10" Grid.Column="1" Text="{Binding LblInputQty}"     Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="11" Grid.Column="0" Text="产出数量：" Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="11" Grid.Column="1" Text="{Binding LblOutputQty}"    Style="{StaticResource ValueLabel}"/>
+
+                        <TextBlock Grid.Row="12" Grid.Column="0" Text="SN 总数："  Style="{StaticResource CaptionLabel}"/>
+                        <TextBox   Grid.Row="12" Grid.Column="1" Text="{Binding LblSnCount}"      Style="{StaticResource CountLabel}"/>
+                    </Grid>
+                </ScrollViewer>
+            </Border>
+
+            <GridSplitter Grid.Column="1"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Background="#DDDDDD"/>
+
+            <!-- ===== 右侧：SN 列表 ===== -->
+            <DataGrid Grid.Column="2"
+                      ItemsSource="{Binding SnRecords}"
+                      Style="{StaticResource DataGridStyle}"
+                      RowStyle="{StaticResource DataGridRowStyle}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="序号"     Binding="{Binding SerialNumber}" Width="180"/>
+                    <DataGridTextColumn Header="工单"     Binding="{Binding WorkOrder}"    Width="160"/>
+                    <DataGridTextColumn Header="料号"     Binding="{Binding PartNo}"       Width="130"/>
+                    <DataGridTextColumn Header="工序"     Binding="{Binding ProcessName}"  Width="120"/>
+                    <DataGridTextColumn Header="状态"     Binding="{Binding WorkFlagText}" Width="80"/>
+                    <DataGridTextColumn Header="出货序号" Binding="{Binding CustomerSN}"   Width="130"/>
+                    <DataGridTextColumn Header="箱号"     Binding="{Binding CartonNo}"     Width="120"/>
+                    <DataGridTextColumn Header="流程"     Binding="{Binding RouteName}"    Width="120"/>
+                    <DataGridTextColumn Header="质检编号" Binding="{Binding QcNo}"         Width="100"/>
+                    <DataGridTextColumn Header="重工编号" Binding="{Binding ReworkNo}"     Width="120"/>
+                    <DataGridTextColumn Header="更新时间" Binding="{Binding UpdateTime}"   Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>
