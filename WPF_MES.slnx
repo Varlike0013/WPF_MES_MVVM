@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="WPF_MES.Contracts/WPF_MES.Contracts.csproj" />
+  <Project Path="WPF_MES.Module.GEDTA/WPF_MES.Module.GEDTA.csproj" />
+  <Project Path="WPF_MES.Module.SAJET/WPF_MES.Module.SAJET.csproj" />
+  <Project Path="WPF_MES.Shared/WPF_MES.Shared.csproj" Id="013d7f27-10af-4695-9258-70aebca2e06c" />
+  <Project Path="WPF_MES_MVVM/WPF_MES_MVVM.csproj" />
+</Solution>

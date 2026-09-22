@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>WPF_MES_MVVM</RootNamespace>
+		<AssemblyName>WPF_MES_MVVM</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\WPF_MES.Contracts\WPF_MES.Contracts.csproj" />
+		<ProjectReference Include="..\WPF_MES.Shared\WPF_MES.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JIXYS4CBup8=",
+  "success": true,
+  "projectFilePath": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\WPF_MES_MVVM.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leihuang.ECS\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.2\\communitytoolkit.mvvm.8.4.2.nupkg.sha512"
+  ],
+  "logs": []
+}
