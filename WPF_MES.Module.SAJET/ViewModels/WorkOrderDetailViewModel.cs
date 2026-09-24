@@ -24,6 +24,10 @@ public partial class WorkOrderDetailViewModel : ObservableObject
 
     /// <summary>当前查询的工单号（用于切换模式时重查）</summary>
     private string _currentWorkOrder = string.Empty;
+    /// <summary>原始客户 ID（工单当前客户，用于判断是否有改动）</summary>
+    private int _originalCustomerId;
+    /// <summary>抑制客户变更事件（程序设置时不触发数据库更新）</summary>
+    private bool _suppressCustomerChange = false;
 
     // ============ 输入 ============
 
@@ -48,6 +52,31 @@ public partial class WorkOrderDetailViewModel : ObservableObject
     // ============ SN 列表 ============
 
     public ObservableCollection<SnListItem> SnRecords { get; } = new();
+    /// <summary>客户列表（下拉框数据源）</summary>
+    public ObservableCollection<CustomerInfo> Customers { get; } = new();
+    /// <summary>当前选中的客户</summary>
+    [ObservableProperty] private CustomerInfo? _selectedCustomer;
+
+    public WorkOrderDetailViewModel()
+    {
+        // 加载客户列表
+        LoadCustomers();
+    }
+    private void LoadCustomers()
+    {
+        try
+        {
+            Customers.Clear();
+            foreach (var c in SajetCommonService.GetCustomers())
+                Customers.Add(c);
+        }
+        catch (Exception ex)
+        {
+            Logger.Error($"[WO-DETAIL] Load customers failed: {ex.Message}");
+            MessageBox.Show("加载客户失败：" + ex.Message, "错误",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
 
     // ============ 命令 ============
 
@@ -179,9 +208,94 @@ public partial class WorkOrderDetailViewModel : ObservableObject
                 MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
-
     // ============ 模式切换 ============
+    partial void OnSelectedCustomerChanged(CustomerInfo? value)
+    {
+        // 1. 抑制中（程序设置），跳过
+        if (_suppressCustomerChange) return;
 
+        // 2. 没有工单，跳过
+        if (string.IsNullOrEmpty(_currentWorkOrder)) return;
+
+        // 3. 未选中，跳过
+        if (value == null) return;
+
+        // 4. 没变，跳过
+        if (value.CustomerId == _originalCustomerId) return;
+
+        // 5. 确认
+        var result = MessageBox.Show(
+            $"确定要将工单 {_currentWorkOrder} 的客户修改为：\n\n" +
+            $"{value.Display}\n\n" +
+            $"此操作会修改 工单 和 工单Sn（流程和状态） 的客户。",
+            "确认修改",
+            MessageBoxButton.YesNo,
+            MessageBoxImage.Question);
+
+        if (result != MessageBoxResult.Yes)
+        {
+            // 用户取消 → 延迟恢复原选中
+            RestoreOriginalCustomer();
+            return;
+        }
+
+        // 6. 执行更新
+        try
+        {
+            int affected = WorkOrderDetailService.UpdateCustomer(
+                _currentWorkOrder, value.CustomerId);
+
+            Logger.Info($"[WO-DETAIL] Customer updated: {_currentWorkOrder} -> " +
+                        $"{value.CustomerCode}, affected={affected}");
+
+            MessageBox.Show($"修改成功。\n\n共影响 {affected} 条记录。", "提示",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+
+            _originalCustomerId = value.CustomerId;
+            LoadSnList();
+        }
+        catch (Exception ex)
+        {
+            Logger.Error($"[WO-DETAIL] Update customer failed: {ex.Message}");
+            MessageBox.Show("修改失败：" + ex.Message, "错误",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+
+            // 失败 → 延迟恢复原选中
+            RestoreOriginalCustomer();
+        }
+    }
+
+    /// <summary>
+    /// 延迟恢复原选中客户。避开 ComboBox 内部状态处理。
+    /// </summary>
+    private void RestoreOriginalCustomer()
+    {
+        System.Windows.Application.Current.Dispatcher.BeginInvoke(
+            new Action(() =>
+            {
+                SetSelectedCustomer(
+                    Customers.FirstOrDefault(c => c.CustomerId == _originalCustomerId));
+            }),
+            System.Windows.Threading.DispatcherPriority.Background);
+    }
+    /// <summary>
+    /// 程序设置当前选中的客户。
+    /// 会抑制 OnSelectedCustomerChanged 的数据库更新逻辑。
+    /// 用户操作请直接用 ComboBox 绑定 SelectedCustomer，不要调这个方法。
+    /// </summary>
+    /// <param name="customer">目标客户。null 表示清空</param>
+    private void SetSelectedCustomer(CustomerInfo? customer)
+    {
+        _suppressCustomerChange = true;
+        try
+        {
+            SelectedCustomer = customer;
+        }
+        finally
+        {
+            _suppressCustomerChange = false;
+        }
+    }
     partial void OnSelectedQueryModeChanged(int value)
     {
         // 已查询过工单 → 重新加载 SN 列表
@@ -234,7 +348,6 @@ public partial class WorkOrderDetailViewModel : ObservableObject
     }
 
     // ============ 内部方法 ============
-
     private void FillLabels(WorkOrder d)
     {
         LblWoNo = d.WorkOrderNo;
@@ -249,6 +362,8 @@ public partial class WorkOrderDetailViewModel : ObservableObject
         LblStartProcess = d.StartProcess;
         LblEndProcess = d.EndProcess;
         LblLine = d.PdlineName;
+        _originalCustomerId = d.CustomerId;
+        SetSelectedCustomer(Customers.FirstOrDefault(c => c.CustomerId == d.CustomerId));
     }
 
     private void ClearAll()
@@ -266,6 +381,11 @@ public partial class WorkOrderDetailViewModel : ObservableObject
         LblEndProcess = string.Empty;
         LblLine = string.Empty;
         LblSnCount = string.Empty;
+        _currentWorkOrder = string.Empty;
+        _originalCustomerId = 0;
+        _suppressCustomerChange = true;
+        SelectedCustomer = null;
+        _suppressCustomerChange = false;
         SnRecords.Clear();
     }
 }

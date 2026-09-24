@@ -34,6 +34,9 @@
       "WPF_MES.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CommunityToolkit.Mvvm": "8.4.2"
+        },
         "compile": {
           "bin/placeholder/WPF_MES.Shared.dll": {}
         },

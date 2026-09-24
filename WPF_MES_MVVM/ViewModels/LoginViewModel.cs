@@ -134,6 +134,9 @@ public partial class LoginViewModel : ObservableObject
 
             if (result.Success)
             {
+                CurrentUser.UserNo = result.UserNo;
+                CurrentUser.UserName = result.UserName;
+                CurrentUser.ModuleKey = SelectedModule.ModuleKey;
                 SaveSettings(SelectedModule.ModuleKey, UserNo.Trim());
                 LoginSucceeded?.Invoke(SelectedModule, result);
             }

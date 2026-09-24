@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YZBGLT+HTQQ=",
+  "dgSpecHash": "MPVCqjxas4I=",
   "success": true,
   "projectFilePath": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\WPF_MES.Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\leihuang.ECS\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.2\\communitytoolkit.mvvm.8.4.2.nupkg.sha512"
+  ],
   "logs": []
 }

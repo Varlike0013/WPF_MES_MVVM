@@ -30,4 +30,7 @@ public class WorkOrder
     public string PdlineName { get; set; } = string.Empty;
 
     public int SnCount { get; set; }
+
+    /// <summary>客户 ID (CUSTOMER_ID)</summary>
+    public int CustomerId { get; set; }
 }

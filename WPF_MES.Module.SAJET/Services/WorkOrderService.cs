@@ -62,7 +62,8 @@ internal static class WorkOrderService
                    W.END_PROCESS_ID,
                    PA.PROCESS_NAME AS END_PROCESS,
                    W.DEFAULT_PDLINE_ID,
-                   PD.PDLINE_NAME
+                   PD.PDLINE_NAME,
+                   W.CUSTOMER_ID
             FROM SAJET.G_WO_BASE W
             LEFT JOIN SAJET.SYS_PART    P  ON P.PART_ID  = W.MODEL_ID
             LEFT JOIN SAJET.SYS_ROUTE   R  ON R.ROUTE_ID = W.ROUTE_ID
@@ -104,6 +105,7 @@ internal static class WorkOrderService
 
                 PdlineId = GetInt(r, "DEFAULT_PDLINE_ID"),
                 PdlineName = GetStr(r, "PDLINE_NAME"),
+                CustomerId = GetInt(r, "CUSTOMER_ID"),
             });
         }
 

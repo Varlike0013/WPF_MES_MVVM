@@ -101,17 +101,17 @@ public class SajetModule : IModule
                     new ModuleMenuNode
                     {
                         Title = "重工执行",
-                        ViewFactory = null,
+                        ViewFactory = () => new ReworkView(),
                     },
                     new ModuleMenuNode
                     {
                         Title = "重工还原",
-                        ViewFactory = null,
+                        ViewFactory = () => new SnRecoveryView(),
                     },
                     new ModuleMenuNode
                     {
                         Title = "清除料件",
-                        ViewFactory = null,
+                        ViewFactory = () => new ClearKeyPartsView(),
                     },
                     new ModuleMenuNode
                     {
@@ -122,6 +122,11 @@ public class SajetModule : IModule
                     {
                         Title = "清除卡号",
                         ViewFactory = null,
+                    },
+                    new ModuleMenuNode
+                    {
+                        Title = "箱号管理",
+                        ViewFactory = () => new CartonInfoView(),
                     }
                 }
             },

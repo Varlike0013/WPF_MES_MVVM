@@ -39,7 +39,7 @@
         public string CurrentStatusText => CurrentStatusCode switch
         {
             0 => "Good",
-            1 => "Fail",
+            1 => "Repair",
             2 => "Hold",
             _ => CurrentStatus,
         };
@@ -51,6 +51,7 @@
         {
             0 => "Good",
             1 => "Fail",
+            2 => "Scap",
             _ => WorkFlag,
         };
     }

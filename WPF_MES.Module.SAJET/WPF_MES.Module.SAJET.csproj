@@ -18,10 +18,6 @@
 		<ProjectReference Include="..\WPF_MES_MVVM\WPF_MES_MVVM.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Models\" />
-	</ItemGroup>
-
 	<Target Name="CopyToHostModules" AfterTargets="Build">
 		<PropertyGroup>
 			<!-- MSBuildThisFileDirectory 是 csproj 所在目录，非常可靠 -->

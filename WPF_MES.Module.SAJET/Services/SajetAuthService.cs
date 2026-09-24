@@ -8,7 +8,7 @@ internal class SajetAuthService : IAuthService
     {
         try
         {
-            var (ok, msg) = OracleHelper.CheckEmpPwd(userNo, password);
+            var (ok, msg) = SajetCommonService.CheckEmpPwd(userNo, password);
 
             if (!ok)
             {
@@ -25,7 +25,7 @@ internal class SajetAuthService : IAuthService
                 Success = true,
                 Message = msg,
                 UserNo = userNo,
-                UserName = OracleHelper.GetUserName(userNo),
+                UserName = SajetCommonService.GetUserName(userNo),
             };
         }
         catch (Exception ex)

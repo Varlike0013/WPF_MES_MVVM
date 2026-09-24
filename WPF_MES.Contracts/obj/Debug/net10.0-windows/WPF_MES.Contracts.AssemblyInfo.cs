@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WPF_MES.Contracts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+463fd4ab5a4ec9d341be7e4d572e6353301b9ff9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73f1bfa90106c4938a28e78aec2d93513bf117a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPF_MES.Contracts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPF_MES.Contracts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

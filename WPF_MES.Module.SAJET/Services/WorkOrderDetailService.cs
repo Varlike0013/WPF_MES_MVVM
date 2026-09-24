@@ -147,4 +147,40 @@ internal static class WorkOrderDetailService
 
         return list;
     }
+    /// <summary>
+    /// 修改工单下的客户。同时更新 G_SN_STATUS、G_SN_TRAVEL、G_WO_BASE 三张表。
+    /// </summary>
+    /// <returns>受影响行数之和</returns>
+    public static int UpdateCustomer(string workOrderNo, int customerId)
+    {
+        const string sqlStatus = @"
+        UPDATE SAJET.G_SN_STATUS
+        SET CUSTOMER_ID = :cid
+        WHERE WORK_ORDER = :wo";
+
+        const string sqlTravel = @"
+        UPDATE SAJET.G_SN_TRAVEL
+        SET CUSTOMER_ID = :cid
+        WHERE WORK_ORDER = :wo";
+
+        const string sqlWoBase = @"
+        UPDATE SAJET.G_WO_BASE
+        SET CUSTOMER_ID = :cid
+        WHERE WORK_ORDER = :wo";
+
+        var ps = new Dictionary<string, object>
+    {
+        { "cid", customerId },
+        { "wo",  workOrderNo },
+    };
+
+        var statements = new List<(string, Dictionary<string, object>?)>
+    {
+        (sqlStatus, ps),
+        (sqlTravel, ps),
+        (sqlWoBase, ps),
+    };
+
+        return OracleHelper.ExecuteInTransaction(statements);
+    }
 }

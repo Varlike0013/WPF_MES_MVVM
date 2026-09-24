@@ -50,7 +50,7 @@
         public string WorkFlagText => WorkFlagCode switch
         {
             0 => "Good",
-            1 => "Fail",
+            1 => "Scap",
             _ => WorkFlag,
         };
     }

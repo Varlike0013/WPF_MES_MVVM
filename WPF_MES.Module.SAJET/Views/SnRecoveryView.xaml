@@ -1,0 +1,207 @@
+<UserControl x:Class="WPF_MES.Module.SAJET.Views.SnRecoveryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Microsoft YaHei"
+             FontSize="13">
+
+    <UserControl.Resources>
+        <!-- 两个表格共享的样式 -->
+        <Style x:Key="CompareGrid" TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="GridLinesVisibility" Value="All"/>
+            <Setter Property="RowHeight" Value="26"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="AlternatingRowBackground" Value="#F8F8F8"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- ========== 顶部输入 ========== -->
+        <Border Grid.Row="0" Background="White" Padding="10,12">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="SN / 重工号"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,0"/>
+
+                <TextBox x:Name="txtInput"
+                         Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
+                         Width="300" Height="26"
+                         VerticalContentAlignment="Center"
+                         KeyDown="InputText_KeyDown"/>
+
+                <Button Content="查询"
+                        Command="{Binding SearchCommand}"
+                        Width="75" Height="26"
+                        Margin="8,0,0,0"/>
+
+                <TextBlock Text="{Binding StatusMessage}"
+                           VerticalAlignment="Center"
+                           Margin="20,0,0,0"
+                           Foreground="#666666"
+                           FontWeight="Bold"/>
+            </StackPanel>
+        </Border>
+
+        <!-- ========== 左右两个表格 ========== -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ===== 左侧：当前状态 ===== -->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="#E8EEF7" Padding="8,6">
+                    <TextBlock Text="当前状态"
+                               FontWeight="Bold"
+                               Foreground="#007ACC"/>
+                </Border>
+
+                <DataGrid Grid.Row="1"
+                      x:Name="dgvCurrent"
+                      ItemsSource="{Binding CurrentItems}"
+                      SelectedItem="{Binding SelectedCurrentItem}"
+                      Style="{StaticResource CompareGrid}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="序列号"     Binding="{Binding SerialNumber}"   Width="120"/>
+                        <DataGridTextColumn Header="工单"       Binding="{Binding WorkOrder}"      Width="120"/>
+                        <DataGridTextColumn Header="料号"       Binding="{Binding PartNo}"         Width="90"/>
+                        <DataGridTextColumn Header="流程"       Binding="{Binding RouteName}"      Width="110"/>
+                        <DataGridTextColumn Header="在制工序"   Binding="{Binding WipProcess}"     Width="90"/>
+                        <DataGridTextColumn Header="当前工序"   Binding="{Binding CurrentProcess}" Width="90"/>
+                        <DataGridTextColumn Header="箱号"       Binding="{Binding CartonNo}"       Width="90"/>
+                        <DataGridTextColumn Header="出货序号" Binding="{Binding CustomerSN}"     Width="120"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+            <GridSplitter Grid.Column="1"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Background="#DDDDDD"/>
+
+            <!-- ===== 右侧：重工前状态 ===== -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="#FFF3CD" Padding="8,6">
+                    <TextBlock Text="重工前状态"
+                               FontWeight="Bold"
+                               Foreground="#856404"/>
+                </Border>
+
+                <DataGrid Grid.Row="1"
+                          x:Name="dgvBackup"
+                          ItemsSource="{Binding BackupItems}"
+                          SelectedItem="{Binding SelectedBackupItem}"
+                          Style="{StaticResource CompareGrid}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="序列号"     Binding="{Binding SerialNumber}"   Width="120"/>
+                        <DataGridTextColumn Header="工单"       Binding="{Binding WorkOrder}"      Width="120"/>
+                        <DataGridTextColumn Header="料号"       Binding="{Binding PartNo}"         Width="90"/>
+                        <DataGridTextColumn Header="流程"       Binding="{Binding RouteName}"      Width="110"/>
+                        <DataGridTextColumn Header="在制工序"   Binding="{Binding WipProcess}"     Width="90"/>
+                        <DataGridTextColumn Header="当前工序"   Binding="{Binding CurrentProcess}" Width="90"/>
+                        <DataGridTextColumn Header="箱号"       Binding="{Binding CartonNo}"       Width="90"/>
+                        <DataGridTextColumn Header="出货序号" Binding="{Binding CustomerSN}"     Width="120"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
+        <!-- ========== 底部按钮 ========== -->
+        <Border Grid.Row="2"
+        Background="#F5F5F5"
+        BorderBrush="#DDDDDD"
+        BorderThickness="0,1,0,0"
+        Padding="10,10">
+            <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center">
+
+                <!-- 恢复选中 -->
+                <Button Command="{Binding RecoverCommand}"
+                IsEnabled="{Binding CanRecover}"
+                Width="160" Height="34"
+                FontWeight="Bold"
+                Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Bd"
+                            Background="#D9534F"
+                            CornerRadius="4">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.Foreground="White"
+                                          TextElement.FontSize="13"
+                                          TextElement.FontWeight="Bold"
+                                          Content="恢复选中"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bd" Property="Background" Value="#C9302C"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!-- 恢复全部 -->
+                <Button Command="{Binding RecoverAllCommand}"
+                IsEnabled="{Binding CanRecoverAll}"
+                Width="160" Height="34"
+                FontWeight="Bold"
+                Margin="15,0,0,0"
+                Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Bd"
+                            Background="#8B0000"
+                            CornerRadius="4">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.Foreground="White"
+                                          TextElement.FontSize="13"
+                                          TextElement.FontWeight="Bold"
+                                          Content="恢复全部"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bd" Property="Background" Value="#A52A2A"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

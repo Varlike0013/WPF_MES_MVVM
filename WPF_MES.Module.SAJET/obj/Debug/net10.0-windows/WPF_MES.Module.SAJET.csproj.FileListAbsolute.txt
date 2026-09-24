@@ -37,3 +37,13 @@ E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\WorkOrderDet
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\WorkOrderDetailView.g.cs
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\NetworkChatView.baml
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\NetworkChatView.g.cs
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ReworkView.baml
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ReworkView.g.cs
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ReworkConfirmDialog.baml
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ReworkConfirmDialog.g.cs
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\SnRecoveryView.baml
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\SnRecoveryView.g.cs
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ClearKeyPartsView.baml
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ClearKeyPartsView.g.cs
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\CartonInfoView.baml
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\CartonInfoView.g.cs

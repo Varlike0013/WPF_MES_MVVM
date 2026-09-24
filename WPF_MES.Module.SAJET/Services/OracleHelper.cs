@@ -1,6 +1,7 @@
-﻿using System.Data;
+﻿using Oracle.ManagedDataAccess.Client;
+using System.Data;
 using System.Text;
-using Oracle.ManagedDataAccess.Client;
+using WPF_MES.Contracts.Models;
 
 namespace WPF_MES.Module.SAJET.Services;
 
@@ -83,50 +84,6 @@ internal static class OracleHelper
         }
     }
 
-    /// <summary>
-    /// 调用存储过程 sj_chk_emp_pwd，返回 (是否成功, 原始返回消息)
-    /// </summary>
-    public static (bool ok, string msg) CheckEmpPwd(string empNo, string password)
-    {
-        using var conn = GetConnection();
-        using var cmd = new OracleCommand("SAJET.sj_chk_emp_pwd", conn)
-        {
-            CommandType = CommandType.StoredProcedure
-        };
-
-        cmd.Parameters.Add("temp2", OracleDbType.Varchar2).Value = empNo;
-        cmd.Parameters.Add("trev", OracleDbType.Varchar2).Value = password;
-
-        var outParam = new OracleParameter("tres", OracleDbType.Varchar2, 200)
-        {
-            Direction = ParameterDirection.Output
-        };
-        cmd.Parameters.Add(outParam);
-
-        cmd.ExecuteNonQuery();
-
-        string msg = outParam.Value?.ToString()?.Trim() ?? string.Empty;
-        bool ok = msg.StartsWith("OK", StringComparison.OrdinalIgnoreCase);
-        return (ok, msg);
-    }
-
-    /// <summary>
-    /// 通过工号获取姓名
-    /// </summary>
-    public static string GetUserName(string userNo)
-    {
-        const string sql = @"
-            SELECT EMP_NAME FROM SYS_EMP
-            WHERE EMP_NO = :userNo AND ENABLED = 'Y'";
-
-        var result = ExecuteScalar(sql,
-            new Dictionary<string, object> { { "userNo", userNo } });
-
-        return result == null || result == DBNull.Value
-            ? string.Empty
-            : result.ToString()!.Trim();
-    }
-
     // ============ 私有辅助 ============
 
     private static void AddParams(OracleCommand cmd, Dictionary<string, object>? ps)
@@ -165,98 +122,53 @@ internal static class OracleHelper
               .Append(kv.Value?.ToString() ?? "NULL").Append("; ");
         return sb.ToString();
     }
-    // ============ 共用业务查询 ============
-
     /// <summary>
-    /// 获取所有启用的产线（ID + 名称）
+    /// 在一个事务里执行多条 SQL。任意一条失败则整体回滚。使用时要求多个语句的绑定参数一致；
     /// </summary>
-    public static List<(int Id, string Name)> GetPDLines()
+    /// <param name="statements">(SQL, 参数) 列表</param>
+    /// <returns>所有语句影响行数之和</returns>
+    public static int ExecuteInTransaction(
+        List<(string Sql, Dictionary<string, object>? Params)> statements)
     {
-        const string sql = @"
-        SELECT PDLINE_ID, PDLINE_NAME
-        FROM SAJET.SYS_PDLINE
-        WHERE ENABLED = 'Y'
-        ORDER BY PDLINE_NAME";
+        if (statements == null || statements.Count == 0) return 0;
 
-        var dt = QueryDataTable(sql);
-        var list = new List<(int, string)>();
-        foreach (DataRow r in dt.Rows)
+        using var conn = GetConnection();
+        using var tran = conn.BeginTransaction();
+
+        try
         {
-            if (r[1] == DBNull.Value) continue;
-            list.Add((Convert.ToInt32(r[0]), r[1].ToString()!.Trim()));
-        }
-        return list;
-    }
-    /// <summary>
-    /// 获取所有启用的产线（ID + 名称）
-    /// </summary>
-    public static List<(int Id, string Name)> GetPDLinesLikeBfloor()
-    {
-        const string sql = @"
-        SELECT PDLINE_ID, PDLINE_NAME
-        FROM SAJET.SYS_PDLINE
-        WHERE ENABLED = 'Y' AND PDLINE_NAME LIKE 'B%'
-        ORDER BY PDLINE_NAME";
+            int total = 0;
 
-        var dt = QueryDataTable(sql);
-        var list = new List<(int, string)>();
-        foreach (DataRow r in dt.Rows)
+            foreach (var (sql, ps) in statements)
+            {
+                using var cmd = new OracleCommand(sql, conn)
+                {
+                    Transaction = tran,
+                };
+
+                if (ps != null)
+                {
+                    foreach (var kv in ps)
+                    {
+                        var p = cmd.Parameters.Add(kv.Key, InferDbType(kv.Value));
+                        p.Value = kv.Value ?? DBNull.Value;
+                    }
+                }
+
+                total += cmd.ExecuteNonQuery();
+            }
+
+            tran.Commit();
+            return total;
+        }
+        catch (Exception ex)
         {
-            if (r[1] == DBNull.Value) continue;
-            list.Add((Convert.ToInt32(r[0]), r[1].ToString()!.Trim()));
+            try { tran.Rollback(); } catch { }
+
+            string sqlList = string.Join("\n---\n", statements.Select(s => s.Sql.Trim()));
+            throw new Exception(
+                $"事务执行失败：{ex.Message}\nSQL:\n{sqlList}", ex);
         }
-        return list;
-    }
-
-    /// <summary>
-    /// 根据流程 ID 获取该流程下的工序（ID + 名称）
-    /// </summary>
-    public static List<(int Id, string Name)> GetRouteProcesses(int routeId)
-    {
-        const string sql = @"
-        SELECT P.PROCESS_ID, P.PROCESS_NAME
-        FROM SAJET.SYS_ROUTE_DETAIL RD
-        LEFT JOIN SAJET.SYS_PROCESS P ON P.PROCESS_ID = RD.NEXT_PROCESS_ID
-        WHERE RD.ROUTE_ID = :routeId
-          AND RD.SEQ = RD.STEP
-        ORDER BY RD.STEP";
-
-        var ps = new Dictionary<string, object> { { "routeId", routeId } };
-        var dt = QueryDataTable(sql, ps);
-
-        var list = new List<(int, string)>();
-        foreach (DataRow r in dt.Rows)
-        {
-            if (r[1] == DBNull.Value) continue;
-            list.Add((Convert.ToInt32(r[0]), r[1].ToString()!.Trim()));
-        }
-        return list;
-    }
-    /// <summary>
-    /// 根据流程名称获取该流程下的工序（ID + 名称）
-    /// </summary>
-    public static List<(int Id, string Name)> GetRouteProcesses(string routeName)
-    {
-        const string sql = @"
-        SELECT P.PROCESS_ID, P.PROCESS_NAME
-        FROM SAJET.SYS_ROUTE_DETAIL RD
-        LEFT JOIN SAJET.SYS_PROCESS P ON P.PROCESS_ID = RD.NEXT_PROCESS_ID
-        WHERE RD.ROUTE_ID = (
-            SELECT R.ROUTE_ID FROM SAJET.SYS_ROUTE R WHERE R.ROUTE_NAME = :route
-        )
-        AND RD.SEQ = RD.STEP
-        ORDER BY RD.STEP";
-
-        var ps = new Dictionary<string, object> { { "route", routeName } };
-        var dt = QueryDataTable(sql, ps);
-
-        var list = new List<(int, string)>();
-        foreach (DataRow r in dt.Rows)
-        {
-            if (r[1] == DBNull.Value) continue;
-            list.Add((Convert.ToInt32(r[0]), r[1].ToString()!.Trim()));
-        }
-        return list;
     }
     // ============ 通用取值辅助（DataRow → 类型） ============
 
@@ -306,5 +218,19 @@ internal static class OracleHelper
     {
         var d = GetDate(r, col);
         return d?.ToString(format) ?? string.Empty;
+    }
+    /// <summary>
+    /// 判断某表某列是否存在指定值。
+    /// 注意：table 和 column 必须是代码里写死的常量，不能来自用户输入。
+    /// </summary>
+    public static bool Exists(string table, string column, string value)
+    {
+        string sql = $"SELECT COUNT(1) FROM {table} WHERE {column} = :v AND ROWNUM = 1";
+
+        var ps = new Dictionary<string, object> { { "v", value } };
+        var result = OracleHelper.ExecuteScalar(sql, ps);
+
+        if (result == null || result == DBNull.Value) return false;
+        return Convert.ToInt32(result) > 0;
     }
 }

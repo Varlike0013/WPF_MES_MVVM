@@ -225,7 +225,7 @@ public partial class WorkOrderMaintainViewModel : ObservableObject
         try
         {
             LineList.Clear();
-            foreach (var (id, name) in OracleHelper.GetPDLinesLikeBfloor())
+            foreach (var (id, name) in SajetCommonService.GetPDLinesLikeBfloor())
             {
                 LineList.Add(new ComboItem { Id = id, Name = name });
             }
@@ -252,7 +252,7 @@ public partial class WorkOrderMaintainViewModel : ObservableObject
 
         try
         {
-            foreach (var (id, name) in OracleHelper.GetRouteProcesses(routeId))
+            foreach (var (id, name) in SajetCommonService.GetRouteProcesses(routeId))
             {
                 StartProcessList.Add(new ComboItem { Id = id, Name = name });
                 EndProcessList.Add(new ComboItem { Id = id, Name = name });
