@@ -3,220 +3,232 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              FontFamily="Microsoft YaHei"
              FontSize="13">
-
+    
     <UserControl.Resources>
-        <!-- 说明标签 -->
-        <Style x:Key="CaptionLabel" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="Margin" Value="0,0,8,0"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPF_MES.Shared;component/Themes/SharedStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
 
-        <!-- 值标签（红色，只读，可选中复制） -->
-        <Style x:Key="ValueLabel" TargetType="TextBox">
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="Red"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="IsReadOnly" Value="True"/>
-            <Setter Property="IsReadOnlyCaretVisible" Value="True"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="Cursor" Value="IBeam"/>
-        </Style>
-
-        <!-- DataGrid 样式 -->
-        <Style x:Key="DataGridStyle" TargetType="DataGrid">
-            <Setter Property="AutoGenerateColumns" Value="False"/>
-            <Setter Property="IsReadOnly" Value="True"/>
-            <Setter Property="CanUserAddRows" Value="False"/>
-            <Setter Property="CanUserDeleteRows" Value="False"/>
-            <Setter Property="HeadersVisibility" Value="Column"/>
-            <Setter Property="SelectionMode" Value="Single"/>
-            <Setter Property="SelectionUnit" Value="FullRow"/>
-            <Setter Property="GridLinesVisibility" Value="All"/>
-            <Setter Property="RowHeight" Value="26"/>
-
-            <!-- 奇数行背景 -->
-            <Setter Property="Background" Value="#F8F8F8"/>
-            <!-- 偶数行背景 -->
-            <Setter Property="AlternatingRowBackground" Value="#DFDFDF"/>
-        </Style>
-        <!-- DataGrid 行样式：NG 红底，其它保持交替色 -->
-        <Style x:Key="DataGridRowStyle" TargetType="DataGridRow">
-            <Style.Triggers>
-                <!-- NG 行：红底白字 -->
-                <DataTrigger Binding="{Binding Status}" Value="1">
-                    <Setter Property="Background" Value="#C83232"/>
-                    <Setter Property="Foreground" Value="White"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
+            <!-- 业务行样式：NG 红底白字（保留在本地） -->
+            <Style x:Key="TravelRowStyle" TargetType="DataGridRow"
+               BasedOn="{StaticResource {x:Type DataGridRow}}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Status}" Value="1">
+                        <Setter Property="Background" Value="{StaticResource RowNgBrush}"/>
+                        <Setter Property="Foreground" Value="White"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid Background="{StaticResource PageBackgroundBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="170"/>
+            <RowDefinition Height="Auto"/>
+            <!-- 标题 -->
+            <RowDefinition Height="Auto"/>
+            <!-- 查询栏 -->
+            <RowDefinition Height="Auto"/>
+            <!-- 信息区 -->
             <RowDefinition Height="*"/>
+            <!-- TabControl -->
         </Grid.RowDefinitions>
 
-        <!-- ===== 顶部查询栏 ===== -->
-        <Border Grid.Row="0" Background="White" Padding="10,12,0,0">
+        <!-- ===== 顶部标题 ===== -->
+        <Border Grid.Row="0"
+                Background="{StaticResource PrimaryBrush}"
+                Padding="12,10">
+            <TextBlock Text="序号状态查询"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+        </Border>
+
+        <!-- ===== 查询栏 ===== -->
+        <Border Grid.Row="1"
+                Background="{StaticResource CardBackgroundBrush}"
+                BorderBrush="{StaticResource CardBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="4"
+                Margin="10,10,10,0"
+                Padding="14,10"
+                Effect="{StaticResource SoftShadow}">
             <StackPanel Orientation="Horizontal">
                 <ComboBox ItemsSource="{Binding InputTypes}"
-                          SelectedIndex="{Binding SelectedInputType}"
-                          Width="100" Height="26"
-                          VerticalContentAlignment="Center"/>
+                      SelectedIndex="{Binding SelectedInputType}"
+                      Width="110" Height="28"
+                      VerticalContentAlignment="Center"/>
 
                 <TextBox x:Name="txtInput"
                          Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
-                         Width="220" Height="26"
-                         Margin="8,0,0,0"
+                         Width="240" Height="28"
+                         Margin="10,0,0,0"
+                         Padding="8,0"
                          VerticalContentAlignment="Center"
                          KeyDown="TxtInput_KeyDown"/>
 
                 <Button Content="查询"
                         Command="{Binding SearchCommand}"
-                        Width="75" Height="26"
-                        Margin="8,0,0,0"/>
+                        Style="{StaticResource PrimaryButton}"
+                        Width="80"
+                        Margin="10,0,0,0"/>
 
                 <Button Content="导出"
                         Command="{Binding ExportCommand}"
-                        Width="75" Height="26"
-                        Margin="8,0,0,0"/>
+                        Style="{StaticResource SecondaryButton}"
+                        Width="80"
+                        Margin="10,0,0,0"/>
             </StackPanel>
         </Border>
 
-        <!-- ===== 中间信息区 ===== -->
-        <Border Grid.Row="1" Background="White" Padding="15,10">
+        <!-- ===== 信息区 ===== -->
+        <Border Grid.Row="2"
+                Background="{StaticResource CardBackgroundBrush}"
+                BorderBrush="{StaticResource CardBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="4"
+                Margin="10,10,10,0"
+                Padding="16,12"
+                Effect="{StaticResource SoftShadow}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="90"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="90"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="36"/>
-                    <RowDefinition Height="36"/>
-                    <RowDefinition Height="36"/>
-                    <RowDefinition Height="36"/>
-                    <RowDefinition Height="36"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="38"/>
                 </Grid.RowDefinitions>
 
                 <!-- 第 1 行 -->
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="序号："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding LblSN}"         Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding LblSN}"           Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="工单："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="0" Grid.Column="3" Text="{Binding LblWO}"         Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="0" Grid.Column="3" Text="{Binding LblWO}"           Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="0" Grid.Column="4" Text="流程名称：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="0" Grid.Column="5" Text="{Binding LblRoute}"      Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="0" Grid.Column="5" Text="{Binding LblRoute}"        Style="{StaticResource ValueLabel}"/>
 
                 <!-- 第 2 行 -->
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="料号："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="1" Grid.Column="1" Text="{Binding LblPartNo}"     Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="1" Grid.Column="1" Text="{Binding LblPartNo}"       Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Text="料号描述：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="1" Grid.Column="3" Text="{Binding LblPartDesc}"   Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="1" Grid.Column="3" Text="{Binding LblPartDesc}"     Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="1" Grid.Column="4" Text="下一站位：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="1" Grid.Column="5" Text="{Binding LblNextProcess}" Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="1" Grid.Column="5" Text="{Binding LblNextProcess}"  Style="{StaticResource ValueLabel}"/>
 
                 <!-- 第 3 行 -->
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Qrcode："   Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="2" Grid.Column="1" Text="{Binding LblPPID}"       Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="2" Grid.Column="1" Text="{Binding LblPPID}"         Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Text="Mac："      Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="2" Grid.Column="3" Text="{Binding LblMac}"        Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="2" Grid.Column="3" Text="{Binding LblMac}"          Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="2" Grid.Column="4" Text="CustSSN："  Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="2" Grid.Column="5" Text="{Binding LblSSN}"        Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="2" Grid.Column="5" Text="{Binding LblSSN}"          Style="{StaticResource ValueLabel}"/>
 
                 <!-- 第 4 行 -->
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="出货序号：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="3" Grid.Column="1" Text="{Binding LblCSN}"        Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="3" Grid.Column="1" Text="{Binding LblCSN}"          Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Text="箱号："     Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="3" Grid.Column="3" Text="{Binding LblCarton}"     Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="3" Grid.Column="3" Text="{Binding LblCarton}"       Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="3" Grid.Column="4" Text="实物状态：" Style="{StaticResource CaptionLabel}"/>
-                <TextBox   Grid.Row="3" Grid.Column="5" Text="{Binding LblWorkFlag}"   Style="{StaticResource ValueLabel}"/>
+                <TextBox   Grid.Row="3" Grid.Column="5" Text="{Binding LblWorkFlag}"     Style="{StaticResource ValueLabel}"/>
 
-                <!-- 第 5 行：序号状态 + 重工编号（同行） -->
+                <!-- 第 5 行：序号状态 + 重工编号 -->
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="序号状态：" Style="{StaticResource CaptionLabel}"/>
                 <TextBox   Grid.Row="4" Grid.Column="1"
-                   Text="{Binding LblCurrentStatus}"
-                   FontSize="16"
-                   FontWeight="Bold"
-                   Foreground="{Binding CurrentStatusColor}"
-                   Background="Transparent"
-                   BorderThickness="0"
-                   IsReadOnly="True"
-                   VerticalContentAlignment="Center"/>
+                           Text="{Binding LblCurrentStatus}"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="{Binding CurrentStatusColor}"
+                           Background="Transparent"
+                           BorderThickness="0"
+                           IsReadOnly="True"
+                           VerticalContentAlignment="Center"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="2" Text="重工编号：" Style="{StaticResource CaptionLabel}"/>
                 <TextBox   Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3"
-                   Text="{Binding LblReworkNo}"
-                   Style="{StaticResource ValueLabel}"/>
+                           Text="{Binding LblReworkNo}"
+                           Style="{StaticResource ValueLabel}"/>
             </Grid>
         </Border>
 
         <!-- ===== 底部 TabControl ===== -->
-        <TabControl Grid.Row="2" Margin="0,5,0,0" FontSize="13" FontWeight="Bold" SelectedIndex="0">
+        <Border Grid.Row="3"
+                Background="{StaticResource CardBackgroundBrush}"
+                BorderBrush="{StaticResource CardBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="4"
+                Margin="10,10,10,10"
+                Effect="{StaticResource SoftShadow}">
+            <TabControl Background="Transparent"
+                        BorderThickness="0"
+                        Padding="0"
+                        SelectedIndex="0"
+                        ItemContainerStyle="{StaticResource FlatTabItem}">
 
-            <TabItem Header="流程表">
-                <DataGrid x:Name="dgvTravel"
+                <TabItem Header="流程表">
+                    <DataGrid x:Name="dgvTravel"
                           ItemsSource="{Binding TravelRecords}"
                           Style="{StaticResource DataGridStyle}"
-                          RowStyle="{StaticResource DataGridRowStyle}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="工单"     Binding="{Binding WorkOrder}"     Width="130"/>
-                        <DataGridTextColumn Header="料号"     Binding="{Binding PartNo}"        Width="120"/>
-                        <DataGridTextColumn Header="生产线"   Binding="{Binding PdlineName}"    Width="100"/>
-                        <DataGridTextColumn Header="工序"     Binding="{Binding ProcessName}"   Width="120"/>
-                        <DataGridTextColumn Header="状态"     Binding="{Binding StatusText}"    Width="60"/>
-                        <DataGridTextColumn Header="完成时间" Binding="{Binding OutProcessTime}" Width="150"/>
-                        <DataGridTextColumn Header="终端"     Binding="{Binding TerminalName}"  Width="100"/>
-                        <DataGridTextColumn Header="作业人员" Binding="{Binding EmpName}"       Width="90"/>
-                        <DataGridTextColumn Header="客户"     Binding="{Binding CustomerName}"  Width="100"/>
-                        <DataGridTextColumn Header="出货序号" Binding="{Binding CustomerSN}"    Width="120"/>
-                        <DataGridTextColumn Header="质检编号" Binding="{Binding QcNo}"          Width="100"/>
-                        <DataGridTextColumn Header="重工编号" Binding="{Binding ReworkNo}"      Width="100"/>
-                        <DataGridTextColumn Header="电压值"   Binding="{Binding PanelNo}"       Width="100"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
+                          RowStyle="{StaticResource TravelRowStyle}"
+                          BorderThickness="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="工单"     Binding="{Binding WorkOrder}"     Width="130"/>
+                            <DataGridTextColumn Header="料号"     Binding="{Binding PartNo}"        Width="120"/>
+                            <DataGridTextColumn Header="生产线"   Binding="{Binding PdlineName}"    Width="100"/>
+                            <DataGridTextColumn Header="工序"     Binding="{Binding ProcessName}"   Width="120"/>
+                            <DataGridTextColumn Header="状态"     Binding="{Binding StatusText}"    Width="60"/>
+                            <DataGridTextColumn Header="完成时间" Binding="{Binding OutProcessTime}" Width="150"/>
+                            <DataGridTextColumn Header="终端"     Binding="{Binding TerminalName}"  Width="100"/>
+                            <DataGridTextColumn Header="作业人员" Binding="{Binding EmpName}"       Width="90"/>
+                            <DataGridTextColumn Header="客户"     Binding="{Binding CustomerName}"  Width="100"/>
+                            <DataGridTextColumn Header="出货序号" Binding="{Binding CustomerSN}"    Width="120"/>
+                            <DataGridTextColumn Header="质检编号" Binding="{Binding QcNo}"          Width="100"/>
+                            <DataGridTextColumn Header="重工编号" Binding="{Binding ReworkNo}"      Width="100"/>
+                            <DataGridTextColumn Header="电压值"   Binding="{Binding PanelNo}"       Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
 
-            <TabItem Header="料件表">
-                <DataGrid x:Name="dgvParts"
-                          ItemsSource="{Binding PartRecords}"
-                          Style="{StaticResource DataGridStyle}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="零件号"       Binding="{Binding PartNo}"      Width="120"/>
-                        <DataGridTextColumn Header="版本"         Binding="{Binding Version}"     Width="70"/>
-                        <DataGridTextColumn Header="规格"         Binding="{Binding Spec}"        Width="160"/>
-                        <DataGridTextColumn Header="关键件序列号" Binding="{Binding ItemPartSn}"  Width="160"/>
-                        <DataGridTextColumn Header="零件类型"     Binding="{Binding PartType}"    Width="100"/>
-                        <DataGridTextColumn Header="站位"         Binding="{Binding ProcessName}" Width="120"/>
-                        <DataGridTextColumn Header="操作员"       Binding="{Binding EmpName}"     Width="90"/>
-                        <DataGridTextColumn Header="执行时间"     Binding="{Binding UpdateTime}"  Width="150"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
+                <TabItem Header="料件表">
+                    <DataGrid x:Name="dgvParts"
+                              ItemsSource="{Binding PartRecords}"
+                              Style="{StaticResource DataGridStyle}"
+                              BorderThickness="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="零件号"       Binding="{Binding PartNo}"      Width="120"/>
+                            <DataGridTextColumn Header="版本"         Binding="{Binding Version}"     Width="70"/>
+                            <DataGridTextColumn Header="规格"         Binding="{Binding Spec}"        Width="160"/>
+                            <DataGridTextColumn Header="关键件序列号" Binding="{Binding ItemPartSn}"  Width="160"/>
+                            <DataGridTextColumn Header="零件类型"     Binding="{Binding PartType}"    Width="100"/>
+                            <DataGridTextColumn Header="站位"         Binding="{Binding ProcessName}" Width="120"/>
+                            <DataGridTextColumn Header="操作员"       Binding="{Binding EmpName}"     Width="90"/>
+                            <DataGridTextColumn Header="执行时间"     Binding="{Binding UpdateTime}"  Width="150"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
 
-            <TabItem Header="重工">
-                <DataGrid x:Name="dgvRework"
-                          ItemsSource="{Binding ReworkRecords}"
-                          Style="{StaticResource DataGridStyle}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="重工号"   Binding="{Binding ReworkNo}"   Width="180"/>
-                        <DataGridTextColumn Header="操作人员" Binding="{Binding EmpName}"    Width="120"/>
-                        <DataGridTextColumn Header="执行时间" Binding="{Binding UpdateTime}" Width="180"/>
-                        <DataGridTextColumn Header="备注"     Binding="{Binding Remark}"     Width="*"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
-        </TabControl>
+                <TabItem Header="重工">
+                    <DataGrid x:Name="dgvRework"
+                              ItemsSource="{Binding ReworkRecords}"
+                              Style="{StaticResource DataGridStyle}"
+                              BorderThickness="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="重工号"   Binding="{Binding ReworkNo}"   Width="180"/>
+                            <DataGridTextColumn Header="操作人员" Binding="{Binding EmpName}"    Width="120"/>
+                            <DataGridTextColumn Header="执行时间" Binding="{Binding UpdateTime}" Width="180"/>
+                            <DataGridTextColumn Header="备注"     Binding="{Binding Remark}"     Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+            </TabControl>
+        </Border>
     </Grid>
 </UserControl>

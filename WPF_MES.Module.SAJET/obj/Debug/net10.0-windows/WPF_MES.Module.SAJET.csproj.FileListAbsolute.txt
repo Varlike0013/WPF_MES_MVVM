@@ -39,8 +39,6 @@ E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\NetworkChatV
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\NetworkChatView.g.cs
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ReworkView.baml
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ReworkView.g.cs
-E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ReworkConfirmDialog.baml
-E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ReworkConfirmDialog.g.cs
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\SnRecoveryView.baml
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\SnRecoveryView.g.cs
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\ClearKeyPartsView.baml
@@ -81,3 +79,5 @@ E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\Dialogs\SqlE
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\QueryFormView.g.cs
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\SmtReelInfoView.baml
 E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\SmtReelInfoView.g.cs
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\Dialogs\ReworkConfirmDialog.baml
+E:\Git\WPF_MES\WPF_MES.Module.SAJET\obj\Debug\net10.0-windows\Views\Dialogs\ReworkConfirmDialog.g.cs

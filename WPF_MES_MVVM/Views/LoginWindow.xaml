@@ -16,10 +16,15 @@
 
         <TextBlock Text="选择系统" Margin="0,0,0,5"/>
         <ComboBox ItemsSource="{Binding Modules}"
-                  SelectedItem="{Binding SelectedModule}"
-                  DisplayMemberPath="DisplayName"
-                  Height="30"
-                  VerticalContentAlignment="Center"/>
+              SelectedItem="{Binding SelectedModule}"
+              Height="30"
+              VerticalContentAlignment="Center">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding DisplayName}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
         <TextBlock Text="用户名" Margin="0,15,0,5"/>
         <ComboBox x:Name="cboUserNo"

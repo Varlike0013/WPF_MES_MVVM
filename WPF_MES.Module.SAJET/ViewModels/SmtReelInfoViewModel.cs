@@ -73,18 +73,23 @@ public partial class SmtReelInfoViewModel : ObservableObject
 
     private async Task InitializeAsync()
     {
-        try
+        if (SmtReelInfoService.HasCache())
         {
-            await RefreshOptionsAsync(forceRefresh: false);
+            var (sites, lines) = SmtReelInfoService.GetCached();
+            ApplySites(sites);
+            ApplyLines(lines);
+            return;
         }
-        catch (Exception ex)
-        {
-            Logger.Error($"[SMTREEL] Initialize failed: {ex.Message}");
-        }
+        await RefreshOptionsAsync(forceRefresh: false);
     }
 
-    // ============ 核心：加载/刷新站点 + 线别 ============
 
+    // ============ 核心：加载/刷新站点 + 线别 ============
+    [RelayCommand]
+    private async Task ReloadAsync()
+    {
+        await RefreshOptionsAsync(forceRefresh: true);
+    }
     /// <summary>
     /// 刷新站点和线别选项。
     /// 有缓存且不强制刷新 → UI 线程直接读缓存（很快）；
@@ -92,35 +97,25 @@ public partial class SmtReelInfoViewModel : ObservableObject
     /// </summary>
     private async Task RefreshOptionsAsync(bool forceRefresh)
     {
-        // 快速路径：缓存已存在且不强制刷新
         if (!forceRefresh && SmtReelInfoService.HasCache())
         {
-            var cachedSites = FileCache.Load<string>(SmtReelInfoService.CacheKeySites) ?? new();
-            var cachedLines = FileCache.Load<string>(SmtReelInfoService.CacheKeyLines) ?? new();
-
-            ApplySites(cachedSites);
-            ApplyLines(cachedLines);
+            var (sites, lines) = SmtReelInfoService.GetCached();
+            ApplySites(sites);
+            ApplyLines(lines);
             return;
         }
 
-        // 慢速路径：后台并行查询
         IsBusy = true;
         BusyMessage = "正在加载站点和线别，请稍候...";
         try
         {
-            var sitesTask = Task.Run(() => SmtReelInfoService.LoadSites(forceRefresh));
-            var linesTask = Task.Run(() => SmtReelInfoService.LoadLines(forceRefresh));
-
-            await Task.WhenAll(sitesTask, linesTask);
-
-            ApplySites(sitesTask.Result);
-            ApplyLines(linesTask.Result);
-
-            Logger.Info($"[SMTREEL] RefreshOptions done: sites={sitesTask.Result.Count}, lines={linesTask.Result.Count}");
+            var (sites, lines) = await Task.Run(() => SmtReelInfoService.Refresh());
+            ApplySites(sites);
+            ApplyLines(lines);
         }
         catch (Exception ex)
         {
-            Logger.Error($"[SMTREEL] RefreshOptions failed: {ex.Message}");
+            Logger.Error($"[SMTREEL] Refresh failed: {ex.Message}");
             MessageBox.Show("加载站点/线别失败：" + ex.Message, "错误",
                 MessageBoxButton.OK, MessageBoxImage.Error);
         }
@@ -135,7 +130,6 @@ public partial class SmtReelInfoViewModel : ObservableObject
     {
         SiteOptions.Clear();
         foreach (var s in sites) SiteOptions.Add(s);
-
         if (SiteOptions.Count > 0 && string.IsNullOrEmpty(SelectedSite))
             SelectedSite = SiteOptions[0];
     }
@@ -144,17 +138,8 @@ public partial class SmtReelInfoViewModel : ObservableObject
     {
         LineOptions.Clear();
         foreach (var l in lines) LineOptions.Add(l);
-
         if (LineOptions.Count > 0 && string.IsNullOrEmpty(SelectedLine))
             SelectedLine = LineOptions[0];
-    }
-
-    // ============ 命令：重载缓存（强制刷新） ============
-
-    [RelayCommand]
-    private async Task ReloadAsync()
-    {
-        await RefreshOptionsAsync(forceRefresh: true);
     }
 
     // ============ 命令：查询料盘信息 ============

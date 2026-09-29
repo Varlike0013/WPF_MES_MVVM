@@ -52,7 +52,7 @@ namespace WPF_MES.Shared.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_MES.Shared;component/views/inputdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_MES.Shared;V1.0.0.0;component/views/inputdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\InputDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

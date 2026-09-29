@@ -5,43 +5,59 @@ using WPF_MES.Shared.Cache;
 
 namespace WPF_MES.Module.SAJET.Services;
 
-/// <summary>
-/// SMT 料盘信息相关操作
-/// </summary>
 internal static class SmtReelInfoService
 {
-    internal const string CacheKeySites = "smt_sites";
-    internal const string CacheKeyLines = "smt_lines";
+    // ============ 缓存参数 ============
 
-    // ============ 缓存状态 ============
+    private const string CacheFile = "SmtReel";
+    private const string KeySites  = "sites";
+    private const string KeyLines  = "lines";
 
-    /// <summary>两个下拉框的缓存是否都已存在</summary>
+    private static readonly object _refreshLock = new();
+
+    /// <summary>是否两部分缓存都存在</summary>
     public static bool HasCache()
-        => FileCache.Exists(CacheKeySites) && FileCache.Exists(CacheKeyLines);
+        => FileCache.Exists(CacheFile, KeySites)
+        && FileCache.Exists(CacheFile, KeyLines);
 
-    // ============ 站点：加载（带缓存） ============
+    /// <summary>读取现有缓存（UI 线程用，无网络）</summary>
+    public static (List<string> Sites, List<string> Lines) GetCached()
+    {
+        var sites = FileCache.Load<string>(CacheFile, KeySites) ?? new();
+        var lines = FileCache.Load<string>(CacheFile, KeyLines) ?? new();
+        return (sites, lines);
+    }
 
     /// <summary>
-    /// 加载站点。优先读缓存；reload=true 时强制刷新。
-    /// 注意：缓存未命中时会同步查询数据库（约 20 秒），调用方需自行放到后台线程。
+    /// 从 DB 重新拉取并写缓存。内部并行查询。
+    /// 同步阻塞，调用方需放到 Task.Run 里。
     /// </summary>
-    public static List<string> LoadSites(bool reload = false)
+    public static (List<string> Sites, List<string> Lines) Refresh()
     {
-        if (!reload)
+        lock (_refreshLock)
         {
-            var cached = FileCache.Load<string>(CacheKeySites);
-            if (cached != null && cached.Count > 0)
-            {
-                Logger.Debug($"[SMTREEL] Sites cache hit: {cached.Count}");
-                return cached;
-            }
-        }
+            Logger.Info("[SMTREEL] Refreshing sites/lines from DB...");
 
-        Logger.Info("[SMTREEL] Loading sites from DB...");
-        var data = LoadSitesFromDb();
-        if (data.Count > 0) FileCache.Save(CacheKeySites, data);
-        return data;
+            var sitesTask = Task.Run(LoadSitesFromDb);
+            var linesTask = Task.Run(LoadLinesFromDb);
+            Task.WaitAll(sitesTask, linesTask);
+
+            var sites = sitesTask.Result;
+            var lines = linesTask.Result;
+
+            if (sites.Count > 0) FileCache.Save(CacheFile, KeySites, sites);
+            if (lines.Count > 0) FileCache.Save(CacheFile, KeyLines, lines);
+
+            Logger.Info($"[SMTREEL] Refreshed: sites={sites.Count}, lines={lines.Count}");
+            return (sites, lines);
+        }
     }
+
+    /// <summary>有缓存直接返回；否则从 DB 加载。</summary>
+    public static (List<string> Sites, List<string> Lines) LoadOrRefresh()
+        => HasCache() ? GetCached() : Refresh();
+
+    // ============ DB 查询 ============
 
     private static List<string> LoadSitesFromDb()
     {
@@ -53,37 +69,12 @@ internal static class SmtReelInfoService
 
         var dt = OracleHelper.QueryDataTable(sql);
         var list = new List<string>(dt.Rows.Count);
-
         foreach (DataRow r in dt.Rows)
         {
             string s = OracleHelper.GetStr(r, "STRSITE");
             if (s.Length > 0) list.Add(s);
         }
         return list;
-    }
-
-    // ============ 线别：加载（带缓存） ============
-
-    /// <summary>
-    /// 加载线别（STRLINEID LIKE 'B%'）。优先读缓存；reload=true 时强制刷新。
-    /// 缓存未命中时会同步查询数据库（约 20 秒），调用方需自行放到后台线程。
-    /// </summary>
-    public static List<string> LoadLines(bool reload = false)
-    {
-        if (!reload)
-        {
-            var cached = FileCache.Load<string>(CacheKeyLines);
-            if (cached != null && cached.Count > 0)
-            {
-                Logger.Debug($"[SMTREEL] Lines cache hit: {cached.Count}");
-                return cached;
-            }
-        }
-
-        Logger.Info("[SMTREEL] Loading lines from DB...");
-        var data = LoadLinesFromDb();
-        if (data.Count > 0) FileCache.Save(CacheKeyLines, data);
-        return data;
     }
 
     private static List<string> LoadLinesFromDb()
@@ -96,7 +87,6 @@ internal static class SmtReelInfoService
 
         var dt = OracleHelper.QueryDataTable(sql);
         var list = new List<string>(dt.Rows.Count);
-
         foreach (DataRow r in dt.Rows)
         {
             string s = OracleHelper.GetStr(r, "STRLINEID");

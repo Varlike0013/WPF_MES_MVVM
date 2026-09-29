@@ -6,26 +6,12 @@ namespace WPF_MES.Shared.Cache;
 
 /// <summary>
 /// 通用文件缓存。
-/// 每个 key 一个文件，存在 Config/Cache/{key}.json。
-/// 支持任意类型（通过 JSON 序列化）。
+/// 结构：Config/Cache/{fileName}.json，内部是一组 key 组成的 JSON 对象。
+/// 每个 key 独立维护 updateTime / count / items。
 /// </summary>
 public static class FileCache
 {
-    // ============ 路径 ============
-
-    private static string CacheDir => AppPaths.CacheDir;
-
-    private static string GetFilePath(string fileName)
-    {
-        // fileName 里不允许有路径分隔符
-        string safeKey = fileName.Replace('/', '_').Replace('\\', '_').Trim();
-        if (safeKey.Length == 0) throw new ArgumentException("缓存 key 不能为空");
-
-        Directory.CreateDirectory(CacheDir);
-        return Path.Combine(CacheDir, $"{safeKey}.json");
-    }
-
-    // ============ 序列化选项 ============
+    // ============ JSON 选项 ============
 
     private static readonly JsonSerializerOptions Options = new()
     {
@@ -34,180 +20,212 @@ public static class FileCache
         PropertyNameCaseInsensitive = true,
     };
 
-    // ============ 内部包装 ============
+    // ============ 文件锁 ============
 
-    private class CacheEntry<T>
+    private static readonly Dictionary<string, object> _fileLocks = new();
+    private static readonly object _lockGuard = new();
+
+    private static object GetFileLock(string path)
+    {
+        lock (_lockGuard)
+        {
+            if (!_fileLocks.TryGetValue(path, out var lk))
+            {
+                lk = new object();
+                _fileLocks[path] = lk;
+            }
+            return lk;
+        }
+    }
+
+    // ============ 内部数据结构 ============
+
+    private class CacheEntry
     {
         public DateTime UpdateTime { get; set; }
         public int Count { get; set; }
-        public List<T>? Items { get; set; }
+        public JsonElement? Items { get; set; }   // 延迟反序列化，避免类型丢失
     }
 
-    // ============ 基础读写 ============
-
-    /// <summary>
-    /// 读缓存。不存在或反序列化失败返回 null。
-    /// </summary>
-    public static List<T>? Load<T>(string key)
+    private class CacheFile
     {
-        string path = GetFilePath(key);
+        public Dictionary<string, CacheEntry> Keys { get; set; } = new();
+    }
 
-        if (!File.Exists(path)) return null;
+    // ============ 路径 ============
+
+    private static string GetFilePath(string fileName)
+    {
+        string safe = fileName
+            .Replace('/', '_')
+            .Replace('\\', '_')
+            .Trim();
+
+        if (safe.Length == 0)
+            throw new ArgumentException("缓存文件名不能为空");
+
+        if (!safe.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+            safe += ".json";
+
+        Directory.CreateDirectory(AppPaths.CacheDir);
+        return Path.Combine(AppPaths.CacheDir, safe);
+    }
+
+    // ============ 文件级读写 ============
+
+    private static CacheFile ReadFile(string path)
+    {
+        if (!File.Exists(path)) return new CacheFile();
 
         try
         {
             string json = File.ReadAllText(path, Encoding.UTF8);
-            if (string.IsNullOrWhiteSpace(json)) return null;
-
-            var entry = JsonSerializer.Deserialize<CacheEntry<T>>(json, Options);
-            return entry?.Items;
+            if (string.IsNullOrWhiteSpace(json)) return new CacheFile();
+            return JsonSerializer.Deserialize<CacheFile>(json, Options) ?? new CacheFile();
         }
         catch (Exception ex)
         {
-            Logger.Warn($"[CACHE] Load failed: {key}, {ex.Message}");
-            return null;
+            Logger.Warn($"[CACHE] Read failed: {path}, {ex.Message}");
+            return new CacheFile();
         }
     }
 
-    /// <summary>
-    /// 写缓存。
-    /// </summary>
-    public static void Save<T>(string key, List<T> items)
+    private static void WriteFile(string path, CacheFile file)
     {
-        string path = GetFilePath(key);
+        string json = JsonSerializer.Serialize(file, Options);
+        File.WriteAllText(path, json, Encoding.UTF8);
+    }
 
-        try
+    // ============ 核心 API ============
+
+    /// <summary>读缓存。不存在或反序列化失败返回 null。</summary>
+    public static List<T>? Load<T>(string fileName, string key)
+    {
+        string path = GetFilePath(fileName);
+
+        lock (GetFileLock(path))
         {
-            var entry = new CacheEntry<T>
+            var file = ReadFile(path);
+            if (!file.Keys.TryGetValue(key, out var entry) || entry.Items == null)
+                return null;
+
+            try
+            {
+                return entry.Items.Value.Deserialize<List<T>>(Options);
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn($"[CACHE] Deserialize failed: {fileName}/{key}, {ex.Message}");
+                return null;
+            }
+        }
+    }
+
+    /// <summary>写缓存。同文件内其他 key 的数据会保留。</summary>
+    public static void Save<T>(string fileName, string key, List<T> items)
+    {
+        string path = GetFilePath(fileName);
+
+        lock (GetFileLock(path))
+        {
+            var file = ReadFile(path);
+
+            file.Keys[key] = new CacheEntry
             {
                 UpdateTime = DateTime.Now,
                 Count = items.Count,
-                Items = items,
+                Items = JsonSerializer.SerializeToElement(items, Options),
             };
 
-            string json = JsonSerializer.Serialize(entry, Options);
-            File.WriteAllText(path, json, Encoding.UTF8);
-
-            Logger.Info($"[CACHE] Saved {items.Count} items to {key}");
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"[CACHE] Save failed: {key}, {ex.Message}");
-            throw new Exception($"保存缓存失败：{ex.Message}", ex);
+            WriteFile(path, file);
+            Logger.Info($"[CACHE] Saved {items.Count} items to {fileName}/{key}");
         }
     }
 
-    /// <summary>
-    /// 删除某个 key 的缓存。
-    /// </summary>
-    public static void Remove(string key)
+    /// <summary>删除某个 key（保留同文件内其他 key）。</summary>
+    public static void Remove(string fileName, string key)
     {
-        string path = GetFilePath(key);
-        if (File.Exists(path))
+        string path = GetFilePath(fileName);
+        lock (GetFileLock(path))
         {
-            try { File.Delete(path); }
-            catch { }
+            var file = ReadFile(path);
+            if (file.Keys.Remove(key))
+                WriteFile(path, file);
         }
     }
 
-    /// <summary>
-    /// 清空所有缓存。
-    /// </summary>
-    public static void Clear()
+    /// <summary>删除整个文件。</summary>
+    public static void RemoveFile(string fileName)
     {
-        if (!Directory.Exists(CacheDir)) return;
-
-        try
+        string path = GetFilePath(fileName);
+        lock (GetFileLock(path))
         {
-            foreach (var file in Directory.GetFiles(CacheDir, "*.json"))
+            if (File.Exists(path))
             {
-                try { File.Delete(file); } catch { }
+                try { File.Delete(path); } catch { }
             }
         }
-        catch (Exception ex)
+    }
+
+    /// <summary>判断 (fileName, key) 是否有缓存。</summary>
+    public static bool Exists(string fileName, string key)
+    {
+        string path = GetFilePath(fileName);
+        if (!File.Exists(path)) return false;
+
+        lock (GetFileLock(path))
         {
-            Logger.Warn($"[CACHE] Clear failed: {ex.Message}");
+            var file = ReadFile(path);
+            return file.Keys.ContainsKey(key);
         }
     }
 
-    // ============ 核心方法：GetOrLoad ============
+    /// <summary>取某个 key 的更新时间。</summary>
+    public static DateTime? GetUpdateTime(string fileName, string key)
+    {
+        string path = GetFilePath(fileName);
+        if (!File.Exists(path)) return null;
 
-    /// <summary>
-    /// 优先读缓存；无缓存或强制刷新时，调 loader 拿数据并写缓存。
-    /// </summary>
-    /// <param name="key">缓存 key</param>
-    /// <param name="loader">数据加载函数</param>
-    /// <param name="forceRefresh">是否强制刷新</param>
-    /// <param name="ttl">缓存有效期；null 表示永不过期</param>
+        lock (GetFileLock(path))
+        {
+            var file = ReadFile(path);
+            return file.Keys.TryGetValue(key, out var e) ? e.UpdateTime : null;
+        }
+    }
+
+    // ============ GetOrLoad ============
+
     public static List<T> GetOrLoad<T>(
+        string fileName,
         string key,
         Func<List<T>> loader,
         bool forceRefresh = false,
         TimeSpan? ttl = null)
     {
-        // 1. 尝试读缓存
         if (!forceRefresh)
         {
-            var cached = Load<T>(key);
-            if (cached != null && !IsExpired(key, ttl))
+            var cached = Load<T>(fileName, key);
+            if (cached != null && !IsExpired(fileName, key, ttl))
             {
-                Logger.Debug($"[CACHE] Hit: {key}, {cached.Count} items");
+                Logger.Debug($"[CACHE] Hit: {fileName}/{key}, {cached.Count} items");
                 return cached;
             }
         }
 
-        // 2. 加载数据
-        Logger.Debug($"[CACHE] Miss: {key}, loading...");
+        Logger.Debug($"[CACHE] Miss: {fileName}/{key}, loading...");
         var data = loader() ?? new List<T>();
 
-        // 3. 写缓存
         if (data.Count > 0)
-        {
-            Save(key, data);
-        }
+            Save(fileName, key, data);
 
         return data;
     }
 
-    // ============ 过期判断 ============
-
-    private static bool IsExpired(string key, TimeSpan? ttl)
+    private static bool IsExpired(string fileName, string key, TimeSpan? ttl)
     {
         if (ttl == null) return false;   // 永不过期
-
-        string path = GetFilePath(key);
-        if (!File.Exists(path)) return true;
-
-        try
-        {
-            var lastWrite = File.GetLastWriteTime(path);
-            return (DateTime.Now - lastWrite) > ttl.Value;
-        }
-        catch
-        {
-            return true;
-        }
-    }
-
-    // ============ 查询缓存元信息 ============
-
-    /// <summary>
-    /// 获取缓存的更新时间。
-    /// </summary>
-    public static DateTime? GetUpdateTime(string key)
-    {
-        string path = GetFilePath(key);
-        if (!File.Exists(path)) return null;
-
-        try { return File.GetLastWriteTime(path); }
-        catch { return null; }
-    }
-
-    /// <summary>
-    /// 判断某个 key 是否有缓存。
-    /// </summary>
-    public static bool Exists(string key)
-    {
-        return File.Exists(GetFilePath(key));
+        var update = GetUpdateTime(fileName, key);
+        if (update == null) return true;
+        return (DateTime.Now - update.Value) > ttl.Value;
     }
 }

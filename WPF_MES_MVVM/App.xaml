@@ -5,7 +5,13 @@
              xmlns:conv="clr-namespace:WPF_MES_MVVM.Converters"
              ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
-        <conv:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
-        <conv:InverseBoolConverter x:Key="InverseBool"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPF_MES.Shared;component/Themes/SharedStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <conv:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+            <conv:InverseBoolConverter x:Key="InverseBool"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

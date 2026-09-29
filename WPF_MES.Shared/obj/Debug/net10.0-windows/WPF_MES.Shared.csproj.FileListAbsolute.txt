@@ -18,3 +18,10 @@ E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\WPF_MES.Shared_MarkupCom
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\WPF_MES.Shared.g.resources
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Views\TextDetailDialog.baml
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Views\TextDetailDialog.g.cs
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\Buttons.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\Colors.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\DataGrids.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\SharedStyles.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\Effects.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\TextStyles.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\ComboBoxes.baml

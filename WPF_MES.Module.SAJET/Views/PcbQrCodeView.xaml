@@ -3,99 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              FontFamily="Microsoft YaHei"
              FontSize="13">
-
+    
     <UserControl.Resources>
-        <Style x:Key="PrimaryButton" TargetType="Button">
-            <Setter Property="Height" Value="28"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="Bd" Background="#007ACC" CornerRadius="3">
-                            <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Bd" Property="Background" Value="#005A9E"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="SecondaryButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="Bd"
-                                Background="#F0F0F0"
-                                BorderBrush="#CCCCCC"
-                                BorderThickness="1"
-                                CornerRadius="3">
-                            <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"
-                                              TextElement.Foreground="Black"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Bd" Property="Background" Value="#E0E0E0"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="Bd" Property="Background" Value="#F5F5F5"/>
-                                <Setter Property="Foreground" Value="#999999"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="DangerButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="Bd" Background="#D9534F" CornerRadius="3">
-                            <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"
-                                              TextElement.Foreground="White"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Bd" Property="Background" Value="#C9302C"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="DataGridStyle" TargetType="DataGrid">
-            <Setter Property="AutoGenerateColumns" Value="False"/>
-            <Setter Property="CanUserAddRows" Value="False"/>
-            <Setter Property="CanUserDeleteRows" Value="False"/>
-            <Setter Property="HeadersVisibility" Value="Column"/>
-            <Setter Property="SelectionMode" Value="Single"/>
-            <Setter Property="SelectionUnit" Value="FullRow"/>
-            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
-            <Setter Property="RowHeight" Value="26"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="#DDDDDD"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="AlternatingRowBackground" Value="#F8F8F8"/>
-            <Setter Property="ColumnHeaderHeight" Value="30"/>
-            <Setter Property="HorizontalGridLinesBrush" Value="#EEEEEE"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPF_MES.Shared;component/Themes/SharedStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
@@ -105,7 +19,9 @@
         </Grid.RowDefinitions>
 
         <!-- 顶部标题 -->
-        <Border Grid.Row="0" Background="#007ACC" Padding="12,10">
+        <Border Grid.Row="0"
+                Background="{StaticResource PrimaryBrush}"
+                Padding="12,10">
             <TextBlock Text="PCB 二维码管理"
                        FontSize="16"
                        FontWeight="Bold"
@@ -113,7 +29,7 @@
         </Border>
 
         <!-- 主体 -->
-        <Grid Grid.Row="1" Margin="10" Background="#F5F7FA">
+        <Grid Grid.Row="1" Margin="10" Background="{StaticResource PageBackgroundBrush}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="380"/>
                 <ColumnDefinition Width="10"/>
@@ -130,8 +46,8 @@
 
                 <!-- 查询条件 -->
                 <Border Grid.Row="0"
-                        Background="White"
-                        BorderBrush="#DDDDDD"
+                        Background="{StaticResource CardBackgroundBrush}"
+                        BorderBrush="{StaticResource CardBorderBrush}"
                         BorderThickness="1"
                         CornerRadius="4"
                         Padding="10"
@@ -139,7 +55,7 @@
                     <StackPanel>
                         <TextBlock Text="查询条件"
                                    FontWeight="Bold"
-                                   Foreground="#007ACC"
+                                   Foreground="{StaticResource PrimaryBrush}"
                                    Margin="0,0,0,8"/>
 
                         <Grid>
@@ -188,8 +104,8 @@
 
                 <!-- 条件列表 -->
                 <Border Grid.Row="1"
-                        Background="White"
-                        BorderBrush="#DDDDDD"
+                        Background="{StaticResource CardBackgroundBrush}"
+                        BorderBrush="{StaticResource CardBorderBrush}"
                         BorderThickness="1"
                         CornerRadius="4"
                         Margin="0,0,0,10">
@@ -199,13 +115,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Border Grid.Row="0"
-                                Background="#E8EEF7"
-                                Padding="10,8"
-                                CornerRadius="4,4,0,0">
+                        <Border Grid.Row="0" Style="{StaticResource InfoCardHeaderStyle}">
                             <TextBlock Text="条件列表"
                                        FontWeight="Bold"
-                                       Foreground="#007ACC"/>
+                                       Foreground="{StaticResource PrimaryBrush}"/>
                         </Border>
 
                         <DataGrid Grid.Row="1"
@@ -235,15 +148,15 @@
 
                 <!-- 编辑区 -->
                 <Border Grid.Row="2"
-                        Background="White"
-                        BorderBrush="#DDDDDD"
+                        Background="{StaticResource CardBackgroundBrush}"
+                        BorderBrush="{StaticResource CardBorderBrush}"
                         BorderThickness="1"
                         CornerRadius="4"
                         Padding="10">
                     <StackPanel>
                         <TextBlock Text="选中记录编辑"
                                    FontWeight="Bold"
-                                   Foreground="#007ACC"
+                                   Foreground="{StaticResource PrimaryBrush}"
                                    Margin="0,0,0,8"/>
 
                         <Grid>
@@ -307,8 +220,8 @@
 
             <!-- ===== 右侧表格 ===== -->
             <Border Grid.Column="2"
-                    Background="White"
-                    BorderBrush="#DDDDDD"
+                    Background="{StaticResource CardBackgroundBrush}"
+                    BorderBrush="{StaticResource CardBorderBrush}"
                     BorderThickness="1"
                     CornerRadius="4">
                 <Grid>
@@ -317,13 +230,10 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Border Grid.Row="0"
-                            Background="#E8EEF7"
-                            Padding="10,8"
-                            CornerRadius="4,4,0,0">
+                    <Border Grid.Row="0" Style="{StaticResource InfoCardHeaderStyle}">
                         <TextBlock Text="查询结果（点击行可回填）"
                                    FontWeight="Bold"
-                                   Foreground="#007ACC"/>
+                                   Foreground="{StaticResource PrimaryBrush}"/>
                     </Border>
 
                     <DataGrid Grid.Row="1"
