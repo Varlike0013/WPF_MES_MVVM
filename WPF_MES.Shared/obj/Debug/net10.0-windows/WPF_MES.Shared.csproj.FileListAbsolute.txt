@@ -12,3 +12,9 @@ E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\ref\WPF_MES.Shared.dll
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\WPF_MES..3C12924C.Up2Date
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\WPF_MES.Shared.sourcelink.json
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\WPF_MES.Shared.csproj.AssemblyReference.cache
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Views\InputDialog.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Views\InputDialog.g.cs
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\WPF_MES.Shared_MarkupCompile.cache
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\WPF_MES.Shared.g.resources
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Views\TextDetailDialog.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Views\TextDetailDialog.g.cs

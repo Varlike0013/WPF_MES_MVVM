@@ -1,0 +1,83 @@
+<Window x:Class="WPF_MES.Module.SAJET.Views.Dialogs.PcbAddDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="新增PCB记录"
+        Width="460" Height="480"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        FontFamily="Microsoft YaHei"
+        FontSize="13"
+        ShowInTaskbar="False">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+
+            <TextBlock Text="ECS零件号" Margin="0,0,0,4"/>
+            <TextBox x:Name="txtEcsPartNo"
+                     Height="30"
+                     VerticalContentAlignment="Center"
+                     Padding="6,0"
+                     Margin="0,0,0,10"/>
+
+            <TextBlock Text="PCB客户PN" Margin="0,0,0,4"/>
+            <TextBox x:Name="txtPcbCustPn"
+                     Height="30"
+                     VerticalContentAlignment="Center"
+                     Padding="6,0"
+                     Margin="0,0,0,10"/>
+
+            <TextBlock Text="PCB SN" Margin="0,0,0,4"/>
+            <TextBox x:Name="txtPcbSn"
+                     Height="30"
+                     VerticalContentAlignment="Center"
+                     Padding="6,0"
+                     Margin="0,0,0,10"/>
+
+            <TextBlock Text="STR SMTSN" Margin="0,0,0,4"/>
+            <TextBox x:Name="txtStrSmtsn"
+                     Height="30"
+                     VerticalContentAlignment="Center"
+                     Padding="6,0"
+                     Margin="0,0,0,10"
+                     TextChanged="TxtStrSmtsn_TextChanged"/>
+
+            <TextBlock Text="PCB二维码" Margin="0,0,0,4"/>
+            <TextBox x:Name="txtPcbQrcode"
+                     Height="30"
+                     VerticalContentAlignment="Center"
+                     Padding="6,0"
+                     Margin="0,0,0,10"/>
+
+            <TextBlock Text="创建时间" Margin="0,0,0,4"/>
+            <Border Background="#F5F5F5"
+                    BorderBrush="#DDDDDD"
+                    BorderThickness="1"
+                    CornerRadius="3"
+                    Padding="8,6">
+                <TextBlock x:Name="lblCreateTime"
+                           Text="等待输入序列号..."
+                           Foreground="#007ACC"
+                           FontWeight="Bold"/>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+            <Button Content="确定"
+                    Width="90" Height="32"
+                    IsDefault="True"
+                    Click="BtnOk_Click"/>
+            <Button Content="取消"
+                    Width="90" Height="32"
+                    Margin="10,0,0,0"
+                    IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

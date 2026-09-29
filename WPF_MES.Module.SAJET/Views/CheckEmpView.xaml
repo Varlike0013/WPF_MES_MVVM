@@ -1,0 +1,403 @@
+<UserControl x:Class="WPF_MES.Module.SAJET.Views.CheckEmpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Microsoft YaHei"
+             FontSize="13">
+
+    <UserControl.Resources>
+        <!-- 主按钮 -->
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="#007ACC" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#005A9E"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 次要按钮 -->
+        <Style x:Key="SecondaryButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd"
+                                Background="#F0F0F0"
+                                BorderBrush="#CCCCCC"
+                                BorderThickness="1"
+                                CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextElement.Foreground="Black"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#E0E0E0"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Background" Value="#F5F5F5"/>
+                                <Setter Property="Foreground" Value="#999999"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 表格样式 -->
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="RowHeight" Value="26"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="AlternatingRowBackground" Value="#F8F8F8"/>
+            <Setter Property="ColumnHeaderHeight" Value="30"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#EEEEEE"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ============ 顶部标题栏 ============ -->
+        <Border Grid.Row="0" Background="#007ACC" Padding="12,10">
+            <TextBlock Text="员工管理"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+        </Border>
+
+        <!-- ============ 主体 ============ -->
+        <Grid Grid.Row="1" Margin="10" Background="#F5F7FA">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="460"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ===== 左侧：员工查询 ===== -->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- 查询条件 -->
+                <Border Grid.Row="0"
+                        Background="White"
+                        BorderBrush="#DDDDDD"
+                        BorderThickness="1"
+                        CornerRadius="4"
+                        Padding="10"
+                        Margin="0,0,0,10">
+                    <StackPanel>
+                        <TextBlock Text="查询条件"
+                                   FontWeight="Bold"
+                                   Foreground="#007ACC"
+                                   Margin="0,0,0,8"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ComboBox Grid.Column="0"
+                                      ItemsSource="{Binding QueryTypes}"
+                                      SelectedItem="{Binding SelectedQueryType}"
+                                      DisplayMemberPath="Display"
+                                      Height="28"
+                                      VerticalContentAlignment="Center"
+                                      Margin="0,0,6,0"/>
+                            <TextBox x:Name="txtInput"
+                                     Grid.Column="1"
+                                     Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
+                                     Height="28"
+                                     VerticalContentAlignment="Center"
+                                     KeyDown="InputText_KeyDown"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- 员工列表 -->
+                <Border Grid.Row="1"
+                        Background="White"
+                        BorderBrush="#DDDDDD"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0"
+                                Background="#E8EEF7"
+                                Padding="10,8"
+                                CornerRadius="4,4,0,0">
+                            <TextBlock Text="员工列表"
+                                       FontWeight="Bold"
+                                       Foreground="#007ACC"/>
+                        </Border>
+
+                        <DataGrid Grid.Row="1"
+                                  x:Name="dgvEmp"
+                                  ItemsSource="{Binding EmpItems}"
+                                  SelectedItem="{Binding SelectedEmp}"
+                                  Style="{StaticResource DataGridStyle}"
+                                  BorderThickness="0"
+                                  IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="工号"     Binding="{Binding EmpNo}"      Width="100"/>
+                                <DataGridTextColumn Header="姓名"     Binding="{Binding EmpName}"    Width="90"/>
+                                <DataGridTextColumn Header="邮箱"     Binding="{Binding Email}"      Width="*"/>
+                                <DataGridTextColumn Header="更新时间" Binding="{Binding UpdateTime}" Width="140"/>
+                                <DataGridTextColumn Header="部门"     Binding="{Binding DeptName}"   Width="120"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <!-- ===== 右侧：权限 + 信息 ===== -->
+            <TabControl Grid.Column="2"
+                        FontSize="13"
+                        SelectedIndex="0"
+                        Background="White"
+                        BorderBrush="#DDDDDD"
+                        BorderThickness="1">
+
+                <!-- ========== 权限 Tab ========== -->
+                <TabItem Header="权限">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- 当前员工提示 -->
+                        <Border Grid.Row="0"
+                                Background="#F0F7FF"
+                                BorderBrush="#B8D8F0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Padding="8,6"
+                                Margin="0,0,0,8">
+                            <TextBlock FontSize="12" Foreground="#005A9E">
+                                <Run Text="当前员工："/>
+                                <Run Text="{Binding SelectedEmp.EmpName, Mode=OneWay}"
+                                     FontWeight="Bold"/>
+                                <Run Text="("/>
+                                <Run Text="{Binding SelectedEmp.EmpNo, Mode=OneWay}"/>
+                                <Run Text=")"/>
+                            </TextBlock>
+                        </Border>
+
+                        <!-- 工具条 -->
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0"
+                                        Orientation="Horizontal"
+                                        Margin="0,0,0,8">
+                                <Button Content="保存"
+                                        Command="{Binding SaveRolesCommand}"
+                                        Style="{StaticResource PrimaryButton}"
+                                        Width="70"/>
+                                <Button Content="清空"
+                                        Command="{Binding ClearRolesCommand}"
+                                        Style="{StaticResource SecondaryButton}"
+                                        Width="70"
+                                        Margin="6,0,0,0"/>
+                                <Button Content="全选"
+                                        Command="{Binding CheckAllRolesCommand}"
+                                        Style="{StaticResource SecondaryButton}"
+                                        Width="70"
+                                        Margin="6,0,0,0"/>
+
+                                <TextBox x:Name="txtCopyEmp"
+                                         Text="{Binding CopyFromEmpNo, UpdateSourceTrigger=PropertyChanged}"
+                                         Width="120"
+                                         Height="28"
+                                         Margin="12,0,0,0"
+                                         VerticalContentAlignment="Center"
+                                         ToolTip="输入工号，复制该员工的权限"
+                                         KeyDown="CopyEmp_KeyDown"/>
+                                <Button Content="复制权限"
+                                        Command="{Binding CopyRolesCommand}"
+                                        Style="{StaticResource SecondaryButton}"
+                                        Width="80"
+                                        Margin="6,0,0,0"/>
+                            </StackPanel>
+
+                            <!-- 角色列表 -->
+                            <DataGrid Grid.Row="1"
+                                      ItemsSource="{Binding RoleItems}"
+                                      Style="{StaticResource DataGridStyle}"
+                                      BorderThickness="1"
+                                      CanUserSortColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="角色名"
+                                                        Binding="{Binding RoleName}"
+                                                        Width="140"
+                                                        IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="描述"
+                                                        Binding="{Binding RoleDesc}"
+                                                        Width="*"
+                                                        IsReadOnly="True"/>
+                                    <DataGridCheckBoxColumn Header="选择"
+                                                            Binding="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                            Width="60"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <!-- ========== 信息 Tab ========== -->
+                <TabItem Header="信息">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  Padding="10">
+                        <StackPanel>
+
+                            <!-- 工号 -->
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="工号"
+                                           VerticalAlignment="Center"/>
+                                <TextBox Grid.Column="1"
+                                         Text="{Binding EditEmpNo}"
+                                         IsReadOnly="True"
+                                         Height="28"
+                                         Background="#F5F5F5"
+                                         VerticalContentAlignment="Center"/>
+                            </Grid>
+
+                            <!-- 姓名 -->
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="姓名"
+                                           VerticalAlignment="Center"/>
+                                <TextBox Grid.Column="1"
+                                         Text="{Binding EditEmpName, UpdateSourceTrigger=PropertyChanged}"
+                                         Height="28"
+                                         VerticalContentAlignment="Center"/>
+                            </Grid>
+
+                            <!-- 部门 -->
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="部门"
+                                           VerticalAlignment="Center"/>
+                                <ComboBox Grid.Column="1"
+                                          ItemsSource="{Binding DeptOptions}"
+                                          SelectedItem="{Binding SelectedDept}"
+                                          DisplayMemberPath="DeptName"
+                                          Height="28"
+                                          VerticalContentAlignment="Center"/>
+                            </Grid>
+
+                            <!-- 邮件 -->
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="邮件"
+                                           VerticalAlignment="Center"/>
+                                <TextBox Grid.Column="1"
+                                         Text="{Binding EditEmail, UpdateSourceTrigger=PropertyChanged}"
+                                         Height="28"
+                                         VerticalContentAlignment="Center"/>
+                            </Grid>
+
+                            <!-- 离职日期 -->
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="离职日期"
+                                           VerticalAlignment="Center"/>
+                                <CheckBox Grid.Column="1"
+                                          IsChecked="{Binding IsQuit}"
+                                          VerticalAlignment="Center"
+                                          Margin="0,0,8,0"/>
+                                <DatePicker Grid.Column="2"
+                                            SelectedDate="{Binding QuitDate}"
+                                            IsEnabled="{Binding IsQuit}"
+                                            Height="28"/>
+                            </Grid>
+
+                            <!-- 备注 -->
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="备注"
+                                           VerticalAlignment="Top"
+                                           Margin="0,8,0,0"/>
+                                <TextBox Grid.Column="1"
+                                         Text="{Binding EditDesc, UpdateSourceTrigger=PropertyChanged}"
+                                         Height="70"
+                                         TextWrapping="Wrap"
+                                         AcceptsReturn="True"
+                                         VerticalScrollBarVisibility="Auto"
+                                         Padding="6,4"/>
+                            </Grid>
+
+                            <!-- 保存按钮 -->
+                            <Button Content="保存"
+                                    Command="{Binding SaveInfoCommand}"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Width="120"
+                                    Height="34"
+                                    Margin="0,10,0,0"
+                                    HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</UserControl>

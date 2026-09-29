@@ -1,0 +1,293 @@
+﻿2026-09-28 08:47:12.077 [INFO] [START] Args=
+2026-09-28 08:47:12.096 [INFO] [START] Console=False
+2026-09-28 08:47:12.655 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 08:47:12.656 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 08:47:12.656 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 08:47:12.656 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 08:47:13.352 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 08:47:28.502 [INFO] [CONFIG] Saved: login.json
+2026-09-28 08:47:28.707 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 08:47:28.745 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 08:47:56.576 [INFO] [WO] Query input=24527126-12.1-001-S, type=0, status=7, count=1
+2026-09-28 08:48:05.574 [INFO] [WO] Update OK: 24527126-12.1-001-S, status=3, route=PCB_INPUT -> SVI, line=B33F02
+2026-09-28 08:56:47.370 [INFO] [WO] Query input=24527126-12.1-001-S, type=0, status=7, count=1
+2026-09-28 08:57:16.719 [INFO] [WO-DETAIL] Status SN count = 0
+2026-09-28 08:57:16.719 [INFO] [WO-DETAIL] 24527126-12.1-001-S loaded, mode=0
+2026-09-28 08:57:18.888 [INFO] [WO-DETAIL] Status SN count = 0
+2026-09-28 08:57:18.888 [INFO] [WO-DETAIL] 24527126-12.1-001-S loaded, mode=0
+2026-09-28 08:57:23.698 [INFO] [WO-DETAIL] Travel SN count = 2500
+2026-09-28 08:57:24.264 [INFO] [WO-DETAIL] Travel SN count = 2500
+2026-09-28 08:57:24.264 [INFO] [WO-DETAIL] 24527126-12.1-001-S loaded, mode=1
+2026-09-28 08:58:35.478 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 08:58:35.505 [INFO] [EXIT] Application exiting.
+2026-09-28 09:34:31.991 [INFO] [START] Args=
+2026-09-28 09:34:32.023 [INFO] [START] Console=False
+2026-09-28 09:34:32.131 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 09:34:32.131 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 09:34:32.131 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 09:34:32.131 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 09:34:32.517 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 09:34:47.287 [INFO] [CONFIG] Saved: login.json
+2026-09-28 09:34:47.458 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 09:34:47.513 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 09:34:57.405 [ERROR] [EMP] Load info failed: 查询失败：ORA-00904: "DESCRIPTION": invalid identifier
+https://docs.oracle.com/error-help/db/ora-00904/
+SQL: SELECT EMP_NO, EMP_NAME, EMAIL, DEPT_ID, DESCRIPTION, ENABLED, QUIT_DATE
+            FROM SAJET.SYS_EMP
+            WHERE EMP_NO = :no AND ROWNUM = 1
+参数：no=D360749; 
+2026-09-28 09:36:30.456 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 09:36:30.477 [INFO] [EXIT] Application exiting.
+2026-09-28 09:57:20.006 [INFO] [START] Args=
+2026-09-28 09:57:20.008 [INFO] [START] Console=False
+2026-09-28 09:57:20.043 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 09:57:20.043 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 09:57:20.044 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 09:57:20.044 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 09:57:20.152 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 09:57:30.550 [INFO] [CONFIG] Saved: login.json
+2026-09-28 09:57:30.687 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 09:57:30.739 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 09:58:24.079 [INFO] [STATUS] No match for 261080683406232
+2026-09-28 09:58:28.205 [INFO] [STATUS] Match: 260980683406232 -> 260980683406232
+2026-09-28 09:58:41.957 [INFO] [WO] Query input=260980683406232, type=4, status=7, count=1
+2026-09-28 09:58:51.183 [INFO] [WO] Update OK: 24527126-13.1-001-S, status=3, route=PCB_INPUT -> SVI, line=B33F02
+2026-09-28 10:00:01.807 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 10:00:01.830 [INFO] [EXIT] Application exiting.
+2026-09-28 10:14:21.239 [INFO] [START] Args=
+2026-09-28 10:14:21.273 [INFO] [START] Console=False
+2026-09-28 10:14:21.387 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 10:14:21.387 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 10:14:21.387 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 10:14:21.388 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 10:14:22.012 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 10:14:30.105 [INFO] [CONFIG] Saved: login.json
+2026-09-28 10:14:30.272 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 10:14:30.325 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 10:15:02.520 [ERROR] [MAC] DeleteAll failed: 事务执行失败：ORA-01722: invalid number
+https://docs.oracle.com/error-help/db/ora-01722/
+SQL:
+INSERT INTO SAJET.G_HT_WO_MAC
+                SELECT M.* FROM SAJET.G_WO_MAC M
+                WHERE M.SERIAL_NUMBER IN (
+            SELECT S.SERIAL_NUMBER FROM SAJET.G_SN_STATUS S
+            WHERE S.WIP_PROCESS = :wipProcess
+              AND (S.SERIAL_NUMBER IN (:s0)))
+---
+DELETE FROM SAJET.G_WO_MAC
+                WHERE SERIAL_NUMBER IN (
+            SELECT S.SERIAL_NUMBER FROM SAJET.G_SN_STATUS S
+            WHERE S.WIP_PROCESS = :wipProcess
+              AND (S.SERIAL_NUMBER IN (:s0)))
+2026-09-28 10:21:17.181 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 10:21:17.302 [INFO] [EXIT] Application exiting.
+2026-09-28 10:21:43.282 [INFO] [START] Args=
+2026-09-28 10:21:43.285 [INFO] [START] Console=False
+2026-09-28 10:21:43.326 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 10:21:43.327 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 10:21:43.327 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 10:21:43.327 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 10:21:43.466 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 10:21:53.774 [INFO] [CONFIG] Saved: login.json
+2026-09-28 10:21:53.862 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 10:21:53.882 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 10:22:14.853 [INFO] [MAC] DeleteAll OK, affected=0
+2026-09-28 10:22:41.585 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 10:22:41.587 [INFO] [EXIT] Application exiting.
+2026-09-28 11:27:22.879 [INFO] [START] Args=
+2026-09-28 11:27:22.901 [INFO] [START] Console=False
+2026-09-28 11:27:22.998 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 11:27:22.998 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 11:27:22.998 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 11:27:22.998 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 11:27:23.276 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 11:27:30.287 [INFO] [CONFIG] Saved: login.json
+2026-09-28 11:27:30.443 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 11:27:30.480 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 11:28:50.852 [ERROR] [ROUTE] Search failed: 查询失败：ORA-01722: invalid number
+https://docs.oracle.com/error-help/db/ora-01722/
+SQL: SELECT R.ROUTE_NAME
+            FROM SAJET.SYS_ROUTE R
+            INNER JOIN SAJET.SYS_ROUTE_DETAIL D ON R.ROUTE_ID = D.ROUTE_ID
+            INNER JOIN SAJET.SYS_PROCESS P ON D.PROCESS_ID = P.PROCESS_ID
+            GROUP BY R.ROUTE_NAME
+            HAVING
+                COUNT(DISTINCT CASE WHEN P.PROCESS_NAME IN (:mh0,:mh1,:mh2,:mh3) THEN P.PROCESS_NAME END) = :mhCount
+                AND COUNT(DISTINCT CASE WHEN P.PROCESS_NAME IN (:mn4,:mn5,:mn6) THEN P.PROCESS_NAME END) = 0
+            ORDER BY R.ROUTE_NAME
+参数：mh0=F1Test; mh1=OQC; mh2=PACKING; mh3=PTopVI; mn4=F2Test; mn5=F3Test; mn6=F4Test; mhCount=4; 
+2026-09-28 13:31:38.930 [ERROR] [ROUTE] Search failed: 查询失败：ORA-01722: invalid number
+https://docs.oracle.com/error-help/db/ora-01722/
+SQL: SELECT R.ROUTE_NAME
+            FROM SAJET.SYS_ROUTE R
+            INNER JOIN SAJET.SYS_ROUTE_DETAIL D ON R.ROUTE_ID = D.ROUTE_ID
+            INNER JOIN SAJET.SYS_PROCESS P ON D.PROCESS_ID = P.PROCESS_ID
+            GROUP BY R.ROUTE_NAME
+            HAVING
+                COUNT(DISTINCT CASE WHEN P.PROCESS_NAME IN (:mh0,:mh1,:mh2,:mh3) THEN P.PROCESS_NAME END) = :mhCount
+                AND COUNT(DISTINCT CASE WHEN P.PROCESS_NAME IN (:mn4,:mn5,:mn6) THEN P.PROCESS_NAME END) = 0
+            ORDER BY R.ROUTE_NAME
+参数：mh0=F1Test; mh1=OQC; mh2=PACKING; mh3=PTopVI; mn4=F2Test; mn5=F3Test; mn6=F4Test; mhCount=4; 
+2026-09-28 13:31:41.848 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 13:31:41.890 [INFO] [EXIT] Application exiting.
+2026-09-28 13:32:56.462 [INFO] [START] Args=
+2026-09-28 13:32:56.464 [INFO] [START] Console=False
+2026-09-28 13:32:56.818 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 13:32:56.818 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 13:32:56.818 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 13:32:56.818 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 13:32:57.252 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 13:33:06.627 [INFO] [CONFIG] Saved: login.json
+2026-09-28 13:33:06.754 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 13:33:06.791 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 13:33:44.975 [ERROR] [ROUTE] Search failed: 查询失败：ORA-01722: invalid number
+https://docs.oracle.com/error-help/db/ora-01722/
+SQL: SELECT R.ROUTE_NAME
+            FROM SAJET.SYS_ROUTE R
+            INNER JOIN SAJET.SYS_ROUTE_DETAIL D ON R.ROUTE_ID = D.ROUTE_ID
+            INNER JOIN SAJET.SYS_PROCESS P ON D.PROCESS_ID = P.PROCESS_ID
+            GROUP BY R.ROUTE_NAME
+            HAVING
+                COUNT(DISTINCT CASE WHEN P.PROCESS_NAME IN (:mh0) THEN P.PROCESS_NAME END) = TO_NUMBER(:mhCount)
+                AND COUNT(DISTINCT CASE WHEN P.PROCESS_NAME IN (:mn1,:mn2,:mn3) THEN P.PROCESS_NAME END) = 0
+            ORDER BY R.ROUTE_NAME
+参数：mh0=F1Test; mn1=F2Test; mn2=F3Test; mn3=F4Test; mhCount=1; 
+2026-09-28 13:37:19.287 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 13:37:19.309 [INFO] [EXIT] Application exiting.
+2026-09-28 13:38:03.828 [INFO] [START] Args=
+2026-09-28 13:38:03.830 [INFO] [START] Console=False
+2026-09-28 13:38:03.867 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 13:38:03.868 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 13:38:03.868 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 13:38:03.868 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 13:38:03.985 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 13:38:11.681 [INFO] [CONFIG] Saved: login.json
+2026-09-28 13:38:11.771 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 13:38:11.800 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 13:38:37.250 [INFO] [ROUTE] Search OK: mustHave=1, mustNot=3, matched=246
+2026-09-28 13:38:51.902 [INFO] [ROUTE] Search OK: mustHave=4, mustNot=3, matched=69
+2026-09-28 13:40:58.228 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 13:40:58.293 [INFO] [EXIT] Application exiting.
+2026-09-28 13:43:34.771 [INFO] [START] Args=
+2026-09-28 13:43:34.773 [INFO] [START] Console=False
+2026-09-28 13:43:34.809 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 13:43:34.809 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 13:43:34.809 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 13:43:34.809 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 13:43:34.918 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 13:43:42.403 [INFO] [CONFIG] Saved: login.json
+2026-09-28 13:43:42.518 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 13:43:42.538 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 13:44:14.593 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 13:44:14.596 [INFO] [EXIT] Application exiting.
+2026-09-28 15:06:28.285 [INFO] [START] Args=
+2026-09-28 15:06:28.878 [INFO] [START] Console=False
+2026-09-28 15:06:29.667 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 15:06:29.668 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 15:06:29.668 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 15:06:29.668 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 15:06:30.372 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 15:06:50.184 [INFO] [CONFIG] Saved: login.json
+2026-09-28 15:06:50.521 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 15:06:50.561 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 15:07:12.201 [INFO] [ECS] Search: ecs=15, cus=, code=0020770, count=0
+2026-09-28 15:07:13.118 [INFO] [ECS] Search: ecs=15, cus=, code=0020770, count=0
+2026-09-28 15:07:14.217 [INFO] [ECS] Search: ecs=15, cus=, code=0020770, count=0
+2026-09-28 15:08:15.686 [INFO] [ECS] Search: ecs=10C083-019945, cus=, code=0020770, count=0
+2026-09-28 15:08:16.274 [INFO] [ECS] Search: ecs=10C083-019945, cus=, code=0020770, count=0
+2026-09-28 15:08:17.026 [INFO] [ECS] Search: ecs=10C083-019945, cus=, code=0020770, count=0
+2026-09-28 15:08:25.894 [INFO] [ECS] Search: ecs=10C083-019945, cus=, code=0018291, count=1
+2026-09-28 15:08:30.078 [INFO] [ECS] Search: ecs=10, cus=, code=0018291, count=1414
+2026-09-28 15:08:37.193 [INFO] [ECS] Search: ecs=10, cus=12, code=0018291, count=1389
+2026-09-28 15:08:43.431 [INFO] [ECS] Search: ecs=10, cus=12022, code=0018291, count=53
+2026-09-28 15:08:49.949 [INFO] [ECS] Search: ecs=10C083, cus=12022, code=0018291, count=18
+2026-09-28 15:09:23.446 [INFO] [ECS] Search: ecs=10C083-019217, cus=12022-00214900, code=0018291, count=1
+2026-09-28 15:09:28.590 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 15:09:28.698 [INFO] [EXIT] Application exiting.
+2026-09-28 15:37:57.400 [INFO] [START] Args=
+2026-09-28 15:37:57.430 [INFO] [START] Console=False
+2026-09-28 15:37:57.579 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 15:37:57.580 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 15:37:57.580 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 15:37:57.580 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 15:37:57.864 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 15:38:14.725 [INFO] [CONFIG] Saved: login.json
+2026-09-28 15:38:14.864 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 15:38:14.911 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 15:38:22.030 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 15:38:22.070 [INFO] [EXIT] Application exiting.
+2026-09-28 15:39:19.143 [INFO] [START] Args=
+2026-09-28 15:39:19.146 [INFO] [START] Console=False
+2026-09-28 15:39:19.184 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 15:39:19.184 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 15:39:19.185 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 15:39:19.185 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 15:39:19.312 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 15:39:25.575 [INFO] [CONFIG] Saved: login.json
+2026-09-28 15:39:25.666 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 15:39:25.697 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 15:39:40.755 [INFO] [TRAVEL] Search: wo=, part=, line=, process=, terminal=, count=244618
+2026-09-28 15:39:49.766 [ERROR] [TRAVEL] Load processes failed: 查询失败：ORA-00942: table or view does not exist
+https://docs.oracle.com/error-help/db/ora-00942/
+SQL: SELECT DISTINCT PR.PROCESS_NAME
+            FROM SAJET.SYS_PROCESS PR
+            LEFT JOIN SAJET.SYS_PDLINE_PROCESS PP ON PP.PROCESS_ID = PR.PROCESS_ID
+            LEFT JOIN SAJET.SYS_PDLINE PL ON PL.PDLINE_ID = PP.PDLINE_ID
+            WHERE PL.PDLINE_NAME = :line AND PR.ENABLED = 'Y'
+            ORDER BY PR.PROCESS_NAME
+参数：line=B32F01; 
+2026-09-28 15:39:51.579 [INFO] [TRAVEL] Search: wo=, part=, line=B32F01, process=, terminal=, count=20353
+2026-09-28 15:40:36.961 [INFO] [TRAVEL] Search: wo=24526828-1.1-002-D, part=, line=B32F01, process=, terminal=, count=7720
+2026-09-28 15:40:52.803 [INFO] [TRAVEL] Search: wo=24526828-1.1-002-D, part=, line=B32F01, process=, terminal=, count=4929
+2026-09-28 15:47:21.582 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 15:47:21.666 [INFO] [EXIT] Application exiting.
+2026-09-28 16:02:59.230 [INFO] [START] Args=
+2026-09-28 16:02:59.262 [INFO] [START] Console=False
+2026-09-28 16:02:59.354 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 16:02:59.354 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 16:02:59.355 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 16:02:59.355 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 16:02:59.691 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 16:03:09.210 [INFO] [CONFIG] Saved: login.json
+2026-09-28 16:03:09.360 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 16:03:09.398 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 16:03:28.312 [INFO] [TRAVEL] Search: wo=, part=, line=B32F01, process=, terminal=, count=20653
+2026-09-28 16:03:53.324 [INFO] [TRAVEL] Search: wo=, part=, line=B32F01, process=F1Test, terminal=, count=1120
+2026-09-28 16:04:15.470 [INFO] [TRAVEL] Search: wo=, part=, line=B32F01, process=F1Test, terminal=F1Test06, count=0
+2026-09-28 16:04:20.083 [INFO] [TRAVEL] Search: wo=, part=, line=B32F01, process=F1Test, terminal=F1Test01, count=1120
+2026-09-28 16:04:25.482 [INFO] [TRAVEL] Search: wo=, part=, line=B32F01, process=F1Test, terminal=F1Test02, count=0
+2026-09-28 16:04:33.376 [INFO] [TRAVEL] Search: wo=, part=, line=B32F01, process=F1Test, terminal=, count=1120
+2026-09-28 16:04:51.280 [INFO] [TRAVEL] Export OK: C:\Users\leihuang.ECS\Desktop\Travel_20260928160445.csv, 1120 rows
+2026-09-28 16:05:16.173 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 16:05:16.227 [INFO] [EXIT] Application exiting.
+2026-09-28 16:30:52.283 [INFO] [START] Args=
+2026-09-28 16:30:52.307 [INFO] [START] Console=False
+2026-09-28 16:30:52.538 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 16:30:52.538 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 16:30:52.539 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 16:30:52.539 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 16:30:52.907 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 16:31:04.080 [INFO] [CONFIG] Saved: login.json
+2026-09-28 16:31:04.366 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 16:31:04.415 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 16:31:15.190 [INFO] [WO] Query input=44806423-2.1-001-P, type=0, status=7, count=1
+2026-09-28 16:31:24.151 [INFO] [WO] Update OK: 44806423-2.1-001-P, status=3, route=PTopVI -> OQC, line=B42F01
+2026-09-28 16:31:33.885 [INFO] [WO] Query input=44806423-2.1-001-D, type=0, status=7, count=1
+2026-09-28 16:31:52.781 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 16:31:52.841 [INFO] [EXIT] Application exiting.
+2026-09-28 16:40:12.456 [INFO] [START] Args=
+2026-09-28 16:40:12.508 [INFO] [START] Console=False
+2026-09-28 16:40:12.548 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-09-28 16:40:12.548 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-09-28 16:40:12.548 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-09-28 16:40:12.548 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-09-28 16:40:12.679 [INFO] [CONFIG] Loaded: login.json
+2026-09-28 16:40:20.958 [INFO] [CONFIG] Saved: login.json
+2026-09-28 16:40:21.113 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-09-28 16:40:21.143 [INFO] [CONFIG] Loaded: favorites.json
+2026-09-28 16:40:47.384 [INFO] [FIND-ROUTE] SN=88AEDDCE53E2, routes=3
+2026-09-28 16:40:54.677 [INFO] [FIND-ROUTE] dip=DIP+DAOI+MDA-TEST, pack=PCB_INPUT+BAOI-SMT-A, matched=0
+2026-09-28 16:41:03.436 [INFO] [FIND-ROUTE] SN=88AEDDCE53E2, routes=3
+2026-09-28 16:41:13.693 [INFO] [FIND-ROUTE] dip=DIP+DAOI+MDA-TEST, pack=P_TVI-PACK-OQC-ACER, matched=2
+2026-09-28 19:55:44.237 [INFO] [EXIT] Shell closed, exiting.
+2026-09-28 19:55:44.294 [INFO] [EXIT] Application exiting.

@@ -1,0 +1,234 @@
+<UserControl x:Class="WPF_MES.Module.SAJET.Views.MaterialErpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Microsoft YaHei"
+             FontSize="13">
+
+    <UserControl.Resources>
+        <!-- 主按钮 -->
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="#007ACC" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#005A9E"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 危险按钮 -->
+        <Style x:Key="DangerButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="#D9534F" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextElement.Foreground="White"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#C9302C"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 表格样式 -->
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="RowHeight" Value="26"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="AlternatingRowBackground" Value="#F8F8F8"/>
+            <Setter Property="ColumnHeaderHeight" Value="30"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#EEEEEE"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 顶部标题 -->
+        <Border Grid.Row="0" Background="#007ACC" Padding="12,10">
+            <TextBlock Text="ERP 物料维护"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+        </Border>
+
+        <!-- 主体 -->
+        <Grid Grid.Row="1" Margin="10" Background="#F5F7FA">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="340"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ===== 左侧：查询 + 表格 ===== -->
+            <Border Grid.Column="0"
+                    Background="White"
+                    BorderBrush="#DDDDDD"
+                    BorderThickness="1"
+                    CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Background="#E8EEF7"
+                            Padding="10,8"
+                            CornerRadius="4,4,0,0">
+                        <TextBlock Text="物料信息查询"
+                                   FontWeight="Bold"
+                                   Foreground="#007ACC"/>
+                    </Border>
+
+                    <!-- 查询输入 -->
+                    <Grid Grid.Row="1" Margin="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox x:Name="txtSearch"
+                                 Grid.Column="0"
+                                 Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                                 Height="30"
+                                 VerticalContentAlignment="Center"
+                                 Padding="8,0"
+                                 KeyDown="Search_KeyDown"
+                                 ToolTip="输入工单或料号，回车查询"/>
+
+                        <Button Grid.Column="1"
+                                Content="查询"
+                                Command="{Binding SearchCommand}"
+                                Style="{StaticResource PrimaryButton}"
+                                Width="80"
+                                Margin="8,0,0,0"/>
+                    </Grid>
+
+                    <!-- 表格 -->
+                    <DataGrid Grid.Row="2"
+                              ItemsSource="{Binding ResultItems}"
+                              SelectedItem="{Binding SelectedItem}"
+                              Style="{StaticResource DataGridStyle}"
+                              BorderThickness="0,1,0,0"
+                              IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="工单|料号" Binding="{Binding WorkOrder}"   Width="160"/>
+                            <DataGridTextColumn Header="ECS料号"   Binding="{Binding EcsPn}"      Width="150"/>
+                            <DataGridTextColumn Header="类型"      Binding="{Binding EcsPnDesc}"  Width="120"/>
+                            <DataGridTextColumn Header="料件号"    Binding="{Binding KpartsNo}"   Width="*"/>
+                            <DataGridTextColumn Header="创建时间"  Binding="{Binding CreateTime}" Width="150"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+
+            <!-- ===== 右侧：编辑表单 ===== -->
+            <Border Grid.Column="2"
+                    Background="White"
+                    BorderBrush="#DDDDDD"
+                    BorderThickness="1"
+                    CornerRadius="4"
+                    Padding="15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Text="物料信息编辑"
+                               FontWeight="Bold"
+                               Foreground="#007ACC"
+                               Margin="0,0,0,15"/>
+
+                    <!-- 表单 -->
+                    <StackPanel Grid.Row="1">
+
+                        <!-- 工单 -->
+                        <TextBlock Text="工单" Margin="0,0,0,4"/>
+                        <TextBox Text="{Binding EditWorkOrder, UpdateSourceTrigger=PropertyChanged}"
+                                 Height="30"
+                                 VerticalContentAlignment="Center"
+                                 Padding="6,0"
+                                 Margin="0,0,0,12"/>
+
+                        <!-- ECS料号 -->
+                        <TextBlock Text="ECS料号" Margin="0,0,0,4"/>
+                        <TextBox Text="{Binding EditEcsPn, UpdateSourceTrigger=PropertyChanged}"
+                                 Height="30"
+                                 VerticalContentAlignment="Center"
+                                 Padding="6,0"
+                                 Margin="0,0,0,12"/>
+
+                        <!-- 类型 -->
+                        <TextBlock Text="类型" Margin="0,0,0,4"/>
+                        <ComboBox ItemsSource="{Binding TypeOptions}"
+                                  SelectedItem="{Binding SelectedType}"
+                                  Height="30"
+                                  VerticalContentAlignment="Center"
+                                  Margin="0,0,0,12"/>
+
+                        <!-- 料件料号 -->
+                        <TextBlock Text="料件料号" Margin="0,0,0,4"/>
+                        <TextBox Text="{Binding EditKpartsNo, UpdateSourceTrigger=PropertyChanged}"
+                                 Height="30"
+                                 VerticalContentAlignment="Center"
+                                 Padding="6,0"/>
+                    </StackPanel>
+
+                    <!-- 按钮 -->
+                    <StackPanel Grid.Row="2" Margin="0,20,0,0">
+                        <Button Content="添加"
+                                Command="{Binding AddCommand}"
+                                Style="{StaticResource PrimaryButton}"
+                                Height="34"
+                                Margin="0,0,0,8"/>
+                        <Button Content="删除"
+                                Command="{Binding DeleteCommand}"
+                                Style="{StaticResource DangerButton}"
+                                Height="34"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

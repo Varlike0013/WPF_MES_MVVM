@@ -26,9 +26,13 @@
                           VerticalContentAlignment="Center"/>
 
                 <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
-                         Width="180" Height="26"
-                         Margin="8,0,0,0"
-                         VerticalContentAlignment="Center"/>
+                     Width="180" Height="26"
+                     Margin="8,0,0,0"
+                     VerticalContentAlignment="Center">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding SearchCommand}"/>
+                    </TextBox.InputBindings>
+                </TextBox>
 
                 <Button Content="查询"
                         Command="{Binding SearchCommand}"
@@ -156,19 +160,19 @@
                       AlternatingRowBackground="#F0F0F0"
                       RowHeight="26">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="工单"     Binding="{Binding WorkOrderNo}" Width="130"/>
+                    <DataGridTextColumn Header="工单"     Binding="{Binding WorkOrderNo}" Width="180"/>
                     <DataGridTextColumn Header="料号"     Binding="{Binding PartNo}" Width="120"/>
                     <DataGridTextColumn Header="规则"     Binding="{Binding WoRule}" Width="80"/>
                     <DataGridTextColumn Header="版本"     Binding="{Binding Version}" Width="60"/>
-                    <DataGridTextColumn Header="状态码"   Binding="{Binding StatusCode}" Width="70"/>
-                    <DataGridTextColumn Header="状态描述" Binding="{Binding StatusDesc}" Width="120"/>
+                    <DataGridTextColumn Header="状态码"   Binding="{Binding StatusCode}" Width="60"/>
+                    <DataGridTextColumn Header="状态描述" Binding="{Binding StatusDesc}" Width="80"/>
                     <DataGridTextColumn Header="目标数量" Binding="{Binding TargetQty}" Width="80"/>
                     <DataGridTextColumn Header="投入数量" Binding="{Binding InputQty}" Width="80"/>
                     <DataGridTextColumn Header="产出数量" Binding="{Binding OutputQty}" Width="80"/>
-                    <DataGridTextColumn Header="流程"     Binding="{Binding RouteName}" Width="120"/>
-                    <DataGridTextColumn Header="起始工序" Binding="{Binding StartProcess}" Width="100"/>
-                    <DataGridTextColumn Header="结束工序" Binding="{Binding EndProcess}" Width="100"/>
-                    <DataGridTextColumn Header="产线"     Binding="{Binding PdlineName}" Width="100"/>
+                    <DataGridTextColumn Header="流程"     Binding="{Binding RouteName}" Width="160"/>
+                    <DataGridTextColumn Header="起始工序" Binding="{Binding StartProcess}" Width="80"/>
+                    <DataGridTextColumn Header="结束工序" Binding="{Binding EndProcess}" Width="80"/>
+                    <DataGridTextColumn Header="产线"     Binding="{Binding PdlineName}" Width="60"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

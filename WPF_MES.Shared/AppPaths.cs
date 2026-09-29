@@ -14,6 +14,8 @@ public static class AppPaths
     public static string ConfigDir => Path.Combine(BaseDir, "Config");
     /// <summary>日志文件夹</summary>
     public static string LogDir => Path.Combine(BaseDir, "Logs");
+    /// <summary>缓存文件夹</summary>
+    public static string CacheDir => Path.Combine(BaseDir, "Config", "Cache");
     /// <summary>
     /// 获取配置文件完整路径，并确保 Config 目录存在。
     /// </summary>

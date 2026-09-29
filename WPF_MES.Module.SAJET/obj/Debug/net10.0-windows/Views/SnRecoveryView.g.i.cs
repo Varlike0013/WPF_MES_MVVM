@@ -76,7 +76,7 @@ namespace WPF_MES.Module.SAJET.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.SAJET;V1.0.0.0;component/views/snrecoveryview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.SAJET;component/views/snrecoveryview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\SnRecoveryView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

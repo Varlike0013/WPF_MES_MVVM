@@ -1,0 +1,430 @@
+<UserControl x:Class="WPF_MES.Module.SAJET.Views.FindRouteView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Microsoft YaHei"
+             FontSize="13">
+
+    <UserControl.Resources>
+        <!-- 主按钮 -->
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="#007ACC" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#005A9E"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 次要按钮 -->
+        <Style x:Key="SecondaryButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd"
+                                Background="#F0F0F0"
+                                BorderBrush="#CCCCCC"
+                                BorderThickness="1"
+                                CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextElement.Foreground="Black"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#E0E0E0"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Background" Value="#F5F5F5"/>
+                                <Setter Property="Foreground" Value="#999999"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 表格样式 -->
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="RowHeight" Value="26"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="AlternatingRowBackground" Value="#F8F8F8"/>
+            <Setter Property="ColumnHeaderHeight" Value="30"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#EEEEEE"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 顶部标题 -->
+        <Border Grid.Row="0" Background="#007ACC" Padding="12,10">
+            <TextBlock Text="重工流程查询"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+        </Border>
+
+        <!-- 主体：四列布局 -->
+        <Grid Grid.Row="1" Margin="10" Background="#F5F7FA">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="320"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ===== 左列：流程列表 ===== -->
+            <Border Grid.Column="0"
+                    Background="White"
+                    BorderBrush="#DDDDDD"
+                    BorderThickness="1"
+                    CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Background="#E8EEF7"
+                            Padding="10,8"
+                            CornerRadius="4,4,0,0">
+                        <TextBlock Text="流程列表"
+                                   FontWeight="Bold"
+                                   Foreground="#007ACC"/>
+                    </Border>
+
+                    <TextBox x:Name="txtFilter"
+                             Grid.Row="1"
+                             Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
+                             Height="28"
+                             Margin="8"
+                             VerticalContentAlignment="Center"
+                             Padding="6,0"
+                             ToolTip="输入流程名模糊查询"/>
+
+                    <ListBox Grid.Row="2"
+                             ItemsSource="{Binding FilteredRoutes}"
+                             SelectedItem="{Binding SelectedRoute}"
+                             BorderThickness="0"
+                             FontSize="13">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Padding" Value="10,6"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="1"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Background="#DDDDDD"/>
+
+            <!-- ===== 中间列：SN 查询 + 上下两个表格 ===== -->
+            <Border Grid.Column="2"
+                Background="White"
+                BorderBrush="#DDDDDD"
+                BorderThickness="1"
+                CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                        Background="#E8EEF7"
+                        Padding="10,8"
+                        CornerRadius="4,4,0,0">
+                        <TextBlock Text="SN → 流程"
+                           FontWeight="Bold"
+                           Foreground="#007ACC"/>
+                    </Border>
+
+                    <!-- SN 输入 -->
+                    <TextBox x:Name="txtSn"
+                         Grid.Row="1"
+                         Text="{Binding InputSn, UpdateSourceTrigger=PropertyChanged}"
+                         Height="28"
+                         Margin="8"
+                         VerticalContentAlignment="Center"
+                         Padding="6,0"
+                         KeyDown="Sn_KeyDown"
+                         ToolTip="输入 SN，回车查询"/>
+
+                    <!-- 上表：途经流程 -->
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0"
+                            Background="#FFF3CD"
+                            Padding="8,4">
+                            <TextBlock Text="途经流程（勾选两个）"
+                               FontWeight="Bold"
+                               FontSize="12"
+                               Foreground="#856404"/>
+                        </Border>
+
+                        <DataGrid Grid.Row="1"
+                              ItemsSource="{Binding SnTravelRoutes}"
+                              Style="{StaticResource DataGridStyle}"
+                              BorderThickness="0"
+                              IsReadOnly="False">
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Header="选"
+                                            Binding="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            Width="45"/>
+                                <DataGridTextColumn Header="ID"
+                                        Binding="{Binding RouteId}"
+                                        Width="60"
+                                        IsReadOnly="True"/>
+                                <DataGridTextColumn Header="流程名称"
+                                        Binding="{Binding RouteName}"
+                                        Width="*"
+                                        IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!-- 分隔条 -->
+                    <GridSplitter Grid.Row="3"
+                      HorizontalAlignment="Stretch"
+                      Background="#DDDDDD"/>
+
+                    <!-- 下表：重工流程 -->
+                    <Grid Grid.Row="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0"
+                            Background="#E8F5E9"
+                            Padding="8,4">
+                            <TextBlock Text="重工流程（点击行查看对比）"
+                               FontWeight="Bold"
+                               FontSize="12"
+                               Foreground="#2E7D32"/>
+                        </Border>
+
+                        <DataGrid Grid.Row="1"
+                              ItemsSource="{Binding ReworkRoutes}"
+                              SelectedItem="{Binding SelectedReworkRoute}"
+                              Style="{StaticResource DataGridStyle}"
+                              BorderThickness="0"
+                              IsReadOnly="True"
+                              SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID"
+                                Binding="{Binding RouteId}"
+                                Width="60"/>
+                                <DataGridTextColumn Header="流程名称"
+                                Binding="{Binding RouteName}"
+                                Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!-- 按钮 -->
+                    <StackPanel Grid.Row="5"
+                    Orientation="Horizontal"
+                    Margin="8"
+                    HorizontalAlignment="Center">
+                        <Button Content="查询重工流程"
+                            Command="{Binding SearchReworkCommand}"
+                            Style="{StaticResource PrimaryButton}"
+                            Width="120"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="3"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Background="#DDDDDD"/>
+
+            <!-- ===== 右二列：旧混合流程 ===== -->
+            <Border Grid.Column="4"
+                    Background="White"
+                    BorderBrush="#DDDDDD"
+                    BorderThickness="1"
+                    CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Background="#FFF3CD"
+                            Padding="10,8"
+                            CornerRadius="4,4,0,0">
+                        <TextBlock Text="旧混合流程"
+                                   FontWeight="Bold"
+                                   Foreground="#856404"/>
+                    </Border>
+
+                    <!-- 旧流程名 -->
+                    <TextBlock Grid.Row="1"
+                               Text="{Binding OldRouteDisplay}"
+                               Padding="10,6"
+                               TextWrapping="Wrap"
+                               Foreground="#666666"
+                               FontSize="11"/>
+
+                    <!-- 步骤列表 -->
+                    <ListBox Grid.Row="2"
+                             ItemsSource="{Binding OldSteps}"
+                             BorderThickness="0"
+                             FontSize="13"
+                             Padding="4">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Padding" Value="8,5"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Necessary}" Value="Y">
+                                        <Setter Property="Foreground" Value="#0050C8"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Necessary}" Value="N">
+                                        <Setter Property="Foreground" Value="#D9534F"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ProcessName}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <!-- 添加为新流程 -->
+                    <Border Grid.Row="3"
+                            Background="#F5F5F5"
+                            BorderBrush="#DDDDDD"
+                            BorderThickness="0,1,0,0"
+                            Padding="8">
+                        <Button Content="添加为新流程"
+                                Command="{Binding AddAsNewRouteCommand}"
+                                Style="{StaticResource PrimaryButton}"
+                                Height="32"/>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="5"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Background="#DDDDDD"/>
+
+            <!-- ===== 最右列：当前查看流程 ===== -->
+            <Border Grid.Column="6"
+                    Background="White"
+                    BorderBrush="#DDDDDD"
+                    BorderThickness="1"
+                    CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Background="#E8F5E9"
+                            Padding="10,8"
+                            CornerRadius="4,4,0,0">
+                        <TextBlock Text="当前查看流程"
+                                   FontWeight="Bold"
+                                   Foreground="#2E7D32"/>
+                    </Border>
+
+                    <TextBox Grid.Row="1"
+                         Text="{Binding NewRouteDisplay}"
+                         IsReadOnly="True"
+                         IsReadOnlyCaretVisible="True"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         TextWrapping="Wrap"
+                         Padding="10,6"
+                         Foreground="#666666"
+                         FontSize="11"
+                         Cursor="IBeam"
+                         VerticalScrollBarVisibility="Auto"/>
+
+                    <ListBox Grid.Row="2"
+                             ItemsSource="{Binding NewSteps}"
+                             BorderThickness="0"
+                             FontSize="13"
+                             Padding="4">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Padding" Value="8,5"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Necessary}" Value="Y">
+                                        <Setter Property="Foreground" Value="#0050C8"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Necessary}" Value="N">
+                                        <Setter Property="Foreground" Value="#D9534F"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ProcessName}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

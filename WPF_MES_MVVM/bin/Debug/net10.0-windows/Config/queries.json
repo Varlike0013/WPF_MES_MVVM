@@ -1,0 +1,9 @@
+﻿[
+  {
+    "Name": "查询SN状态",
+    "Type": "查询",
+    "TypeId": 0,
+    "Description": "查询SN状态",
+    "Sql": "SELECT * FROM SAJET.G_SN_STATUS S\r\nWHERE S.SERIAL_NUMBER = :sn"
+  }
+]

@@ -3,36 +3,48 @@
   "WorkspaceRootPath": "E:\\Git\\WPF_MES\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\smtreelinfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\smtreelinfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\viewmodels\\smtreelinfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\viewmodels\\smtreelinfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\cache\\filecache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\cache\\filecache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\apppaths.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\apppaths.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\smtreelinfoview.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\smtreelinfoview.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\smtreelinfoview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\smtreelinfoview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\cartoninfoview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\cartoninfoview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\viewmodels\\cartoninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\viewmodels\\cartoninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\smtreelinfoview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\smtreelinfoview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\cartoninfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\cartoninfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\cartoninfoview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\cartoninfoview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\cartoninfoview.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\cartoninfoview.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\models\\reelinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\models\\reelinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,18 +53,18 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 208,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 189,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "SajetModule.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\SajetModule.cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\SajetModule.cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\SajetModule.cs",
               "RelativeToolTip": "WPF_MES.Module.SAJET\\SajetModule.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAYwIAAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAAHsAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-22T08:26:25.615Z",
               "IsPinned": true,
@@ -66,7 +78,7 @@
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
               "RelativeToolTip": "WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAuwOsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-23T01:47:05.578Z",
               "IsPinned": true,
@@ -74,31 +86,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CartonInfoView.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml",
+              "DocumentIndex": 5,
+              "Title": "SmtReelInfoView.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml",
+              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml",
+              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-24T11:16:19.761Z",
+              "WhenOpened": "2026-09-29T07:37:50.573Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 192,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 211,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "SajetCommonService .cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "RelativeToolTip": "WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
-              "ViewState": "AgIAAFUBAAAAAAAAAAA+wGgBAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAqwF8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-24T01:59:04.928Z",
               "IsPinned": true,
@@ -107,53 +119,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CartonInfoViewModel.cs",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\CartonInfoViewModel.cs",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\ViewModels\\CartonInfoViewModel.cs",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\CartonInfoViewModel.cs",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\ViewModels\\CartonInfoViewModel.cs",
-              "ViewState": "AgIAAMQBAAAAAAAAAAAAABgAAAAGAAAAAAAAAA==",
+              "Title": "FileCache.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Cache\\FileCache.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Shared\\Cache\\FileCache.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Cache\\FileCache.cs",
+              "RelativeToolTip": "WPF_MES.Shared\\Cache\\FileCache.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwD4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-24T11:25:47.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CartonInfoService.cs",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\CartonInfoService.cs",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\CartonInfoService.cs",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\CartonInfoService.cs",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\Services\\CartonInfoService.cs",
-              "ViewState": "AgIAAAoBAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-24T11:24:34.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CartonInfoView.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml",
-              "ViewState": "AgIAAHIBAAAAAAAAAADgv4UBAABuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-24T11:12:52.345Z",
+              "WhenOpened": "2026-09-29T08:17:27.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CartonInfoView.xaml.cs",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml.cs",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml.cs",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml.cs",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\CartonInfoView.xaml.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAQwDwAAAABAAAAAAAAAA==",
+              "Title": "SmtReelInfoViewModel.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\SmtReelInfoViewModel.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\ViewModels\\SmtReelInfoViewModel.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\SmtReelInfoViewModel.cs",
+              "RelativeToolTip": "WPF_MES.Module.SAJET\\ViewModels\\SmtReelInfoViewModel.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBkAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-24T11:16:41.319Z",
+              "WhenOpened": "2026-09-29T07:49:19.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SmtReelInfoService.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SmtReelInfoService.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\SmtReelInfoService.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SmtReelInfoService.cs",
+              "RelativeToolTip": "WPF_MES.Module.SAJET\\Services\\SmtReelInfoService.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAswLsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T07:43:35.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SmtReelInfoView.xaml.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml.cs",
+              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T07:42:37.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReelInfo.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Models\\ReelInfo.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Models\\ReelInfo.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Models\\ReelInfo.cs",
+              "RelativeToolTip": "WPF_MES.Module.SAJET\\Models\\ReelInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T07:30:10.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SmtReelInfoView.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml",
+              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml",
+              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\SmtReelInfoView.xaml",
+              "ViewState": "AgIAAPUAAAAAAAAAAAAAAAkBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-09-29T07:37:55.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppPaths.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\AppPaths.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Shared\\AppPaths.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\AppPaths.cs",
+              "RelativeToolTip": "WPF_MES.Shared\\AppPaths.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T06:35:10.909Z",
               "EditorCaption": ""
             }
           ]

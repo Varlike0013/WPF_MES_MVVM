@@ -1,0 +1,209 @@
+<UserControl x:Class="WPF_MES.Module.SAJET.Views.ServerIpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:models="clr-namespace:WPF_MES.Module.SAJET.Models"
+             FontFamily="Microsoft YaHei"
+             FontSize="13">
+
+    <UserControl.Resources>
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="#007ACC" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#005A9E"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SecondaryButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd"
+                                Background="#F0F0F0"
+                                BorderBrush="#CCCCCC"
+                                BorderThickness="1"
+                                CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextElement.Foreground="Black"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#E0E0E0"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Background" Value="#F5F5F5"/>
+                                <Setter Property="Foreground" Value="#999999"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="RowHeight" Value="26"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="AlternatingRowBackground" Value="#F8F8F8"/>
+            <Setter Property="ColumnHeaderHeight" Value="30"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#EEEEEE"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ========== 顶部标题 ========== -->
+        <Border Grid.Row="0" Background="#007ACC" Padding="12,10">
+            <TextBlock Text="服务器 IP 管理"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+        </Border>
+
+        <!-- ========== 主体：左右分栏 ========== -->
+        <Grid Grid.Row="1" Margin="10" Background="#F5F7FA">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ===== 左侧：服务器/网关/IP 树 ===== -->
+            <Border Grid.Column="0"
+                    Background="White"
+                    BorderBrush="#DDDDDD"
+                    BorderThickness="1"
+                    CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Background="#E8EEF7"
+                            Padding="10,8"
+                            CornerRadius="4,4,0,0">
+                        <TextBlock Text="服务器 / 网关 / IP"
+                                   FontWeight="Bold"
+                                   Foreground="#007ACC"/>
+                    </Border>
+
+                    <TreeView x:Name="treeServers"
+                          Grid.Row="1"
+                          ItemsSource="{Binding TreeNodes}"
+                          BorderThickness="0"
+                          FontSize="13"
+                          SelectedItemChanged="TreeServers_SelectedItemChanged">
+                        <TreeView.Resources>
+                            <HierarchicalDataTemplate DataType="{x:Type models:TreeNodeViewModel}"
+                                  ItemsSource="{Binding Children}">
+                                <TextBlock Text="{Binding Title}" Padding="2,3"/>
+                            </HierarchicalDataTemplate>
+                        </TreeView.Resources>
+                        <TreeView.ItemContainerStyle>
+                            <Style TargetType="TreeViewItem">
+                                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                                <Setter Property="Padding" Value="2"/>
+                                <!-- 关键：用 EventSetter 挂 Expanded 事件 -->
+                                <EventSetter Event="Expanded" Handler="TreeViewItem_Expanded"/>
+                            </Style>
+                        </TreeView.ItemContainerStyle>
+                    </TreeView>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="1"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Background="#DDDDDD"/>
+
+            <!-- ===== 右侧：终端链接表格 + 按钮 ===== -->
+            <Border Grid.Column="2"
+                    Background="White"
+                    BorderBrush="#DDDDDD"
+                    BorderThickness="1"
+                    CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Background="#E8EEF7"
+                            Padding="10,6"
+                            CornerRadius="4,4,0,0">
+                        <Grid>
+                            <TextBlock Text="终端信息"
+                                       FontWeight="Bold"
+                                       Foreground="#007ACC"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"/>
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Right">
+                                <Button Content="清空"
+                                        Command="{Binding ClearCommand}"
+                                        Style="{StaticResource SecondaryButton}"
+                                        Width="70"
+                                        Margin="0,0,8,0"/>
+                                <Button Content="导出IP"
+                                        Command="{Binding ExportCommand}"
+                                        Style="{StaticResource PrimaryButton}"
+                                        Width="80"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <DataGrid Grid.Row="1"
+                              ItemsSource="{Binding TerminalItems}"
+                              Style="{StaticResource DataGridStyle}"
+                              BorderThickness="0"
+                              IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="站别"     Binding="{Binding StageName}"    Width="100"/>
+                            <DataGridTextColumn Header="产线"     Binding="{Binding PdlineName}"   Width="90"/>
+                            <DataGridTextColumn Header="网关描述" Binding="{Binding GatewayDesc}"  Width="130"/>
+                            <DataGridTextColumn Header="终端ID"   Binding="{Binding TerminalId}"   Width="80"/>
+                            <DataGridTextColumn Header="终端名称" Binding="{Binding TerminalName}" Width="*"/>
+                            <DataGridTextColumn Header="工序"     Binding="{Binding ProcessName}"  Width="120"/>
+                            <DataGridTextColumn Header="组ID"     Binding="{Binding GroupId}"      Width="70"/>
+                            <DataGridTextColumn Header="启用状态" Binding="{Binding Enabled}"      Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

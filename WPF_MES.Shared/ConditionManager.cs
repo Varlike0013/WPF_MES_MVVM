@@ -15,6 +15,8 @@ public enum ConditionType
     WorkOrder,
     /// <summary>抽验号 (QCNO)</summary>
     QcNo,
+    /// <summary>二维码(Qrcode)</summary>
+    QrCode,
 }
 /// <summary>
 /// 条件管理器（泛型版）。

@@ -60,7 +60,7 @@ namespace WPF_MES.Module.SAJET.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.SAJET;V1.0.0.0;component/views/reworkview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.SAJET;component/views/reworkview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ReworkView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

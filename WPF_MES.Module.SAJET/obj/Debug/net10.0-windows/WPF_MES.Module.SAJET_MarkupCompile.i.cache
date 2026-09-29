@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-9-1300367880
+25-649252906
 
-341649988159
+93357888870
 212-169590454
-Views\CartonInfoView.xaml;Views\ClearKeyPartsView.xaml;Views\NetworkChatView.xaml;Views\ReworkConfirmDialog.xaml;Views\ReworkView.xaml;Views\SnRecoveryView.xaml;Views\StatusTagView.xaml;Views\WorkOrderDetailView.xaml;Views\WorkOrderMaintainView.xaml;
+Views\CartonInfoView.xaml;Views\CheckEmpView.xaml;Views\CheckMacView.xaml;Views\CheckRouteView.xaml;Views\ClearKeyPartsView.xaml;Views\CustomerEcspartView.xaml;Views\Dialogs\PcbAddDialog.xaml;Views\Dialogs\SqlEditDialog.xaml;Views\ExportTravelsView.xaml;Views\FindRouteView.xaml;Views\MaterialErpView.xaml;Views\NetworkChatView.xaml;Views\PcbQrCodeView.xaml;Views\QueryFormView.xaml;Views\ReworkConfirmDialog.xaml;Views\ReworkQuestionView.xaml;Views\ReworkView.xaml;Views\ServerIpView.xaml;Views\SmtReelInfoView.xaml;Views\SnRecoveryView.xaml;Views\StatusTagView.xaml;Views\TgsGroupTestView.xaml;Views\TgsGroupView.xaml;Views\WorkOrderDetailView.xaml;Views\WorkOrderMaintainView.xaml;
 
 False
 
