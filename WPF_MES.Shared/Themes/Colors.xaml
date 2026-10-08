@@ -42,5 +42,38 @@
     <!-- 语义色（值标签柔和红） -->
     <SolidColorBrush x:Key="ValueRedBrush"    Color="#D32F2F"/>
     <SolidColorBrush x:Key="RowNgBrush"       Color="#C83232"/>
+    <!-- ===== 暗色面板（侧栏 / 深色导航） ===== -->
+    <SolidColorBrush x:Key="DarkPanelBrush"      Color="#1F242B"/>
+    <!-- 侧栏主背景 -->
+    <SolidColorBrush x:Key="DarkPanelDeepBrush"  Color="#171B21"/>
+    <!-- 深一档：搜索区 / 工具条 -->
+    <SolidColorBrush x:Key="DarkGroupBrush"      Color="#2A313B"/>
+    <!-- 分组节点 -->
+    <SolidColorBrush x:Key="DarkGroupHoverBrush" Color="#39424F"/>
+    <!-- 分组 hover -->
+    <SolidColorBrush x:Key="DarkItemBrush"       Color="#232932"/>
+    <!-- 叶子节点 -->
+    <SolidColorBrush x:Key="DarkItemHoverBrush"  Color="#313A47"/>
+    <!-- 叶子 hover -->
+    <SolidColorBrush x:Key="DarkTextBrush"       Color="#E8EDF2"/>
+    <!-- 主文字 -->
+    <SolidColorBrush x:Key="DarkTextSubBrush"    Color="#C8D1DB"/>
+    <!-- 次要文字 -->
+    <SolidColorBrush x:Key="DarkTextHintBrush"   Color="#8899AA"/>
+    <!-- 提示 / 图标 -->
+
+    <!-- 收藏星标 -->
+    <SolidColorBrush x:Key="FavoriteStarBrush"   Color="#FFD54A"/>
+    <!-- ===== 滚动条（深色，用于侧栏 / 深色面板） ===== -->
+    <SolidColorBrush x:Key="DarkScrollTrackBrush"  Color="Transparent"/>
+    <SolidColorBrush x:Key="DarkScrollThumbBrush"  Color="#4A5563"/>
+    <SolidColorBrush x:Key="DarkScrollThumbHover"  Color="#5E6B7C"/>
+    <SolidColorBrush x:Key="DarkScrollThumbDrag"   Color="#007ACC"/>
+
+    <!-- ===== 滚动条（浅色，用于内容区 / DataGrid） ===== -->
+    <SolidColorBrush x:Key="LightScrollTrackBrush" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="LightScrollThumbBrush" Color="#C0C0C0"/>
+    <SolidColorBrush x:Key="LightScrollThumbHover" Color="#A0A0A0"/>
+    <SolidColorBrush x:Key="LightScrollThumbDrag"  Color="#007ACC"/>
 
 </ResourceDictionary>

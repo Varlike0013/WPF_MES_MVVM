@@ -1,0 +1,140 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- ============================================================ -->
+    <!-- 深色滚动条（侧栏专用） -->
+    <!-- ============================================================ -->
+    <Style x:Key="DarkScrollBarThumb" TargetType="Thumb">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Border x:Name="Bd"
+                            Background="{StaticResource DarkScrollThumbBrush}"
+                            CornerRadius="3"
+                            Margin="2,0"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background"
+                                    Value="{StaticResource DarkScrollThumbHover}"/>
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter TargetName="Bd" Property="Background"
+                                    Value="{StaticResource DarkScrollThumbDrag}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DarkScrollBar" TargetType="ScrollBar">
+        <Setter Property="Width" Value="8"/>
+        <Setter Property="Background" Value="{StaticResource DarkScrollTrackBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollBar">
+                    <Grid Background="{TemplateBinding Background}">
+                        <!-- 轨道 -->
+                        <Track x:Name="PART_Track" IsDirectionReversed="True">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageUpCommand"
+                                              Opacity="0" Focusable="False"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource DarkScrollBarThumb}"/>
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageDownCommand"
+                                              Opacity="0" Focusable="False"/>
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- 悬停时变宽一点，更易抓 -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Width" Value="10"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="Height" Value="8"/>
+                <Setter Property="Width" Value="Auto"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- ============================================================ -->
+    <!-- 浅色滚动条（内容区通用） -->
+    <!-- ============================================================ -->
+    <Style x:Key="LightScrollBarThumb" TargetType="Thumb">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Border x:Name="Bd"
+                            Background="{StaticResource LightScrollThumbBrush}"
+                            CornerRadius="3"
+                            Margin="2,0"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background"
+                                    Value="{StaticResource LightScrollThumbHover}"/>
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter TargetName="Bd" Property="Background"
+                                    Value="{StaticResource LightScrollThumbDrag}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LightScrollBar" TargetType="ScrollBar">
+        <Setter Property="Width" Value="8"/>
+        <Setter Property="Background" Value="{StaticResource LightScrollTrackBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollBar">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Track x:Name="PART_Track" IsDirectionReversed="True">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageUpCommand"
+                                              Opacity="0" Focusable="False"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource LightScrollBarThumb}"/>
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageDownCommand"
+                                              Opacity="0" Focusable="False"/>
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Width" Value="10"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="Height" Value="8"/>
+                <Setter Property="Width" Value="Auto"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

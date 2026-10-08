@@ -10,238 +10,132 @@
         FontSize="13">
 
     <Window.Resources>
-        <!-- ============ 菜单分组节点按钮 ============ -->
-        <Style x:Key="MenuGroupStyle" TargetType="Button">
-            <Setter Property="Height" Value="42"/>
-            <Setter Property="Background" Value="#2D2D30"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="Padding" Value="8,0,0,0"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Left"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#3E3E42"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPF_MES.Shared;component/Themes/SharedStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
 
-        <!-- ============ 菜单叶子节点按钮 ============ -->
-        <Style x:Key="MenuItemStyle" TargetType="Button">
-            <Setter Property="Height" Value="38"/>
-            <Setter Property="Background" Value="#252526"/>
-            <Setter Property="Foreground" Value="#DDDDDD"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="Padding" Value="8,0,0,0"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Left"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#3E3E42"/>
-                    <Setter Property="Foreground" Value="White"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+            <!-- ============================================================ -->
+            <!-- 页签样式 -->
+            <!-- ============================================================ -->
+            <Style x:Key="TabBorderStyle" TargetType="Border">
+                <Setter Property="Background" Value="#DCE1E7"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="CornerRadius" Value="5,5,0,0"/>
+                <Setter Property="Margin" Value="2,0,2,0"/>
+                <Setter Property="Height" Value="30"/>
+            </Style>
 
-        <!-- ============ 左侧工具条小按钮 ============ -->
-        <Style x:Key="MenuToolButtonStyle" TargetType="Button">
-            <Setter Property="Width" Value="50"/>
-            <Setter Property="Height" Value="26"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="#3E3E42"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                CornerRadius="3">
-                            <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#555555"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <!-- ============ 搜索框样式 ============ -->
-        <Style x:Key="MenuSearchBoxStyle" TargetType="TextBox">
-            <Setter Property="Height" Value="26"/>
-            <Setter Property="Background" Value="#3E3E42"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CaretBrush" Value="White"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="6,0"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="12"/>
-        </Style>
-
-        <!-- ============ 菜单树 TreeViewItem 样式 ============ -->
-        <Style x:Key="MenuTreeItemStyle" TargetType="TreeViewItem">
-            <Setter Property="Visibility"
-                    Value="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"/>
-            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TreeViewItem">
-                        <StackPanel>
-                            <ContentPresenter ContentSource="Header"
-                                              HorizontalAlignment="Stretch"/>
-                            <ItemsPresenter x:Name="ItemsHost" Margin="15,0,0,0"/>
+            <!-- ============================================================ -->
+            <!-- 菜单节点递归模板 -->
+            <!-- ============================================================ -->
+            <HierarchicalDataTemplate DataType="{x:Type vm:MenuNodeViewModel}"
+                                      ItemsSource="{Binding Children}">
+                <StackPanel>
+                    <!-- 分组节点 -->
+                    <Button Command="{Binding ToggleCommand}"
+                            Style="{StaticResource MenuGroupStyle}"
+                            Visibility="{Binding IsGroupVisible,
+                                Converter={StaticResource BoolToVisibility}}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Icon}"
+                                       Width="18"
+                                       FontSize="12"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding Title}"
+                                       VerticalAlignment="Center"/>
                         </StackPanel>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsExpanded" Value="False">
-                                <Setter TargetName="ItemsHost"
-                                        Property="Visibility"
-                                        Value="Collapsed"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <!-- 图标小按钮（自适应宽度） -->
-        <Style x:Key="MenuIconButtonStyle" TargetType="Button">
-            <Setter Property="Height" Value="26"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="#3E3E42"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Margin" Value="2,0"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                        CornerRadius="3">
-                            <ContentPresenter HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#555555"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <!-- ============ 页签样式 ============ -->
-        <Style x:Key="TabBorderStyle" TargetType="Border">
-            <Setter Property="Background" Value="#D2D2D2"/>
-            <Setter Property="BorderBrush" Value="#B4B4B4"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="3"/>
-            <Setter Property="Margin" Value="2,0,2,0"/>
-            <Setter Property="Height" Value="28"/>
-        </Style>
+                    </Button>
 
-        <!-- ============ 菜单节点递归模板 ============ -->
-        <HierarchicalDataTemplate DataType="{x:Type vm:MenuNodeViewModel}"
-                                  ItemsSource="{Binding Children}">
-            <StackPanel>
-
-                <!-- 分组节点：图标 + 标题 -->
-                <Button Command="{Binding ToggleCommand}"
-                        Style="{StaticResource MenuGroupStyle}"
-                        Visibility="{Binding IsGroupVisible,
-                            Converter={StaticResource BoolToVisibility}}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Icon}"
-                                   Width="16"
-                                   FontSize="11"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding Title}"
-                                   VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Button>
-
-                <!-- 叶子节点：图标占位 + 标题 -->
-                <Button Command="{Binding OpenCommand}"
-                        Style="{StaticResource MenuItemStyle}"
-                        Visibility="{Binding IsLeafVisible,
-                            Converter={StaticResource BoolToVisibility}}">
-                    <StackPanel Orientation="Horizontal">
-                        <!-- 空 TextBlock 占位，让叶子文字与分组文字对齐 -->
-                        <TextBlock Text=""
-                                   Width="16"
-                                   FontSize="11"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Text="{Binding Title}"
-                                   VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-        </HierarchicalDataTemplate>
+                    <!-- 叶子节点 -->
+                    <Button Command="{Binding OpenCommand}"
+                            Style="{StaticResource MenuItemStyle}"
+                            Visibility="{Binding IsLeafVisible,
+                                Converter={StaticResource BoolToVisibility}}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text=""
+                                       Width="18"
+                                       FontSize="12"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Title}"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </HierarchicalDataTemplate>
+        </ResourceDictionary>
     </Window.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="88"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="220"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- ============ 顶栏 ============ -->
-        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#007ACC">
+        <!-- ============================================================ -->
+        <!-- 顶栏 -->
+        <!-- ============================================================ -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#0069B4" Offset="0"/>
+                    <GradientStop Color="#007ACC" Offset="0.55"/>
+                    <GradientStop Color="#0089D9" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect Color="#000000"
+                      BlurRadius="8" ShadowDepth="2" Opacity="0.22"/>
+            </Border.Effect>
+
             <Grid Margin="20,0">
-                <TextBlock Text="{Binding Title}"
-                           FontSize="20" FontWeight="Bold"
-                           Foreground="White"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"/>
-                <TextBlock Text="{Binding UserDisplay, StringFormat=当前用户：{0}}"
-                           FontSize="14"
-                           Foreground="White"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Right"/>
+                <!-- 左侧：Logo + 标题 -->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Width="34" Height="34" CornerRadius="8"
+                            Background="#FFFFFF" Margin="0,0,12,0">
+                        <TextBlock Text="M"
+                                   FontSize="19" FontWeight="Bold"
+                                   Foreground="#007ACC"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock Text="{Binding Title}"
+                               FontSize="18" FontWeight="Bold"
+                               Foreground="White"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- 右侧：用户信息 -->
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center">
+                    <Border Width="30" Height="30" CornerRadius="15"
+                            Background="#4DA6DC" Margin="0,0,10,0">
+                        <TextBlock Text="👤"
+                                   FontSize="14"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock Text="{Binding UserDisplay}"
+                               FontSize="14"
+                               Foreground="White"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
             </Grid>
         </Border>
 
-        <!-- ============ 左侧菜单 ============ -->
-        <Border Grid.Row="1" Grid.Column="0" Background="#2D2D30">
+        <!-- ============================================================ -->
+        <!-- 左侧菜单 -->
+        <!-- ============================================================ -->
+        <Border Grid.Row="1" Grid.Column="0"
+                Background="{StaticResource DarkPanelBrush}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -250,58 +144,77 @@
                 </Grid.RowDefinitions>
 
                 <!-- 搜索框 -->
-                <Border Grid.Row="0" Background="#252526" Padding="5,5,5,3">
-                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
-                             Style="{StaticResource MenuSearchBoxStyle}"
-                             ToolTip="输入关键字过滤菜单"/>
+                <Border Grid.Row="0"
+                        Background="{StaticResource DarkPanelDeepBrush}"
+                        Padding="10,8,10,6">
+                    <Border Background="#2A313B"
+                            CornerRadius="4"
+                            Padding="8,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="🔍"
+                                       FontSize="12"
+                                       Foreground="#8899AA"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,6,0"/>
+                            <TextBox Grid.Column="1"
+                                     Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource MenuSearchBoxStyle}"
+                                     ToolTip="输入关键字过滤菜单"/>
+                        </Grid>
+                    </Border>
                 </Border>
 
-                <!-- 展开/折叠 工具条 -->
-                <!-- 工具条：4 个图标按钮铺满整行 -->
-                <Border Grid.Row="1" Background="#252526" Padding="5,0,5,5">
+                <!-- 工具条 -->
+                <Border Grid.Row="1"
+                       Background="{StaticResource DarkPanelDeepBrush}"
+                        Padding="10,0,10,8">
                     <UniformGrid Rows="1" Columns="4" Height="26">
-
-                        <!-- 首页 -->
                         <Button Content="⌂"
-                            Command="{Binding GoHomeCommand}"
-                            Style="{StaticResource MenuIconButtonStyle}"
-                            ToolTip="回到首页"/>
+                                Command="{Binding GoHomeCommand}"
+                                Style="{StaticResource MenuIconButtonStyle}"
+                                ToolTip="回到首页"/>
 
-                        <!-- 收藏（☆ / ★ 切换） -->
                         <Button Command="{Binding ToggleFavoriteCommand}"
-                            ToolTip="收藏/取消收藏当前页面">
+                                ToolTip="收藏/取消收藏当前页面">
                             <Button.Style>
                                 <Style TargetType="Button"
-                                    BasedOn="{StaticResource MenuIconButtonStyle}">
+                                       BasedOn="{StaticResource MenuIconButtonStyle}">
                                     <Setter Property="Content" Value="☆"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding IsCurrentFavorite}" Value="True">
                                             <Setter Property="Content" Value="★"/>
-                                            <Setter Property="Foreground" Value="#FFD700"/>
+                                            <Setter Property="Foreground" Value="#FFD54A"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
                             </Button.Style>
                         </Button>
 
-                        <!-- 展开全部 -->
                         <Button Content="▼"
-                            Command="{Binding ExpandAllCommand}"
-                            Style="{StaticResource MenuIconButtonStyle}"
-                            ToolTip="展开全部"/>
+                                Command="{Binding ExpandAllCommand}"
+                                Style="{StaticResource MenuIconButtonStyle}"
+                                ToolTip="展开全部"/>
 
-                        <!-- 折叠全部 -->
                         <Button Content="▶"
-                            Command="{Binding CollapseAllCommand}"
-                            Style="{StaticResource MenuIconButtonStyle}"
-                            ToolTip="折叠全部"/>
+                                Command="{Binding CollapseAllCommand}"
+                                Style="{StaticResource MenuIconButtonStyle}"
+                                ToolTip="折叠全部"/>
                     </UniformGrid>
                 </Border>
 
                 <!-- 菜单树 -->
                 <ScrollViewer Grid.Row="2"
                               VerticalScrollBarVisibility="Auto"
-                              HorizontalScrollBarVisibility="Disabled">
+                              HorizontalScrollBarVisibility="Disabled"
+                              Background="Transparent">
+                    <ScrollViewer.Resources>
+                        <Style TargetType="ScrollBar"
+                            BasedOn="{StaticResource DarkScrollBar}"/>
+                    </ScrollViewer.Resources>
                     <TreeView ItemsSource="{Binding MenuNodes}"
                               Background="Transparent"
                               BorderThickness="0"
@@ -311,11 +224,14 @@
             </Grid>
         </Border>
 
-        <!-- ============ 内容区 ============ -->
-        <Grid Grid.Row="1" Grid.Column="1" Background="WhiteSmoke">
+        <!-- ============================================================ -->
+        <!-- 内容区 -->
+        <!-- ============================================================ -->
+        <Grid Grid.Row="1" Grid.Column="1"
+              Background="{StaticResource PageBackgroundBrush}">
             <TextBlock Text="{Binding WelcomeText}"
-                       FontSize="32" FontWeight="Bold"
-                       Foreground="Gray"
+                       FontSize="34" FontWeight="Bold"
+                       Foreground="#B8C2CC"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        Visibility="{Binding IsWelcomeVisible,
@@ -326,15 +242,22 @@
                                 ConverterParameter=Invert}"/>
         </Grid>
 
-        <!-- ============ 底栏 ============ -->
-        <Grid Grid.Row="2" Grid.ColumnSpan="2" Background="#F0F0F0">
+        <!-- ============================================================ -->
+        <!-- 底栏 -->
+        <!-- ============================================================ -->
+        <Grid Grid.Row="2" Grid.ColumnSpan="2"
+              Background="{StaticResource CardBackgroundBrush}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="46"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <!-- 页签栏 -->
-            <Border Grid.Row="0" Background="#E6E6E6" Padding="5,5,5,0">
+            <Border Grid.Row="0"
+                    Background="#EDF1F5"
+                    BorderBrush="{StaticResource CardBorderBrush}"
+                    BorderThickness="0,0,0,1"
+                    Padding="8,8,8,0">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto"
                               VerticalScrollBarVisibility="Disabled">
                     <ItemsControl ItemsSource="{Binding Tabs}">
@@ -349,23 +272,48 @@
                                     <Border.Style>
                                         <Style TargetType="Border"
                                                BasedOn="{StaticResource TabBorderStyle}">
+                                            <Setter Property="Effect">
+                                                <Setter.Value>
+                                                    <DropShadowEffect Color="#000000"
+                                                      BlurRadius="4"
+                                                      ShadowDepth="1"
+                                                      Opacity="0.12"/>
+                                                </Setter.Value>
+                                            </Setter>
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding IsActive}" Value="True">
-                                                    <Setter Property="Background" Value="#007ACC"/>
+                                                    <Setter Property="Background"
+                                                            Value="{StaticResource PrimaryBrush}"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Border.Style>
+
                                     <StackPanel Orientation="Horizontal">
+                                        <!-- 页签标题按钮 -->
                                         <Button Content="{Binding Title}"
                                                 Command="{Binding SelectCommand}"
                                                 Background="Transparent"
                                                 BorderThickness="0"
-                                                Padding="8,0,4,0"
-                                                Cursor="Hand">
+                                                Padding="12,0,6,0"
+                                                Cursor="Hand"
+                                                Focusable="False">
                                             <Button.Style>
                                                 <Style TargetType="Button">
-                                                    <Setter Property="Foreground" Value="Black"/>
+                                                    <Setter Property="Foreground" Value="#44505C"/>
+                                                    <Setter Property="FontWeight" Value="SemiBold"/>
+                                                    <Setter Property="FontSize" Value="12"/>
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="Button">
+                                                                <Border Background="Transparent"
+                                                                        Padding="{TemplateBinding Padding}">
+                                                                    <ContentPresenter VerticalAlignment="Center"
+                                                                                      HorizontalAlignment="Center"/>
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding IsActive}" Value="True">
                                                             <Setter Property="Foreground" Value="White"/>
@@ -374,18 +322,41 @@
                                                 </Style>
                                             </Button.Style>
                                         </Button>
+
+                                        <!-- 关闭按钮 -->
                                         <Button Content="×"
                                                 Command="{Binding CloseCommand}"
                                                 Background="Transparent"
                                                 BorderThickness="0"
-                                                Width="20"
-                                                Cursor="Hand">
+                                                Width="22"
+                                                Cursor="Hand"
+                                                Focusable="False">
                                             <Button.Style>
                                                 <Style TargetType="Button">
-                                                    <Setter Property="Foreground" Value="Black"/>
+                                                    <Setter Property="Foreground" Value="#8899AA"/>
+                                                    <Setter Property="FontSize" Value="14"/>
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="Button">
+                                                                <Border x:Name="Bd"
+                                                                        Background="Transparent"
+                                                                        CornerRadius="3">
+                                                                    <ContentPresenter VerticalAlignment="Center"
+                                                                                      HorizontalAlignment="Center"/>
+                                                                </Border>
+                                                                <ControlTemplate.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter TargetName="Bd" Property="Background"
+                                                                                Value="#E74C3C"/>
+                                                                        <Setter Property="Foreground" Value="White"/>
+                                                                    </Trigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding IsActive}" Value="True">
-                                                            <Setter Property="Foreground" Value="White"/>
+                                                            <Setter Property="Foreground" Value="#CFE4F5"/>
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -402,20 +373,25 @@
             <!-- 时间 + 按钮 -->
             <Grid Grid.Row="1">
                 <TextBlock Text="{Binding TimeDisplay}"
-                           Margin="10,0,0,0"
+                           Margin="16,0,0,0"
+                           FontSize="12"
+                           Foreground="{StaticResource TextSecondaryBrush}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"/>
+
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Center"
-                            Margin="0,0,10,0">
+                            Margin="0,0,16,0">
                     <Button Content="注销"
-                            Width="80" Height="26"
-                            Margin="0,0,8,0"
-                            Command="{Binding LogoutCommand}"/>
+                            Width="84"
+                            Command="{Binding LogoutCommand}"
+                            Style="{StaticResource SecondaryButton}"
+                            Margin="0,0,10,0"/>
                     <Button Content="退出"
-                            Width="80" Height="26"
-                            Click="BtnExit_Click"/>
+                            Width="84"
+                            Click="BtnExit_Click"
+                            Style="{StaticResource DangerButton}"/>
                 </StackPanel>
             </Grid>
         </Grid>

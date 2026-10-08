@@ -102,8 +102,7 @@
                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                     MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                 <Border.Effect>
-                                    <DropShadowEffect x:Shared="False"
-                                                      Color="#000000"
+                                    <DropShadowEffect Color="#000000"
                                                       BlurRadius="8"
                                                       ShadowDepth="2"
                                                       Opacity="0.15"/>

@@ -1,9 +1,10 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Collections.ObjectModel;
+using System.Windows;
 using WPF_MES.Contracts;
 using WPF_MES.Shared;
+using WPF_MES_MVVM.Services;
 
 namespace WPF_MES_MVVM.ViewModels;
 
@@ -80,6 +81,8 @@ public partial class ShellViewModel : ObservableObject
 
         // 2. 模块菜单
         var nodes = _module.GetMenuItems().ToList();
+        // 主程序统一追加全局项  ← 关键
+        GlobalMenuProvider.AttachTo(nodes);
         foreach (var node in nodes)
         {
             var vm = CreateMenuNode(node);

@@ -25,3 +25,8 @@ E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\SharedStyles.baml
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\Effects.baml
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\TextStyles.baml
 E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\ComboBoxes.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\DarkSidebar.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\WPF_MES.Shared_MarkupCompile.lref
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\Converters.baml
+E:\Git\WPF_MES\WPF_MES.Shared\obj\Debug\net10.0-windows\Themes\ScrollBars.baml

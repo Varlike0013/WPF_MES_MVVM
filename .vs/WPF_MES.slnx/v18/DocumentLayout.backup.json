@@ -3,52 +3,72 @@
   "WorkspaceRootPath": "E:\\Git\\WPF_MES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\services\\globalmenuprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\services\\globalmenuprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\viewmodels\\shareinfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\viewmodels\\shareinfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\statustagview.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\statustagview.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\network\\networkshareconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\network\\networkshareconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\themes\\sharedstyles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\themes\\sharedstyles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\shareinfoview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\shareinfoview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\themes\\textstyles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\themes\\textstyles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\viewmodels\\shellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\viewmodels\\shellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\statustagview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\statustagview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\shareinfoview.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\shareinfoview.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\themes\\comboboxes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\themes\\comboboxes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\themes\\converters.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\themes\\converters.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\themes\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\themes\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\networkloginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\networkloginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\themes\\datagrids.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\themes\\datagrids.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\networkloginwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\networkloginwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\themes\\buttons.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\themes\\buttons.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\networkloginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\networkloginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\themes\\effects.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\themes\\effects.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\converters\\base64toimageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\converters\\base64toimageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\models\\sharenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\models\\sharenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\services\\sharefileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\services\\sharefileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|e:\\git\\wpf_mes\\wpf_mes.shared\\models\\sharetreedocument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013D7F27-10AF-4695-9258-70AEBCA2E06C}|WPF_MES.Shared\\WPF_MES.Shared.csproj|solutionrelative:wpf_mes.shared\\models\\sharetreedocument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\shellwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\shellwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +86,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 16,
               "Title": "SajetModule.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\SajetModule.cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\SajetModule.cs",
@@ -80,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "OracleHelper.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
@@ -93,43 +113,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\LoginWindow.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\LoginWindow.xaml",
-              "RelativeToolTip": "WPF_MES_MVVM\\Views\\LoginWindow.xaml",
+              "DocumentIndex": 3,
+              "Title": "ShareInfoView.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\ShareInfoView.xaml",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\ShareInfoView.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\ShareInfoView.xaml",
+              "RelativeToolTip": "WPF_MES_MVVM\\Views\\ShareInfoView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:53:32.736Z",
+              "WhenOpened": "2026-10-08T08:36:00.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StatusTagView.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
+              "DocumentIndex": 14,
+              "Title": "ShellWindow.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\ShellWindow.xaml",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\ShellWindow.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\ShellWindow.xaml",
+              "RelativeToolTip": "WPF_MES_MVVM\\Views\\ShellWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:17:00.703Z",
+              "WhenOpened": "2026-10-08T03:03:25.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NetworkLoginWindow.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml",
+              "RelativeToolTip": "WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-08T08:25:39.132Z",
               "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 211,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "SajetCommonService .cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "RelativeToolTip": "WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAqwFYAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAqwE0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-24T01:59:04.928Z",
               "IsPinned": true,
@@ -137,100 +169,157 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StatusTagView.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
-              "ViewState": "AgIAACgAAAAAAAAAAAApwDgAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:17:08.844Z",
-              "IsPinned": true,
+              "DocumentIndex": 4,
+              "Title": "ShellViewModel.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\ShellViewModel.cs",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\ViewModels\\ShellViewModel.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\ShellViewModel.cs",
+              "RelativeToolTip": "WPF_MES_MVVM\\ViewModels\\ShellViewModel.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAcwFgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:38:33.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ComboBoxes.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\ComboBoxes.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Shared\\Themes\\ComboBoxes.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\ComboBoxes.xaml",
-              "RelativeToolTip": "WPF_MES.Shared\\Themes\\ComboBoxes.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:47:24.459Z",
+              "DocumentIndex": 0,
+              "Title": "GlobalMenuProvider.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
+              "RelativeToolTip": "WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAwDsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:37:40.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShareInfoViewModel.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\ShareInfoViewModel.cs",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\ViewModels\\ShareInfoViewModel.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\ShareInfoViewModel.cs",
+              "RelativeToolTip": "WPF_MES_MVVM\\ViewModels\\ShareInfoViewModel.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAwwL0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:27:24.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Buttons.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\Buttons.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Shared\\Themes\\Buttons.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\Buttons.xaml",
-              "RelativeToolTip": "WPF_MES.Shared\\Themes\\Buttons.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:29:50.791Z",
+              "Title": "NetworkLoginWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml.cs",
+              "RelativeToolTip": "WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:26:52.522Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SharedStyles.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\SharedStyles.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Shared\\Themes\\SharedStyles.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\SharedStyles.xaml",
-              "RelativeToolTip": "WPF_MES.Shared\\Themes\\SharedStyles.xaml",
+              "DocumentIndex": 6,
+              "Title": "Converters.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\Converters.xaml",
+              "RelativeDocumentMoniker": "WPF_MES.Shared\\Themes\\Converters.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\Converters.xaml",
+              "RelativeToolTip": "WPF_MES.Shared\\Themes\\Converters.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:29:45.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DataGrids.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\DataGrids.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Shared\\Themes\\DataGrids.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\DataGrids.xaml",
-              "RelativeToolTip": "WPF_MES.Shared\\Themes\\DataGrids.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:28:29.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TextStyles.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\TextStyles.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Shared\\Themes\\TextStyles.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\TextStyles.xaml",
-              "RelativeToolTip": "WPF_MES.Shared\\Themes\\TextStyles.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:27:31.029Z",
+              "WhenOpened": "2026-10-08T08:23:59.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Effects.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\Effects.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Shared\\Themes\\Effects.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\Effects.xaml",
-              "RelativeToolTip": "WPF_MES.Shared\\Themes\\Effects.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:26:53.004Z",
+              "Title": "Base64ToImageConverter.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Converters\\Base64ToImageConverter.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Shared\\Converters\\Base64ToImageConverter.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Converters\\Base64ToImageConverter.cs",
+              "RelativeToolTip": "WPF_MES.Shared\\Converters\\Base64ToImageConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:22:03.599Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Colors.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\Colors.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Shared\\Themes\\Colors.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Themes\\Colors.xaml",
-              "RelativeToolTip": "WPF_MES.Shared\\Themes\\Colors.xaml",
+              "DocumentIndex": 12,
+              "Title": "ShareFileService.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Services\\ShareFileService.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Shared\\Services\\ShareFileService.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Services\\ShareFileService.cs",
+              "RelativeToolTip": "WPF_MES.Shared\\Services\\ShareFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:17:03.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ShareTreeDocument.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Models\\ShareTreeDocument.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Shared\\Models\\ShareTreeDocument.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Models\\ShareTreeDocument.cs",
+              "RelativeToolTip": "WPF_MES.Shared\\Models\\ShareTreeDocument.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:15:40.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ShareNode.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Models\\ShareNode.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Shared\\Models\\ShareNode.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Models\\ShareNode.cs",
+              "RelativeToolTip": "WPF_MES.Shared\\Models\\ShareNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:14:42.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShareInfoView.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\ShareInfoView.xaml",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\ShareInfoView.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\ShareInfoView.xaml",
+              "RelativeToolTip": "WPF_MES_MVVM\\Views\\ShareInfoView.xaml",
+              "ViewState": "AgIAAK0AAAAAAAAAAAD4v7wAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-29T11:26:33.676Z",
+              "WhenOpened": "2026-10-08T08:28:26.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NetworkLoginWindow.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml",
+              "RelativeToolTip": "WPF_MES_MVVM\\Views\\NetworkLoginWindow.xaml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-08T08:25:47.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NetworkShareConnector.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Network\\NetworkShareConnector.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Shared\\Network\\NetworkShareConnector.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Shared\\Network\\NetworkShareConnector.cs",
+              "RelativeToolTip": "WPF_MES.Shared\\Network\\NetworkShareConnector.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAUwE0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:12:52.125Z",
               "EditorCaption": ""
             }
           ]

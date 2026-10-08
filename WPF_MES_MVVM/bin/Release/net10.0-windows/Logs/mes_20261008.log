@@ -1,0 +1,67 @@
+﻿2026-10-08 14:55:36.250 [INFO] [START] Args=
+2026-10-08 14:55:36.250 [INFO] [START] Console=False
+2026-10-08 14:55:36.284 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-08 14:55:36.285 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-08 14:55:36.285 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-08 14:55:36.285 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-08 14:55:36.291 [INFO] [CONFIG] File not found, use default: login.json
+2026-10-08 14:55:56.993 [INFO] [CONFIG] Saved: login.json
+2026-10-08 14:55:57.036 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-08 14:55:57.041 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-08 14:56:39.009 [INFO] [EXIT] Shell closed, exiting.
+2026-10-08 14:56:39.032 [INFO] [EXIT] Application exiting.
+2026-10-08 15:49:24.865 [INFO] [START] Args=
+2026-10-08 15:49:24.866 [INFO] [START] Console=False
+2026-10-08 15:49:25.061 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-08 15:49:25.062 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-08 15:49:25.062 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-08 15:49:25.062 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-08 15:49:25.445 [INFO] [CONFIG] Loaded: login.json
+2026-10-08 15:49:34.601 [INFO] [CONFIG] Saved: login.json
+2026-10-08 15:49:34.761 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-08 15:49:34.766 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-08 16:02:05.026 [INFO] [EXIT] Shell closed, exiting.
+2026-10-08 16:02:05.048 [INFO] [EXIT] Application exiting.
+2026-10-08 18:46:03.827 [INFO] [START] Args=
+2026-10-08 18:46:03.828 [INFO] [START] Console=False
+2026-10-08 18:46:04.058 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-08 18:46:04.058 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-08 18:46:04.059 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-08 18:46:04.059 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-08 18:46:04.388 [INFO] [CONFIG] Loaded: login.json
+2026-10-08 18:46:13.319 [INFO] [CONFIG] Saved: login.json
+2026-10-08 18:46:13.499 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-08 18:46:13.517 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-08 18:46:25.280 [INFO] [CARTON] WQC result: carton=266G001440, result=OK
+2026-10-08 18:46:58.487 [INFO] [RQ] Search: floor=ALL, start=2026-10-01, kw=, unfinished=False, count=15
+2026-10-08 18:47:04.590 [INFO] [RQ] Reply: idx=822877, emp=D360749, reply=OK, affected=1
+2026-10-08 18:47:05.366 [INFO] [RQ] Search: floor=ALL, start=2026-10-01, kw=, unfinished=False, count=15
+2026-10-08 18:47:09.804 [INFO] [RQ] Reply: idx=822878, emp=D360749, reply=OK, affected=1
+2026-10-08 18:47:10.550 [INFO] [RQ] Search: floor=ALL, start=2026-10-01, kw=, unfinished=False, count=15
+2026-10-08 18:47:13.693 [INFO] [RQ] Reply: idx=822879, emp=D360749, reply=OK, affected=1
+2026-10-08 18:47:14.465 [INFO] [RQ] Search: floor=ALL, start=2026-10-01, kw=, unfinished=False, count=15
+2026-10-08 18:47:18.478 [INFO] [RQ] Reply: idx=822880, emp=D360749, reply=OK, affected=1
+2026-10-08 18:47:19.327 [INFO] [RQ] Search: floor=ALL, start=2026-10-01, kw=, unfinished=False, count=15
+2026-10-08 18:51:46.725 [INFO] [SERVER-IP] Export OK: C:\Users\leihuang.ECS\Desktop\TGS_SERVER_IPS.csv
+2026-10-08 19:05:14.760 [INFO] [EXIT] Shell closed, exiting.
+2026-10-08 19:05:14.796 [INFO] [EXIT] Application exiting.
+2026-10-08 19:12:47.391 [INFO] [START] Args=
+2026-10-08 19:12:47.392 [INFO] [START] Console=False
+2026-10-08 19:12:47.430 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-08 19:12:47.430 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-08 19:12:47.430 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-08 19:12:47.430 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-08 19:12:47.524 [INFO] [CONFIG] Loaded: login.json
+2026-10-08 19:12:54.013 [INFO] [CONFIG] Saved: login.json
+2026-10-08 19:12:54.118 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-08 19:12:54.134 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-08 19:13:13.720 [INFO] [SHARE] Connect: True - 已可直接访问
+2026-10-08 19:13:13.756 [INFO] [SHARE] Loaded 0 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-08 19:13:20.545 [INFO] [SHARE] PickImage called. SelectedNode=新根节点
+2026-10-08 19:15:23.677 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-08 19:15:32.812 [INFO] [SHARE] Loaded 1 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-08 19:15:47.373 [INFO] [SHARE] PickImage called. SelectedNode=TGS&Reel服务器IP
+2026-10-08 19:15:51.748 [INFO] [SHARE] PickImage called. SelectedNode=TGS&Reel服务器IP
+2026-10-08 19:15:59.031 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-08 19:16:13.718 [INFO] [EXIT] Shell closed, exiting.
+2026-10-08 19:16:13.723 [INFO] [EXIT] Application exiting.

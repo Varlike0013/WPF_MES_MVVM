@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WPF_MES.Module.GEDTA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09dfb45dc341b140b8b2e44b5a6e6053c00baa7c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bcf841f6202f7880233357b1ef3ee13febb27dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPF_MES.Module.GEDTA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPF_MES.Module.GEDTA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

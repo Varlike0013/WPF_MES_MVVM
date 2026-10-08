@@ -2,16 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WPF_MES_MVVM"
-             xmlns:conv="clr-namespace:WPF_MES_MVVM.Converters"
              ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/WPF_MES.Shared;component/Themes/SharedStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
-            <conv:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
-            <conv:InverseBoolConverter x:Key="InverseBool"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
