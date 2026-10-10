@@ -7,9 +7,15 @@ public partial class NetworkLoginWindow : Window
     public string UserName { get; private set; } = string.Empty;
     public string Password { get; private set; } = string.Empty;
 
-    public NetworkLoginWindow(string path)
+    /// <summary>无参构造：Designer 预览 / 反射用</summary>
+    public NetworkLoginWindow()
     {
         InitializeComponent();
+    }
+
+    /// <summary>带参构造：正常业务入口</summary>
+    public NetworkLoginWindow(string path) : this()
+    {
         txtPath.Text = path;
     }
 

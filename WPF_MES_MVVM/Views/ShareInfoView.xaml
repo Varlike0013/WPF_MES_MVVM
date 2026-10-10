@@ -197,15 +197,25 @@
                             </StackPanel>
 
                             <Border Background="#FAFAFA"
-                                    BorderBrush="{StaticResource CardBorderBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="4"
-                                    MinHeight="180"
-                                    Padding="8"
-                                    Margin="0,0,0,16">
-                                <Image Source="{Binding SelectedNode.ImageBase64, Converter={StaticResource Base64ToImage}}"
-                                       Stretch="Uniform"
-                                       MaxHeight="300"/>
+                                BorderBrush="{StaticResource CardBorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="4"
+                                Height="400"
+                                Padding="8"
+                                Margin="0,0,0,16">
+                                <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                                        VerticalScrollBarVisibility="Auto">
+                                    <Image x:Name="imgPreview"
+                                           Source="{Binding SelectedNode.ImageBase64, Converter={StaticResource Base64ToImage}}"
+                                           Stretch="Uniform"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top"
+                                           RenderTransformOrigin="0,0">
+                                        <Image.RenderTransform>
+                                            <ScaleTransform x:Name="imgScale" ScaleX="1" ScaleY="1"/>
+                                        </Image.RenderTransform>
+                                    </Image>
+                                </ScrollViewer>
                             </Border>
 
                             <TextBlock Foreground="{StaticResource TextSecondaryBrush}"

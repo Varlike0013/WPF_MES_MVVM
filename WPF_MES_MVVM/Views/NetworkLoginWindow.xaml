@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="访问网络共享"
-        Width="420" Height="300"
+        Width="420" Height="400"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
         FontFamily="Microsoft YaHei"
@@ -18,7 +18,7 @@
                 <Setter Property="FontSize" Value="12"/>
                 <Setter Property="FontWeight" Value="SemiBold"/>
                 <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
-                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Margin" Value="0,0,0,6"/>
             </Style>
         </ResourceDictionary>
     </Window.Resources>
@@ -31,25 +31,26 @@
                 Margin="16" Padding="20"
                 Effect="{StaticResource SoftShadow}">
             <StackPanel>
-                <TextBlock Text="访问网络共享" FontSize="16" FontWeight="Bold"
+                <TextBlock Text="访问网络共享"
+                           FontSize="16" FontWeight="Bold"
                            Foreground="{StaticResource PrimaryBrush}"
-                           Margin="0,0,0,16"/>
+                           Margin="0,0,0,20"/>
 
                 <TextBlock Text="共享路径" Style="{StaticResource Lbl}"/>
                 <TextBox x:Name="txtPath" Height="30" IsReadOnly="True"
                          Background="#F5F5F5"
                          Padding="8,0" VerticalContentAlignment="Center"
-                         Margin="0,0,0,12"/>
+                         Margin="0,0,0,14"/>
 
                 <TextBlock Text="用户名" Style="{StaticResource Lbl}"/>
                 <TextBox x:Name="txtUser" Height="30"
                          Padding="8,0" VerticalContentAlignment="Center"
-                         Margin="0,0,0,12"/>
+                         Margin="0,0,0,14"/>
 
                 <TextBlock Text="密码" Style="{StaticResource Lbl}"/>
                 <PasswordBox x:Name="txtPwd" Height="30"
                              Padding="8,0" VerticalContentAlignment="Center"
-                             Margin="0,0,0,20"/>
+                             Margin="0,0,0,24"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="取消" Width="80" Height="30"

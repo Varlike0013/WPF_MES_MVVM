@@ -47,13 +47,15 @@ public partial class App : Application
         RunLoginLoop(modules);
     }
     /// <summary>
-    /// 登录 → Shell 循环。注销后回到登录，退出则结束。
+    /// 登录 → 主界面 循环。注销后回到登录，退出则结束。
     /// </summary>
     private void RunLoginLoop(List<IModule> modules)
     {
         while (true)
         {
-            // ============ 1. 登录 ============
+            // ============================================================
+            // 1. 登录
+            // ============================================================
             var loginVm = new LoginViewModel(modules);
             var login = new LoginWindow { DataContext = loginVm };
 
@@ -77,36 +79,76 @@ public partial class App : Application
                 return;
             }
 
-            Logger.Info($"[LOGIN OK] Module={selectedModule.ModuleKey}, " +
-                        $"UserNo={loginResult.UserNo}");
+            Logger.Info($"[LOGIN OK] Module={selectedModule.ModuleKey}, UserNo={loginResult.UserNo}");
 
-            // ============ 2. Shell ============
-            bool isLogout = false;
+            // ============================================================
+            // 2. 主界面分流
+            // ============================================================
+            bool needRelogin = false;
 
-            var shellVm = new ShellViewModel(selectedModule, loginResult);
-            var shell = new ShellWindow { DataContext = shellVm };
-
-            shellVm.LogoutRequested += () =>
+            if (selectedModule is IStandaloneWindowModule standalone)
             {
-                isLogout = true;
-                Logger.Info("[LOGOUT] User requested logout.");
-                shell.Close();
-            };
-
-            shell.ShowDialog();
-
-            // ============ 3. 判断 ============
-            if (!isLogout)
+                // ---- 独立窗口模块（AOI 等）----
+                needRelogin = RunStandaloneWindow(standalone, loginResult);
+            }
+            else
             {
-                // 用户点"退出"或关闭窗口
-                Logger.Info("[EXIT] Shell closed, exiting.");
+                // ---- 菜单式模块（SAJET 等）----
+                needRelogin = RunShellWindow(selectedModule, loginResult);
+            }
+
+            // ============================================================
+            // 3. 循环判断
+            // ============================================================
+            if (!needRelogin)
+            {
+                Logger.Info("[EXIT] Program exit.");
                 Shutdown();
                 return;
             }
 
-            // 否则是注销 → 循环回登录
             Logger.Info("[LOGOUT] Back to login.");
         }
+    }
+
+    /// <summary>
+    /// 打开独立窗口模块。
+    /// 返回 true → 回到登录；返回 false → 退出程序。
+    /// 独立窗口默认关闭即退出，不支持注销。
+    /// </summary>
+    private bool RunStandaloneWindow(IStandaloneWindowModule standalone, LoginResult loginResult)
+    {
+        Logger.Info($"[OPEN] Standalone window for {standalone.GetType().Name}");
+        var win = standalone.CreateMainWindow(loginResult.UserName);
+        win.ShowDialog();
+
+        // 目前独立窗口不支持注销：关闭即退出
+        // 若将来要支持，可在 Window 里暴露事件，参照 Shell 的 LogoutRequested 模式
+        Logger.Info("[EXIT] Standalone window closed.");
+        return false;
+    }
+
+    /// <summary>
+    /// 打开 Shell 窗口。
+    /// 返回 true → 用户点了注销，回到登录；返回 false → 用户关闭窗口，退出程序。
+    /// </summary>
+    private bool RunShellWindow(IModule module, LoginResult loginResult)
+    {
+        bool isLogout = false;
+
+        var shellVm = new ShellViewModel(module, loginResult);
+        var shell = new ShellWindow { DataContext = shellVm };
+
+        shellVm.LogoutRequested += () =>
+        {
+            isLogout = true;
+            Logger.Info("[LOGOUT] User requested logout.");
+            shell.Close();
+        };
+
+        shell.ShowDialog();
+
+        return isLogout;
     }
     protected override void OnExit(ExitEventArgs e)
     {

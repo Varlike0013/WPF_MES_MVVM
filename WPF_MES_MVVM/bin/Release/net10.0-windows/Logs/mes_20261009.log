@@ -1,0 +1,301 @@
+﻿2026-10-09 08:01:35.149 [INFO] [START] Args=
+2026-10-09 08:01:35.150 [INFO] [START] Console=False
+2026-10-09 08:01:35.378 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 08:01:35.378 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 08:01:35.378 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 08:01:35.378 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 08:01:35.755 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 08:01:59.208 [INFO] [CONFIG] Saved: login.json
+2026-10-09 08:01:59.323 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 08:01:59.326 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 08:02:22.146 [INFO] [TGS] Query: type=0, input=246, jobs=8
+2026-10-09 08:02:26.993 [INFO] [TGS] LoadSource start: procName=SAJET.CHECK_REPAIR_SN, RichTextBox=True
+2026-10-09 08:02:27.020 [INFO] [TGS] LoadSource got 7002 chars
+2026-10-09 08:02:27.041 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 09:28:10.374 [INFO] [WO] Query input=24527126-20.1-001-SN, type=0, status=7, count=0
+2026-10-09 09:28:11.754 [INFO] [WO] Query input=24527126-20.1-001-S, type=0, status=7, count=1
+2026-10-09 09:28:21.136 [INFO] [WO] Update OK: 24527126-20.1-001-S, status=3, route=PCB_INPUT -> SVI, line=B33F01
+2026-10-09 09:28:27.623 [INFO] [WO-DETAIL] Status SN count = 3000
+2026-10-09 09:28:27.623 [INFO] [WO-DETAIL] 24527126-20.1-001-S loaded, mode=0
+2026-10-09 09:28:36.720 [INFO] [WO-DETAIL] Travel SN count = 3000
+2026-10-09 09:28:38.381 [INFO] [WO-DETAIL] Travel SN count = 3000
+2026-10-09 09:28:38.381 [INFO] [WO-DETAIL] 24527126-20.1-001-S loaded, mode=1
+2026-10-09 09:28:39.711 [INFO] [WO-DETAIL] Travel SN count = 3000
+2026-10-09 09:28:39.711 [INFO] [WO-DETAIL] 24527126-20.1-001-S loaded, mode=1
+2026-10-09 09:31:11.709 [INFO] [WO-DETAIL] Status SN count = 3000
+2026-10-09 09:31:12.884 [INFO] [WO-DETAIL] Status SN count = 3000
+2026-10-09 09:31:12.884 [INFO] [WO-DETAIL] 24527126-20.1-001-S loaded, mode=0
+2026-10-09 09:31:17.471 [INFO] [WO-DETAIL] Travel SN count = 3000
+2026-10-09 09:31:18.891 [INFO] [WO-DETAIL] Travel SN count = 3000
+2026-10-09 09:31:18.891 [INFO] [WO-DETAIL] 24527126-20.1-001-S loaded, mode=1
+2026-10-09 10:01:05.762 [INFO] [EXIT] Shell closed, exiting.
+2026-10-09 10:01:05.843 [INFO] [EXIT] Application exiting.
+2026-10-09 10:02:57.005 [INFO] [START] Args=
+2026-10-09 10:02:57.006 [INFO] [START] Console=False
+2026-10-09 10:02:57.117 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 10:02:57.117 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 10:02:57.117 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 10:02:57.117 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 10:02:57.117 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 10:02:57.117 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 10:02:57.399 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 10:03:12.068 [INFO] [CONFIG] Saved: login.json
+2026-10-09 10:03:12.243 [INFO] [LOGIN OK] Module=AOI, UserNo=D360749
+2026-10-09 10:03:12.246 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 10:03:17.807 [INFO] [EXIT] Shell closed, exiting.
+2026-10-09 10:03:17.812 [INFO] [EXIT] Application exiting.
+2026-10-09 10:23:53.707 [INFO] [START] Args=
+2026-10-09 10:23:53.708 [INFO] [START] Console=False
+2026-10-09 10:23:53.755 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 10:23:53.755 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 10:23:53.755 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 10:23:53.756 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 10:23:53.756 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 10:23:53.756 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 10:23:53.861 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 10:24:01.195 [INFO] [CONFIG] Saved: login.json
+2026-10-09 10:24:01.361 [INFO] [LOGIN OK] Module=AOI, UserNo=D360749
+2026-10-09 10:24:01.366 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 10:24:03.841 [INFO] [EXIT] Shell closed, exiting.
+2026-10-09 10:24:04.047 [INFO] [EXIT] Application exiting.
+2026-10-09 10:27:10.623 [INFO] [START] Args=
+2026-10-09 10:27:10.624 [INFO] [START] Console=False
+2026-10-09 10:27:10.863 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 10:27:10.863 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 10:27:10.863 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 10:27:10.863 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 10:27:10.863 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 10:27:10.863 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 10:27:11.170 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 10:27:27.385 [INFO] [CONFIG] Saved: login.json
+2026-10-09 10:27:27.507 [INFO] [LOGIN OK] Module=AOI, UserNo=D360749
+2026-10-09 10:27:27.507 [INFO] [OPEN] Standalone window for AoiModule
+2026-10-09 10:27:27.657 [INFO] [CONFIG] File not found, use default: aoi.json
+2026-10-09 10:27:31.560 [INFO] [EXIT] Standalone window closed.
+2026-10-09 10:27:31.560 [INFO] [EXIT] Program exit.
+2026-10-09 10:27:31.565 [INFO] [EXIT] Application exiting.
+2026-10-09 10:27:36.356 [INFO] [START] Args=
+2026-10-09 10:27:36.357 [INFO] [START] Console=False
+2026-10-09 10:27:36.406 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 10:27:36.406 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 10:27:36.406 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 10:27:36.406 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 10:27:36.406 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 10:27:36.406 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 10:27:36.510 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 10:27:44.709 [INFO] [CONFIG] Saved: login.json
+2026-10-09 10:27:44.797 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 10:27:44.810 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 10:27:47.310 [INFO] [LOGOUT] User requested logout.
+2026-10-09 10:27:47.359 [INFO] [LOGOUT] Back to login.
+2026-10-09 10:27:47.362 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 10:27:50.704 [INFO] [LOGIN] Cancelled, exiting.
+2026-10-09 10:27:50.707 [INFO] [EXIT] Application exiting.
+2026-10-09 10:39:47.486 [INFO] [START] Args=
+2026-10-09 10:39:47.487 [INFO] [START] Console=False
+2026-10-09 10:39:47.538 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 10:39:47.538 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 10:39:47.538 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 10:39:47.538 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 10:39:47.538 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 10:39:47.538 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 10:39:47.645 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 10:39:54.102 [INFO] [CONFIG] Saved: login.json
+2026-10-09 10:39:54.204 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 10:39:54.210 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 10:41:43.069 [INFO] [EXIT] Program exit.
+2026-10-09 10:41:43.098 [INFO] [EXIT] Application exiting.
+2026-10-09 10:44:07.507 [INFO] [START] Args=
+2026-10-09 10:44:07.507 [INFO] [START] Console=False
+2026-10-09 10:44:07.555 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 10:44:07.555 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 10:44:07.555 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 10:44:07.556 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 10:44:07.556 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 10:44:07.556 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 10:44:07.659 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 10:44:13.923 [INFO] [CONFIG] Saved: login.json
+2026-10-09 10:44:14.004 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 10:44:14.011 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 10:44:36.117 [INFO] [SERVER-IP] Export OK: C:\Users\leihuang.ECS\Desktop\TGS_SERVER_IPS.csv
+2026-10-09 10:49:07.945 [INFO] [EXIT] Program exit.
+2026-10-09 10:49:07.966 [INFO] [EXIT] Application exiting.
+2026-10-09 11:00:07.349 [INFO] [START] Args=
+2026-10-09 11:00:07.351 [INFO] [START] Console=False
+2026-10-09 11:00:07.396 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 11:00:07.396 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 11:00:07.397 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 11:00:07.397 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 11:00:07.397 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 11:00:07.397 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 11:00:07.501 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 11:00:15.560 [INFO] [CONFIG] Saved: login.json
+2026-10-09 11:00:15.653 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 11:00:15.657 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 11:00:24.315 [INFO] [SHARE] Loaded 1 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:02:38.696 [INFO] [SHARE] PickImage called. SelectedNode=电子看板
+2026-10-09 11:03:32.817 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:04:25.631 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:04:54.073 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:06:08.976 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:07:02.065 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:07:16.490 [INFO] [TGS] Query: type=0, input=538, jobs=9
+2026-10-09 11:07:47.399 [INFO] [SHARE] PickImage called. SelectedNode=538：常规
+2026-10-09 11:07:55.342 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:10:01.000 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:11:48.612 [INFO] [TGS] Query: type=0, input=655, jobs=3
+2026-10-09 11:12:10.806 [INFO] [SHARE] PickImage called. SelectedNode=655:CMD，单输入行为
+2026-10-09 11:12:59.042 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:13:28.337 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:13:44.836 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 11:29:21.862 [INFO] [SHARE] PickImage called. SelectedNode=无线枪开关和重启
+2026-10-09 11:30:08.750 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 13:38:04.574 [INFO] [STATUS] Match: 260981097011372 -> 260981097011372
+2026-10-09 13:47:31.178 [INFO] [STATUS] Match: 226110200 180817 -> 260981097011019
+2026-10-09 14:28:36.989 [INFO] [EXIT] Program exit.
+2026-10-09 14:28:37.057 [INFO] [EXIT] Application exiting.
+2026-10-09 14:32:58.697 [INFO] [START] Args=
+2026-10-09 14:32:58.698 [INFO] [START] Console=False
+2026-10-09 14:32:58.860 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 14:32:58.861 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 14:32:58.861 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 14:32:58.861 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 14:32:58.861 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 14:32:58.861 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 14:32:58.967 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 14:33:06.755 [INFO] [CONFIG] Saved: login.json
+2026-10-09 14:33:06.828 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 14:33:06.833 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 14:33:14.789 [INFO] [SHARE] Loaded 4 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 14:34:59.227 [INFO] [EXIT] Program exit.
+2026-10-09 14:34:59.232 [INFO] [EXIT] Application exiting.
+2026-10-09 14:57:50.076 [INFO] [START] Args=
+2026-10-09 14:57:50.099 [INFO] [START] Console=False
+2026-10-09 14:57:50.212 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 14:57:50.212 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 14:57:50.213 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 14:57:50.213 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 14:57:50.213 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 14:57:50.213 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 14:57:50.432 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 14:57:58.681 [INFO] [CONFIG] Saved: login.json
+2026-10-09 14:57:58.907 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 14:57:58.915 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 14:58:18.859 [INFO] [TGS] Query: type=0, input=264, jobs=6
+2026-10-09 14:58:21.605 [INFO] [TGS] Query: type=0, input=267, jobs=5
+2026-10-09 14:58:44.350 [INFO] [TGS] Query: type=0, input=246, jobs=8
+2026-10-09 14:58:46.042 [INFO] [TGS] LoadSource start: procName=SAJET.CHECK_REPAIR_SN, RichTextBox=True
+2026-10-09 14:58:46.060 [INFO] [TGS] LoadSource got 7002 chars
+2026-10-09 14:58:46.083 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 15:07:03.553 [INFO] [SMTREEL] Refreshing sites/lines from DB...
+2026-10-09 15:07:17.376 [INFO] [RQ] Search: floor=ALL, start=2026-10-02, kw=, unfinished=False, count=25
+2026-10-09 15:07:27.403 [INFO] [CACHE] Saved 4136 items to SmtReel/sites
+2026-10-09 15:07:27.468 [INFO] [CACHE] Saved 113 items to SmtReel/lines
+2026-10-09 15:07:27.468 [INFO] [SMTREEL] Refreshed: sites=4136, lines=113
+2026-10-09 15:10:12.649 [INFO] [EXIT] Program exit.
+2026-10-09 15:10:12.731 [INFO] [EXIT] Application exiting.
+2026-10-09 15:10:37.412 [INFO] [START] Args=
+2026-10-09 15:10:37.413 [INFO] [START] Console=False
+2026-10-09 15:10:37.466 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 15:10:37.466 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 15:10:37.466 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 15:10:37.466 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 15:10:37.466 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 15:10:37.466 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 15:10:37.585 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 15:10:45.319 [INFO] [CONFIG] Saved: login.json
+2026-10-09 15:10:45.437 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 15:10:45.471 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 15:11:43.621 [INFO] [STATUS] Match: 88AEDDCE7B56 -> 88AEDDCE7B56
+2026-10-09 15:19:44.988 [INFO] [EXIT] Program exit.
+2026-10-09 15:19:45.055 [INFO] [EXIT] Application exiting.
+2026-10-09 15:20:36.391 [INFO] [START] Args=
+2026-10-09 15:20:36.392 [INFO] [START] Console=False
+2026-10-09 15:20:36.519 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 15:20:36.519 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 15:20:36.520 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 15:20:36.520 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 15:20:36.520 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-09 15:20:36.520 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-09 15:20:36.881 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 15:20:49.088 [INFO] [CONFIG] Saved: login.json
+2026-10-09 15:20:49.221 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 15:20:49.227 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 15:21:07.282 [INFO] [WO] Query input=88AEDDCE7B56, type=4, status=7, count=2
+2026-10-09 15:21:18.771 [INFO] [WO-DETAIL] Not found: 88AEDDCE7B56
+2026-10-09 15:21:29.514 [INFO] [WO-DETAIL] Status SN count = 36
+2026-10-09 15:21:29.514 [INFO] [WO-DETAIL] 44901006-2.1-003-D loaded, mode=0
+2026-10-09 15:21:35.634 [INFO] [WO-DETAIL] Travel SN count = 2000
+2026-10-09 15:21:36.951 [INFO] [WO-DETAIL] Travel SN count = 2000
+2026-10-09 15:21:36.951 [INFO] [WO-DETAIL] 44901006-2.1-003-D loaded, mode=1
+2026-10-09 15:26:47.981 [INFO] [EXIT] Program exit.
+2026-10-09 15:26:48.045 [INFO] [EXIT] Application exiting.
+2026-10-09 15:44:57.074 [INFO] [START] Args=
+2026-10-09 15:44:57.511 [INFO] [START] Console=False
+2026-10-09 15:45:01.620 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 15:42026-10-09 15:45:01.623 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-09 15:45:01.623 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-09 15:45:01.623 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-09 15:45:01.623 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-09 15:45:01.623 [INFO] [MODULE] Loaded: GEDTA - GEDTA �2026-10-09 15:45:03.883 [INFO] [CONFIG] Loaded: login.json
+2026-10-09 15:45:43.324 [INFO] [CONFIG] Saved: login.json
+2026-10-09 15:45:43.666 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-09 15:45:43.670 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-09 15:45:53.597 [INFO] [SHARE] Loaded 4 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-09 16:08:41.103 [INFO] [TGS] Query: type=0, input=651, jobs=54
+2026-10-09 16:08:43.446 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_SN, RichTextBox=True
+2026-10-09 16:08:43.535 [INFO] [TGS] LoadSource got 797 chars
+2026-10-09 16:08:43.539 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:09:02.326 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_ROUTE2, RichTextBox=True
+2026-10-09 16:09:02.333 [INFO] [TGS] LoadSource got 2595 chars
+2026-10-09 16:09:02.336 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:09:03.309 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_SN, RichTextBox=True
+2026-10-09 16:09:03.312 [INFO] [TGS] LoadSource got 797 chars
+2026-10-09 16:09:03.313 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:09:03.982 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_ROUTE2, RichTextBox=True
+2026-10-09 16:09:03.985 [INFO] [TGS] LoadSource got 2595 chars
+2026-10-09 16:09:03.986 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:09:04.688 [INFO] [TGS] LoadSource start: procName=SAJET.CHECK_REPAIR_EMP, RichTextBox=True
+2026-10-09 16:09:04.691 [INFO] [TGS] LoadSource got 1251 chars
+2026-10-09 16:09:04.692 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:09:23.120 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_REPAIR_CHK_DEFECT, RichTextBox=True
+2026-10-09 16:09:23.128 [INFO] [TGS] LoadSource got 5767 chars
+2026-10-09 16:09:23.131 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:20:14.180 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKSYS_DEFECT, RichTextBox=True
+2026-10-09 16:20:14.183 [INFO] [TGS] LoadSource got 379 chars
+2026-10-09 16:20:14.188 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:20:31.740 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_REPAIR_IN_DEFECT, RichTextBox=True
+2026-10-09 16:20:31.743 [INFO] [TGS] LoadSource got 741 chars
+2026-10-09 16:20:31.747 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:20:37.227 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_REPAIR_CHK_MOREDEFECT, RichTextBox=True
+2026-10-09 16:20:37.231 [INFO] [TGS] LoadSource got 716 chars
+2026-10-09 16:20:37.232 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:20:37.979 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_REPAIR_IN_DEFECT, RichTextBox=True
+2026-10-09 16:20:37.980 [INFO] [TGS] LoadSource got 741 chars
+2026-10-09 16:20:37.982 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 16:21:02.886 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_REPAIR_CHK_MOREDEFECT, RichTextBox=True
+2026-10-09 16:21:02.888 [INFO] [TGS] LoadSource got 716 chars
+2026-10-09 16:21:02.893 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-09 18:54:43.182 [INFO] [FIND-ROUTE] SN=8SSB21D13672E1SZ69N0274, routes=3
+2026-10-09 18:54:51.534 [INFO] [FIND-ROUTE] dip=DIP+DAOI+ICT-P, pack=P_TVI-PACK-OQC-Lenovo, matched=3
+2026-10-09 18:55:27.545 [INFO] [MAC] ========== DeleteAll Start ==========
+2026-10-09 18:55:27.545 [INFO] [MAC] Operator   : D360749
+2026-10-09 18:55:27.545 [INFO] [MAC] Serials    : 8SSB21D13672E1SZ69N0274
+2026-10-09 18:55:27.545 [INFO] [MAC] Reworks    : (无)
+2026-10-09 18:55:27.545 [INFO] [MAC] SerialsCnt : 1
+2026-10-09 18:55:27.545 [INFO] [MAC] ReworksCnt : 0
+2026-10-09 18:55:27.611 [WARN] [MAC] DeleteAll Result: 0 records affected (no match)
+2026-10-09 18:55:27.611 [INFO] [MAC] ========== DeleteAll End ==========
+2026-10-09 18:56:12.566 [INFO] [CARTON] WQC result: carton=267G021346, result=OK
+2026-10-09 19:17:14.937 [INFO] [RQ] Search: floor=ALL, start=2026-10-02, kw=, unfinished=False, count=29
+2026-10-09 19:17:21.465 [INFO] [RQ] Reply: idx=822888, emp=D360749, reply=OK, affected=1
+2026-10-09 19:17:22.213 [INFO] [RQ] Search: floor=ALL, start=2026-10-02, kw=, unfinished=False, count=29
+2026-10-09 19:17:24.846 [INFO] [RQ] Reply: idx=822893, emp=D360749, reply=OK, affected=1
+2026-10-09 19:17:25.538 [INFO] [RQ] Search: floor=ALL, start=2026-10-02, kw=, unfinished=False, count=29
+2026-10-09 19:17:28.672 [INFO] [RQ] Reply: idx=822894, emp=D360749, reply=OK, affected=1
+2026-10-09 19:17:29.414 [INFO] [RQ] Search: floor=ALL, start=2026-10-02, kw=, unfinished=False, count=29
+2026-10-09 19:17:51.476 [INFO] [STATUS] Match: 260981097821167 -> 260981097821167
+2026-10-09 19:19:23.180 [INFO] [STATUS] Match: 260981097821167 -> 260981097821167
+2026-10-09 19:19:51.751 [INFO] [CLEAR-KP] DeleteAll OK: 1 items, affected=0
+2026-10-09 20:00:09.066 [INFO] [EXIT] Program exit.
+2026-10-09 20:00:09.110 [INFO] [EXIT] Application exiting.

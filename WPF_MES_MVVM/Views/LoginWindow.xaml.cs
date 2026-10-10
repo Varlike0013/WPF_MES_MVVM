@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using WPF_MES_MVVM.ViewModels;
 
 namespace WPF_MES_MVVM.Views;
 
@@ -11,11 +12,13 @@ public partial class LoginWindow : Window
         Loaded += OnLoaded;
     }
 
+    private LoginViewModel? Vm => DataContext as LoginViewModel;
+
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-        if (DataContext is not ViewModels.LoginViewModel vm) return;
+        if (Vm == null) return;
 
-        if (!string.IsNullOrEmpty(vm.UserNo))
+        if (!string.IsNullOrEmpty(Vm.UserNo))
             pwdBox.Focus();
         else
             cboUserNo.Focus();
@@ -35,16 +38,10 @@ public partial class LoginWindow : Window
         DoLogin();
     }
 
-    private void BtnLogin_Click(object sender, RoutedEventArgs e)
-    {
-        DoLogin();
-    }
+    private void BtnLogin_Click(object sender, RoutedEventArgs e) => DoLogin();
 
     private void DoLogin()
     {
-        if (DataContext is ViewModels.LoginViewModel vm)
-        {
-            vm.DoLogin(pwdBox.Password);
-        }
+        Vm?.DoLogin(pwdBox.Password);
     }
 }

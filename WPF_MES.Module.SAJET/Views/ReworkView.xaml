@@ -4,285 +4,393 @@
              FontFamily="Microsoft YaHei"
              FontSize="13">
 
-    <Grid>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPF_MES.Shared;component/Themes/SharedStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- 表单标签 -->
+            <Style x:Key="FormLabel" TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Style>
+
+            <!-- 卡内 GroupBox 的柔和化样式 -->
+            <Style x:Key="SoftGroupBox" TargetType="GroupBox">
+                <Setter Property="Background" Value="#FAFBFC"/>
+                <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="GroupBox">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0"
+                                        Background="Transparent"
+                                        Padding="2,0,0,6">
+                                    <ContentPresenter ContentSource="Header"
+                                                      TextElement.FontWeight="SemiBold"
+                                                      TextElement.Foreground="{StaticResource PrimaryBrush}"/>
+                                </Border>
+                                <Border Grid.Row="1"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="4"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter/>
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="{StaticResource PageBackgroundBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="380"/>
-            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="6"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- ============ 左侧操作区 ============ -->
-        <Grid Grid.Column="0" Background="White">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <!-- 顶部输入区 -->
-                <RowDefinition Height="*"/>
-                <!-- 条件列表（自适应） -->
-                <RowDefinition Height="Auto"/>
-                <!-- 底部操作区 -->
-            </Grid.RowDefinitions>
+        <!-- ============================================================
+             左侧：操作区
+             ============================================================ -->
+        <Border Grid.Column="0"
+                Background="{StaticResource CardBackgroundBrush}"
+                BorderBrush="{StaticResource CardBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="4"
+                Margin="10,10,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <!-- ========== 顶部：输入区 ========== -->
-            <StackPanel Grid.Row="0" Margin="10,10,10,5">
-
-                <!-- 新工单 -->
-                <Grid Margin="0,0,0,8">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <CheckBox Grid.Column="0"
-                              Content="新工单"
-                              IsChecked="{Binding IsNewWorkOrder}"
-                              VerticalAlignment="Center"
-                              Margin="0,0,8,0"/>
-                    <TextBox Grid.Column="1"
-                             Text="{Binding NewWorkOrder, UpdateSourceTrigger=PropertyChanged}"
-                             IsEnabled="{Binding IsNewWorkOrder}"
-                             Height="26"
-                             VerticalContentAlignment="Center"
-                             KeyDown="NewWorkOrder_KeyDown"/>
-                </Grid>
-
-                <!-- 重工单号 -->
-                <Grid Margin="0,0,0,8">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="重工单号"
-                               VerticalAlignment="Center"/>
-                    <TextBox Grid.Column="1"
-                             Text="{Binding ReworkNo, UpdateSourceTrigger=PropertyChanged}"
-                             Height="26"
-                             VerticalContentAlignment="Center"
-                             Margin="0,0,5,0"/>
-                    <Button Grid.Column="2"
-                            Content="新增"
-                            Command="{Binding GenerateReworkNoCommand}"
-                            Width="55" Height="26"/>
-                </Grid>
-
-                <!-- 条件输入 -->
-                <Grid Margin="0,0,0,8">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="90"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <ComboBox Grid.Column="0"
-                              ItemsSource="{Binding InputTypes}"
-                              SelectedItem="{Binding SelectedInputType}"
-                              DisplayMemberPath="Display"
-                              Height="26"
-                              VerticalContentAlignment="Center"/>
-                    <TextBox x:Name="txtInput"
-                             Grid.Column="1"
-                             Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
-                             Height="26"
-                             VerticalContentAlignment="Center"
-                             Margin="5,0,5,0"
-                             KeyDown="InputText_KeyDown"/>
-                    <Button Grid.Column="2"
-                            Content="清空条件"
-                            Command="{Binding ClearConditionsCommand}"
-                            Width="75" Height="26"/>
-                </Grid>
-
-                <!-- 数量显示 -->
-                <Grid Margin="0,0,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="数量："
-                               VerticalAlignment="Center"
-                               Margin="0,0,8,0"/>
-                    <TextBox Grid.Column="1"
-                             Text="{Binding SnCount}"
-                             IsReadOnly="True"
-                             FontSize="18" FontWeight="Bold"
-                             Foreground="#007ACC"
-                             Background="#F0F0F0"
-                             BorderThickness="1"
-                             BorderBrush="#CCCCCC"
-                             Height="32"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Right"
-                             Width="140"/>
-                </Grid>
-            </StackPanel>
-
-            <!-- ========== 中间：条件列表（撑满剩余空间） ========== -->
-            <Border Grid.Row="1"
-                    BorderBrush="#CCCCCC"
-                    BorderThickness="1"
-                    Margin="10,5,10,5">
-                <DataGrid ItemsSource="{Binding ConditionItems}"
-                          AutoGenerateColumns="False"
-                          IsReadOnly="True"
-                          CanUserAddRows="False"
-                          CanUserDeleteRows="False"
-                          HeadersVisibility="Column"
-                          GridLinesVisibility="All"
-                          RowHeight="24"
-                          FontSize="12"
-                          Background="White"
-                          RowBackground="White"
-                          AlternatingRowBackground="#F8F8F8">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="条件" Binding="{Binding TypeName}" Width="100"/>
-                        <DataGridTextColumn Header="值"   Binding="{Binding Value}"    Width="*"/>
-                        <DataGridTemplateColumn Header="" Width="40">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Content="×"
-                                            Width="24" Height="20"
-                                            FontSize="14"
-                                            Background="Transparent"
-                                            BorderThickness="0"
-                                            Cursor="Hand"
-                                            Click="RemoveCondition_Click"
-                                            Tag="{Binding}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Border>
-
-            <!-- ========== 底部：重工条件 + 流程 + 执行 ========== -->
-            <StackPanel Grid.Row="2" Margin="10,5,10,10">
-
-                <!-- 重工条件 -->
-                <GroupBox Header="重工条件" Margin="0,0,0,8" Padding="8">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="26"/>
-                            <RowDefinition Height="26"/>
-                            <RowDefinition Height="26"/>
-                        </Grid.RowDefinitions>
-
-                        <CheckBox Grid.Row="0" Grid.Column="0"
-                                  Content="清除出货序号"
-                                  IsChecked="{Binding ClearCustomerSN}"/>
-                        <CheckBox Grid.Row="0" Grid.Column="1"
-                                  Content="清除包装信息"
-                                  IsChecked="{Binding ClearPack}"/>
-                        <CheckBox Grid.Row="1" Grid.Column="0"
-                                  Content="清除抽验信息"
-                                  IsChecked="{Binding ClearQc}"/>
-                        <CheckBox Grid.Row="1" Grid.Column="1"
-                                  Content="清除MAC"
-                                  IsChecked="{Binding ClearMac}"/>
-                        <CheckBox Grid.Row="2" Grid.Column="0"
-                                  Content="清除料件"
-                                  IsChecked="{Binding ClearParts}"/>
-                    </Grid>
-                </GroupBox>
-
-                <!-- 重工流程 -->
-                <GroupBox Header="重工流程" Margin="0,0,0,8" Padding="8">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="70"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="32"/>
-                            <RowDefinition Height="32"/>
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="流程名称"
-                                   VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="0" Grid.Column="1"
-                                 Text="{Binding RouteName, UpdateSourceTrigger=PropertyChanged}"
-                                 IsEnabled="{Binding IsRouteEditable}"
-                                 Height="26"
-                                 VerticalContentAlignment="Center"
-                                 KeyDown="RouteName_KeyDown"/>
-
-                        <TextBlock Grid.Row="1" Grid.Column="0" Text="站位"
-                                   VerticalAlignment="Center"/>
-                        <ComboBox Grid.Row="1" Grid.Column="1"
-                                  ItemsSource="{Binding ProcessList}"
-                                  SelectedItem="{Binding SelectedProcess}"
-                                  DisplayMemberPath="ProcessName"
-                                  Height="26"
-                                  VerticalContentAlignment="Center"/>
-                    </Grid>
-                </GroupBox>
-
-                <!-- 执行按钮 -->
-                <Border Background="#F5F5F5"
-                        BorderBrush="#DDDDDD"
-                        BorderThickness="0,1,0,0"
-                        Padding="0,8,0,0">
-                    <Button Content="执行"
-                            Command="{Binding ExecuteCommand}"
-                            Width="180" Height="32"
-                            FontSize="13" FontWeight="Bold"
-                            Foreground="White"
-                            BorderThickness="0"
-                            Cursor="Hand"
-                            HorizontalAlignment="Center">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border x:Name="Bd" Background="#007ACC" CornerRadius="4">
-                                    <ContentPresenter HorizontalAlignment="Center"
-                                                      VerticalAlignment="Center"/>
-                                </Border>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="Bd" Property="Background" Value="#005A9E"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                <!-- 卡片表头 -->
+                <Border Grid.Row="0" Style="{StaticResource InfoCardHeaderStyle}">
+                    <TextBlock Text="重工执行"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource PrimaryBrush}"/>
                 </Border>
-            </StackPanel>
-        </Grid>
 
+                <!-- ========== 输入区 ========== -->
+                <StackPanel Grid.Row="1" Margin="12,12,12,6">
+
+                    <!-- 新工单 -->
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Column="0"
+                                  Content="新工单"
+                                  IsChecked="{Binding IsNewWorkOrder}"
+                                  VerticalAlignment="Center"
+                                  Margin="0,0,10,0"/>
+                        <TextBox Grid.Column="1"
+                                 Text="{Binding NewWorkOrder, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding IsNewWorkOrder}"
+                                 Height="28"
+                                 MinWidth="0"
+                                 Padding="8,0"
+                                 VerticalContentAlignment="Center"
+                                 KeyDown="NewWorkOrder_KeyDown"/>
+                    </Grid>
+
+                    <!-- 重工单号 -->
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="重工单号"
+                                   Style="{StaticResource FormLabel}"/>
+                        <TextBox Grid.Column="1"
+                                 Text="{Binding ReworkNo, UpdateSourceTrigger=PropertyChanged}"
+                                 Height="28"
+                                 MinWidth="0"
+                                 Padding="8,0"
+                                 VerticalContentAlignment="Center"
+                                 Margin="0,0,8,0"/>
+                        <Button Grid.Column="2"
+                                Content="新增"
+                                Command="{Binding GenerateReworkNoCommand}"
+                                Style="{StaticResource SecondaryButton}"
+                                Width="60"/>
+                    </Grid>
+
+                    <!-- 条件输入 -->
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="90"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox Grid.Column="0"
+                                  ItemsSource="{Binding InputTypes}"
+                                  SelectedItem="{Binding SelectedInputType}"
+                                  DisplayMemberPath="Display"
+                                  Height="28"
+                                  MinWidth="90"
+                                  Margin="0,0,8,0"/>
+                        <TextBox x:Name="txtInput"
+                                 Grid.Column="1"
+                                 Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
+                                 Height="28"
+                                 MinWidth="0"
+                                 Padding="8,0"
+                                 VerticalContentAlignment="Center"
+                                 Margin="0,0,8,0"
+                                 KeyDown="InputText_KeyDown"/>
+                        <Button Grid.Column="2"
+                                Content="清空条件"
+                                Command="{Binding ClearConditionsCommand}"
+                                Style="{StaticResource SecondaryButton}"
+                                Width="80"/>
+                    </Grid>
+
+                    <!-- 数量显示 -->
+                    <Border Background="#EAF4FE"
+                            BorderBrush="#B8D8F0"
+                            BorderThickness="1"
+                            CornerRadius="4"
+                            Padding="10,6">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="数量："
+                                       VerticalAlignment="Center"
+                                       FontWeight="SemiBold"
+                                       Foreground="{StaticResource TextSecondaryBrush}"
+                                       Margin="0,0,8,0"/>
+                            <TextBlock Grid.Column="1"
+                                       Text="{Binding SnCount}"
+                                       FontSize="20"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource PrimaryBrush}"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                <!-- ========== 条件列表 ========== -->
+                <Border Grid.Row="2"
+                        BorderBrush="{StaticResource CardBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="4"
+                        Margin="12,6,12,10"
+                        ClipToBounds="True">
+                    <DataGrid ItemsSource="{Binding ConditionItems}"
+                              Style="{StaticResource DataGridStyle}"
+                              BorderThickness="0"
+                              IsReadOnly="True"
+                              RowHeight="26"
+                              FontSize="12">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="条件" Binding="{Binding TypeName}" Width="100"/>
+                            <DataGridTextColumn Header="值"   Binding="{Binding Value}"    Width="*"/>
+                            <DataGridTemplateColumn Header="" Width="40">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="×"
+                                                Width="24" Height="20"
+                                                FontSize="14"
+                                                Foreground="#8899AA"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Cursor="Hand"
+                                                Click="RemoveCondition_Click"
+                                                Tag="{Binding}">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="Button">
+                                                                <Border x:Name="Bd"
+                                                                        Background="Transparent"
+                                                                        CornerRadius="3">
+                                                                    <ContentPresenter HorizontalAlignment="Center"
+                                                                                      VerticalAlignment="Center"/>
+                                                                </Border>
+                                                                <ControlTemplate.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter TargetName="Bd" Property="Background"
+                                                                                Value="#FDE7E7"/>
+                                                                        <Setter Property="Foreground"
+                                                                                Value="#C83232"/>
+                                                                    </Trigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+
+                <!-- ========== 底部：重工条件 + 流程 + 执行 ========== -->
+                <StackPanel Grid.Row="3" Margin="12,0,12,12">
+
+                    <!-- 重工条件 -->
+                    <GroupBox Header="重工条件"
+                              Style="{StaticResource SoftGroupBox}"
+                              Margin="0,0,0,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+
+                            <CheckBox Grid.Row="0" Grid.Column="0"
+                                      Content="清除出货序号"
+                                      IsChecked="{Binding ClearCustomerSN}"
+                                      VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="0" Grid.Column="1"
+                                      Content="清除包装信息"
+                                      IsChecked="{Binding ClearPack}"
+                                      VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="1" Grid.Column="0"
+                                      Content="清除抽验信息"
+                                      IsChecked="{Binding ClearQc}"
+                                      VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="1" Grid.Column="1"
+                                      Content="清除MAC"
+                                      IsChecked="{Binding ClearMac}"
+                                      VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="2" Grid.Column="0"
+                                      Content="清除料件"
+                                      IsChecked="{Binding ClearParts}"
+                                      VerticalAlignment="Center"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <!-- 重工流程 -->
+                    <GroupBox Header="重工流程"
+                              Style="{StaticResource SoftGroupBox}"
+                              Margin="0,0,0,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="72"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="34"/>
+                                <RowDefinition Height="34"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="流程名称"
+                                       Style="{StaticResource FormLabel}"/>
+                            <TextBox Grid.Row="0" Grid.Column="1"
+                                     Text="{Binding RouteName, UpdateSourceTrigger=PropertyChanged}"
+                                     IsEnabled="{Binding IsRouteEditable}"
+                                     Height="28"
+                                     MinWidth="0"
+                                     Padding="8,0"
+                                     VerticalContentAlignment="Center"
+                                     KeyDown="RouteName_KeyDown"/>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="站位"
+                                       Style="{StaticResource FormLabel}"/>
+                            <ComboBox Grid.Row="1" Grid.Column="1"
+                                      ItemsSource="{Binding ProcessList}"
+                                      SelectedItem="{Binding SelectedProcess}"
+                                      DisplayMemberPath="ProcessName"
+                                      Height="28"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <!-- 执行按钮 -->
+                    <Button Content="执 行"
+                            Command="{Binding ExecuteCommand}"
+                            Style="{StaticResource PrimaryButton}"
+                            Width="200" Height="36"
+                            FontSize="14" FontWeight="Bold"
+                            HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ============================================================
+             分隔条
+             ============================================================ -->
         <GridSplitter Grid.Column="1"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch"
-                      Background="#DDDDDD"/>
+                      Background="Transparent"/>
 
-        <!-- ============ 右侧结果表格 ============ -->
-        <DataGrid Grid.Column="2"
-                  ItemsSource="{Binding SnItems}"
-                  AutoGenerateColumns="False"
-                  IsReadOnly="True"
-                  CanUserAddRows="False"
-                  CanUserDeleteRows="False"
-                  HeadersVisibility="Column"
-                  SelectionMode="Single"
-                  SelectionUnit="FullRow"
-                  GridLinesVisibility="All"
-                  RowHeight="26"
-                  Background="White"
-                  AlternatingRowBackground="#DFDFDF">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="序列号"   Binding="{Binding SerialNumber}"   Width="160"/>
-                <DataGridTextColumn Header="工单"     Binding="{Binding WorkOrder}"      Width="150"/>
-                <DataGridTextColumn Header="料号"     Binding="{Binding PartNo}"         Width="110"/>
-                <DataGridTextColumn Header="产线"     Binding="{Binding PdlineName}"     Width="90"/>
-                <DataGridTextColumn Header="在制工序" Binding="{Binding WipProcess}"     Width="110"/>
-                <DataGridTextColumn Header="当前工序" Binding="{Binding CurrentProcess}" Width="110"/>
-                <DataGridTextColumn Header="终端"     Binding="{Binding TerminalName}"   Width="90"/>
-                <DataGridTextColumn Header="出货序号" Binding="{Binding CustomerSN}"     Width="120"/>
-                <DataGridTextColumn Header="栈板号"   Binding="{Binding PalletNo}"       Width="100"/>
-                <DataGridTextColumn Header="箱号"     Binding="{Binding CartonNo}"       Width="100"/>
-                <DataGridTextColumn Header="彩盒号"   Binding="{Binding Container}"      Width="100"/>
-                <DataGridTextColumn Header="出线时间" Binding="{Binding OutPdlineTime}"  Width="140"/>
-                <DataGridTextColumn Header="途程"     Binding="{Binding RouteName}"      Width="120"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <!-- ============================================================
+             右侧：结果表格
+             ============================================================ -->
+        <Border Grid.Column="2"
+                Background="{StaticResource CardBackgroundBrush}"
+                BorderBrush="{StaticResource CardBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="4"
+                Margin="0,10,10,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Style="{StaticResource SuccessCardHeaderStyle}">
+                    <TextBlock Text="序列号列表"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource SuccessTextBrush}"/>
+                </Border>
+
+                <DataGrid Grid.Row="1"
+                          ItemsSource="{Binding SnItems}"
+                          Style="{StaticResource DataGridStyle}"
+                          BorderThickness="0"
+                          IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="序列号"   Binding="{Binding SerialNumber}"   Width="160"/>
+                        <DataGridTextColumn Header="工单"     Binding="{Binding WorkOrder}"      Width="150"/>
+                        <DataGridTextColumn Header="料号"     Binding="{Binding PartNo}"         Width="110"/>
+                        <DataGridTextColumn Header="产线"     Binding="{Binding PdlineName}"     Width="90"/>
+                        <DataGridTextColumn Header="在制工序" Binding="{Binding WipProcess}"     Width="110"/>
+                        <DataGridTextColumn Header="当前工序" Binding="{Binding CurrentProcess}" Width="110"/>
+                        <DataGridTextColumn Header="终端"     Binding="{Binding TerminalName}"   Width="90"/>
+                        <DataGridTextColumn Header="出货序号" Binding="{Binding CustomerSN}"     Width="120"/>
+                        <DataGridTextColumn Header="栈板号"   Binding="{Binding PalletNo}"       Width="100"/>
+                        <DataGridTextColumn Header="箱号"     Binding="{Binding CartonNo}"       Width="100"/>
+                        <DataGridTextColumn Header="彩盒号"   Binding="{Binding Container}"      Width="100"/>
+                        <DataGridTextColumn Header="出线时间" Binding="{Binding OutPdlineTime}"  Width="140"/>
+                        <DataGridTextColumn Header="途程"     Binding="{Binding RouteName}"      Width="120"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
