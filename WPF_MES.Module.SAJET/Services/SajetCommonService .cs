@@ -343,6 +343,8 @@ internal static class SajetCommonService
         => OracleHelper.Exists("SAJET.G_SN_STATUS", "WORK_ORDER", wo);
     public static bool ExistsQcNo(string qcNo)
         => OracleHelper.Exists("SAJET.G_SN_STATUS", "QC_NO", qcNo);
+    public static bool ExistsKeypart(string kp)
+        => OracleHelper.Exists("SAJET.G_SN_KEYPARTS", "ITEM_PART_SN", kp);
 
     /// <summary>
     /// 生成新重工号：RWV + YYMMDD + 4位序列。

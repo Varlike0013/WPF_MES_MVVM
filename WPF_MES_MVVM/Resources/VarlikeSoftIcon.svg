@@ -1,0 +1,46 @@
+<svg width="156" height="150" viewBox="44 44 156 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 左侧折角背面 -->
+    <linearGradient id="foldBack" x1="58" y1="82" x2="88" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#0B1F3A"/>
+    </linearGradient>
+
+    <!-- 左侧臂渐变 -->
+    <linearGradient id="leftArm" x1="80" y1="52" x2="122" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="0.55" stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#0B1F3A"/>
+    </linearGradient>
+
+    <!-- 右侧臂渐变 -->
+    <linearGradient id="rightArm" x1="188" y1="52" x2="118" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F80ED"/>
+      <stop offset="0.5" stop-color="#00D1FF"/>
+      <stop offset="1" stop-color="#0B1F3A"/>
+    </linearGradient>
+
+    <!-- 横穿缎带 -->
+    <linearGradient id="swoosh" x1="55" y1="136" x2="190" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="0.5" stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#00D1FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 折角背面 -->
+  <path d="M 78 52 L 52 82 L 70 94 L 92 68 Z" fill="url(#foldBack)"/>
+
+  <!-- 左侧臂 -->
+  <path d="M 78 52 L 112 66 L 132 176 L 110 186 Z" fill="url(#leftArm)"/>
+
+  <!-- 横穿缎带 -->
+  <path d="M 58 134
+           C 88 108, 125 152, 188 112
+           L 188 98
+           C 125 138, 88 94, 58 122 Z"
+        fill="url(#swoosh)" opacity="0.95"/>
+
+  <!-- 右侧臂 -->
+  <path d="M 162 52 L 192 52 L 140 176 L 118 186 Z" fill="url(#rightArm)"/>
+</svg>

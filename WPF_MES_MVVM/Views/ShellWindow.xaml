@@ -97,9 +97,9 @@
             <Grid Margin="20,0">
                 <!-- 左侧：Logo + 标题 -->
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Border Width="34" Height="34" CornerRadius="8"
+                    <Border Width="50" Height="34" CornerRadius="8"
                             Background="#FFFFFF" Margin="0,0,12,0">
-                        <TextBlock Text="M"
+                        <TextBlock Text="MES"
                                    FontSize="19" FontWeight="Bold"
                                    Foreground="#007ACC"
                                    HorizontalAlignment="Center"

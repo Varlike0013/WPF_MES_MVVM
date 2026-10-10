@@ -17,6 +17,8 @@ public enum ConditionType
     QcNo,
     /// <summary>二维码(Qrcode)</summary>
     QrCode,
+    /// <summary>料件(KeyPart)</summary>
+    KeyPart,
 }
 /// <summary>
 /// 条件管理器（泛型版）。

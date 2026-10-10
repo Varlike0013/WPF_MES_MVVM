@@ -11,6 +11,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\VarlikeSoft.ico" />
+	  <None Remove="Resources\VarlikeSoftBackground.ico" />
+	  <None Remove="Resources\VarlikeSoftIcon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Resources\VarlikeSoft.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Resources\VarlikeSoftBackground.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 	</ItemGroup>
 
@@ -18,5 +32,12 @@
 		<ProjectReference Include="..\WPF_MES.Contracts\WPF_MES.Contracts.csproj" />
 		<ProjectReference Include="..\WPF_MES.Shared\WPF_MES.Shared.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Resources\VarlikeSoftIcon.ico" />
+	</ItemGroup>
+	<PropertyGroup>
+  <ApplicationIcon>VarlikeSoftIcon.ico</ApplicationIcon>
+</PropertyGroup>
 
 </Project>

@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Reflection;
+using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using WPF_MES_MVVM.ViewModels;
 
 namespace WPF_MES_MVVM.Views;

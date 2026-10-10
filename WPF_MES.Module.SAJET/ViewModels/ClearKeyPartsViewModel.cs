@@ -23,6 +23,7 @@ public partial class ClearKeyPartsViewModel : ObservableObject
     {
         new("序号",   ConditionType.SerialNumber),
         new("重工号", ConditionType.Rework),
+        new("料件", ConditionType.KeyPart)
     };
 
     [ObservableProperty] private InputTypeItem? _selectedInputType;
@@ -100,6 +101,7 @@ public partial class ClearKeyPartsViewModel : ObservableObject
             {
                 ConditionType.SerialNumber => SajetCommonService.ExistsSerialNumber(text),
                 ConditionType.Rework => SajetCommonService.ExistsRework(text),
+                ConditionType.KeyPart => SajetCommonService.ExistsKeypart(text),
                 _ => false,
             };
 
@@ -383,14 +385,15 @@ public partial class ClearKeyPartsViewModel : ObservableObject
         {
             if (kv.Value.Count == 0) continue;
 
-            string col = kv.Key switch
+            string? col = kv.Key switch
             {
                 ConditionType.SerialNumber => "S.SERIAL_NUMBER",
                 ConditionType.Rework => "S.REWORK_NO",
-                _ => null!,
+                _ => null,
             };
 
-            if (col == null) continue;
+            bool isKeyPart = kv.Key == ConditionType.KeyPart;
+            if (col == null && !isKeyPart) continue;
 
             var paramNames = new List<string>();
             foreach (var v in kv.Value)
@@ -400,7 +403,17 @@ public partial class ClearKeyPartsViewModel : ObservableObject
                 ps[p] = v;
             }
 
-            parts.Add($"{col} IN ({string.Join(",", paramNames)})");
+            if (isKeyPart)
+            {
+                parts.Add(
+                    "S.SERIAL_NUMBER IN (" +
+                    "SELECT K.SERIAL_NUMBER FROM SAJET.G_SN_KEYPARTS K " +
+                    $"WHERE K.ITEM_PART_SN IN ({string.Join(",", paramNames)}))");
+            }
+            else
+            {
+                parts.Add($"{col} IN ({string.Join(",", paramNames)})");
+            }
         }
 
         return (string.Join(" OR ", parts), ps);

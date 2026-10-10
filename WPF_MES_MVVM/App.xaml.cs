@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using WPF_MES_MVVM.Services;
+using System.Windows.Media.Imaging;
 using WPF_MES.Shared;
 using WPF_MES_MVVM.ViewModels;
 using WPF_MES_MVVM.Views;
@@ -12,7 +13,7 @@ public partial class App : Application
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
-
+        
         // 1. 解析启动参数
         Logger.Init(e.Args);
         Logger.Info($"[START] Args={string.Join(" ", e.Args)}");

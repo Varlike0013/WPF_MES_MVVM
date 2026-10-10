@@ -1,0 +1,138 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- ===== 背景相关 ===== -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="640" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E1E1E"/>
+      <stop offset="0.5" stop-color="#18181B"/>
+      <stop offset="1" stop-color="#101014"/>
+    </linearGradient>
+
+    <radialGradient id="glowBlue" cx="0.2" cy="0.3" r="0.7">
+      <stop stop-color="#007ACC" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#007ACC" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowPurple" cx="0.8" cy="0.7" r="0.7">
+      <stop stop-color="#68217A" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#68217A" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="dotPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#FFFFFF" fill-opacity="0.03"/>
+    </pattern>
+
+    <radialGradient id="textGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#2F80ED" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#2F80ED" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ===== 原有图标渐变 ===== -->
+    <linearGradient id="foldBack" x1="58" y1="82" x2="88" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#0B1F3A"/>
+    </linearGradient>
+
+    <linearGradient id="leftArm" x1="80" y1="52" x2="122" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="0.55" stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#0B1F3A"/>
+    </linearGradient>
+
+    <linearGradient id="rightArm" x1="188" y1="52" x2="118" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F80ED"/>
+      <stop offset="0.5" stop-color="#00D1FF"/>
+      <stop offset="1" stop-color="#0B1F3A"/>
+    </linearGradient>
+
+    <linearGradient id="swoosh" x1="55" y1="136" x2="190" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="0.5" stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#00D1FF"/>
+    </linearGradient>
+
+    <linearGradient id="softGrad" x1="260" y1="150" x2="520" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#00D1FF"/>
+    </linearGradient>
+
+    <linearGradient id="blockFade" x1="366" y1="0" x2="497" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F80ED" stop-opacity="1"/>
+      <stop offset="0.5" stop-color="#00D1FF" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#00D1FF" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <linearGradient id="varGrad" x1="240" y1="112" x2="500" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1F3A"/>
+      <stop offset="0.4" stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#00D1FF"/>
+    </linearGradient>
+
+    <linearGradient id="lineFade" x1="240" y1="132" x2="500" y2="132" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1F3A" stop-opacity="1"/>
+      <stop offset="0.4" stop-color="#2F80ED" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#00D1FF" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== 背景层 ===== -->
+  <rect width="640" height="480" fill="url(#bgGrad)"/>
+  <rect width="640" height="480" fill="url(#glowBlue)"/>
+  <rect width="640" height="480" fill="url(#glowPurple)"/>
+  <rect width="640" height="480" fill="url(#dotPattern)"/>
+
+  <!-- 文字区域柔光，居中 -->
+  <ellipse cx="320" cy="240" rx="170" ry="90" fill="url(#textGlow)"/>
+
+  <!-- 窗口边框与顶部高光 -->
+  <rect x="0.5" y="0.5" width="639" height="479" rx="12" stroke="#FFFFFF" stroke-opacity="0.06" fill="none"/>
+  <rect x="0" y="0" width="640" height="1" fill="#FFFFFF" opacity="0.06"/>
+
+  <!-- ===== 内容区：整体居中 ===== -->
+  <!-- 原内容中心约 (276,115)，平移到画布中心 (320,240) -->
+  <g transform="translate(44 125)">
+    <!-- 折角背面 -->
+    <path d="M 78 52 L 52 82 L 70 94 L 92 68 Z" fill="url(#foldBack)"/>
+
+    <!-- 左侧臂 -->
+    <path d="M 78 52 L 112 66 L 132 176 L 110 186 Z" fill="url(#leftArm)"/>
+
+    <!-- 横穿缎带 -->
+    <path d="M 58 134
+             C 88 108, 125 152, 188 112
+             L 188 98
+             C 125 138, 88 94, 58 122 Z"
+          fill="url(#swoosh)" opacity="0.95"/>
+
+    <!-- 右侧臂 -->
+    <path d="M 162 52 L 192 52 L 140 176 L 118 186 Z" fill="url(#rightArm)"/>
+
+    <!-- 主文字 VARLIKE -->
+    <text x="240" y="112"
+          font-family="'Segoe UI', Inter, Montserrat, Arial, sans-serif"
+          font-size="54"
+          font-weight="700"
+          fill="url(#varGrad)"
+          letter-spacing="6">VARLIKE</text>
+
+    <!-- 下划线 -->
+    <line x1="240" y1="132" x2="356" y2="132"
+          stroke="url(#lineFade)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="366" y1="132" x2="500" y2="132"
+          stroke="url(#lineFade)" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- SOFT -->
+    <text x="240" y="176"
+          font-family="'Segoe UI', Inter, Montserrat, Arial, sans-serif"
+          font-size="36"
+          font-weight="300"
+          fill="url(#softGrad)"
+          letter-spacing="10">SOFT</text>
+
+    <!-- 五个渐变方块 -->
+    <rect x="366"    y="155" width="16" height="16" rx="3" fill="url(#blockFade)"/>
+    <rect x="394.75" y="155" width="16" height="16" rx="3" fill="url(#blockFade)"/>
+    <rect x="423.5"  y="155" width="16" height="16" rx="3" fill="url(#blockFade)"/>
+    <rect x="452.25" y="155" width="16" height="16" rx="3" fill="url(#blockFade)"/>
+    <rect x="481"    y="155" width="16" height="16" rx="3" fill="url(#blockFade)"/>
+  </g>
+</svg>
