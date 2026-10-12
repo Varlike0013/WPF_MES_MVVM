@@ -32,6 +32,7 @@ public partial class StatusTagViewModel : ObservableObject
     [ObservableProperty] private string _lblPartNo = string.Empty;
     [ObservableProperty] private string _lblPartDesc = string.Empty;
     [ObservableProperty] private string _lblNextProcess = string.Empty;
+    [ObservableProperty] private string _lblWipProcess = string.Empty;
     [ObservableProperty] private string _lblWorkFlag = string.Empty;
     [ObservableProperty] private string _lblCSN = string.Empty;
     [ObservableProperty] private string _lblCarton = string.Empty;
@@ -126,6 +127,7 @@ public partial class StatusTagViewModel : ObservableObject
         LblMac = info.Mac;
         LblSSN = info.SSN;
         LblPPID = info.PcbQrCode;
+        LblWipProcess = info.WipProcess.ProcessName;
         LblCurrentStatus = info.CurrentStatusText;
         CurrentStatusColor = info.CurrentStatusCode switch
         {

@@ -199,6 +199,9 @@ internal static class CartonInfoService
     {
         if (cartons.Count == 0 && workOrders.Count == 0) return 0;
 
+        // 1. 清理状态值：去除首尾空格
+        newStatus = newStatus.Trim();
+
         // 构建 W 表的 WHERE
         var conditions = new List<string>();
         var ps = new Dictionary<string, object>();

@@ -434,11 +434,10 @@ public partial class CartonInfoViewModel : ObservableObject
         // 执行
         try
         {
+            
             int affected = CartonInfoService.BatchUpdateStatus(
                 cartons, workOrders, status);
-
             Logger.Info($"[CARTON] BatchUpdateStatus {statusDisplay}, affected={affected}");
-
             if (affected == 0)
             {
                 MessageBox.Show("没有匹配的记录需要更新。", "提示",

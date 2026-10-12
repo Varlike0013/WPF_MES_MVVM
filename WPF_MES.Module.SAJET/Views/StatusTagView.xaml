@@ -137,11 +137,11 @@
                 <TextBox   Grid.Row="3" Grid.Column="1" Text="{Binding LblCSN}"          Style="{StaticResource ValueLabel}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Text="箱号："     Style="{StaticResource CaptionLabel}"/>
                 <TextBox   Grid.Row="3" Grid.Column="3" Text="{Binding LblCarton}"       Style="{StaticResource ValueLabel}"/>
-                <TextBlock Grid.Row="3" Grid.Column="4" Text="实物状态：" Style="{StaticResource CaptionLabel}"/>
+                <TextBlock Grid.Row="3" Grid.Column="4" Text="序号状态：" Style="{StaticResource CaptionLabel}"/>
                 <TextBox   Grid.Row="3" Grid.Column="5" Text="{Binding LblWorkFlag}"     Style="{StaticResource ValueLabel}"/>
 
                 <!-- 第 5 行：序号状态 + 重工编号 -->
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="序号状态：" Style="{StaticResource CaptionLabel}"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="实物状态：" Style="{StaticResource CaptionLabel}"/>
                 <TextBox   Grid.Row="4" Grid.Column="1"
                            Text="{Binding LblCurrentStatus}"
                            FontSize="16"
@@ -156,6 +156,8 @@
                 <TextBox   Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3"
                            Text="{Binding LblReworkNo}"
                            Style="{StaticResource ValueLabel}"/>
+                <TextBlock Grid.Row="4" Grid.Column="4" Text="WIP站位：" Style="{StaticResource CaptionLabel}"/>
+                <TextBox   Grid.Row="4" Grid.Column="5" Text="{Binding LblWipProcess}"  Style="{StaticResource ValueLabel}"/>
             </Grid>
         </Border>
 

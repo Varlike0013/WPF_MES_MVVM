@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "E:\\Git\\WPF_MES\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\viewmodels\\statustagviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\viewmodels\\statustagviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\statustagview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\statustagview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\clearkeypartsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\clearkeypartsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\viewmodels\\clearkeypartsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +35,8 @@
       "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\shellwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 189,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -56,26 +64,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "OracleHelper.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
               "RelativeToolTip": "WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAuwOsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAkwJMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-23T01:47:05.578Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 211,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "SajetCommonService .cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
@@ -84,12 +93,36 @@
               "ViewState": "AgIAAEgBAAAAAAAAAAAowFkBAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-24T01:59:04.928Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StatusTagView.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
+              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
+              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\StatusTagView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-12T03:07:33.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "StatusTagViewModel.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\StatusTagViewModel.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\ViewModels\\StatusTagViewModel.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\StatusTagViewModel.cs",
+              "RelativeToolTip": "WPF_MES.Module.SAJET\\ViewModels\\StatusTagViewModel.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAABAwCEAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T03:04:46.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ClearKeyPartsView.xaml",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\ClearKeyPartsView.xaml",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\ClearKeyPartsView.xaml",
@@ -101,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ClearKeyPartsViewModel.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\ClearKeyPartsViewModel.cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\ViewModels\\ClearKeyPartsViewModel.cs",
@@ -109,24 +142,22 @@
               "RelativeToolTip": "WPF_MES.Module.SAJET\\ViewModels\\ClearKeyPartsViewModel.cs",
               "ViewState": "AgIAAIQBAAAAAAAAAADwv6MBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T01:48:27.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-10T01:48:27.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ShellWindow.xaml",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\ShellWindow.xaml",
               "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\ShellWindow.xaml",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\ShellWindow.xaml",
               "RelativeToolTip": "WPF_MES_MVVM\\Views\\ShellWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-10T01:15:54.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-10T01:15:54.74Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\App.xaml.cs",
               "RelativeDocumentMoniker": "WPF_MES_MVVM\\App.xaml.cs",
@@ -134,8 +165,7 @@
               "RelativeToolTip": "WPF_MES_MVVM\\App.xaml.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAAwB0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T00:43:55.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-10T00:43:55.861Z"
             }
           ]
         }

@@ -118,6 +118,7 @@ internal static class ReworkService
         var sets = new List<string>
     {
         "S.ROUTE_ID    = :routeId",
+        "S.NEXT_PROCESS= :processId",
         "S.WIP_PROCESS = :processId",
         "S.REWORK_NO   = :reworkNo",
     };

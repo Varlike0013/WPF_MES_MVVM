@@ -88,6 +88,7 @@ internal static class OracleHelper
 
     private static void AddParams(OracleCommand cmd, Dictionary<string, object>? ps)
     {
+        cmd.BindByName = true;
         if (ps == null) return;
         foreach (var kv in ps)
         {
@@ -144,6 +145,7 @@ internal static class OracleHelper
                 using var cmd = new OracleCommand(sql, conn)
                 {
                     Transaction = tran,
+                    BindByName = true,
                 };
 
                 if (ps != null)
