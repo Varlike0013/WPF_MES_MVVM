@@ -1,0 +1,86 @@
+﻿2026-10-14 09:41:16.267 [INFO] [START] Args=
+2026-10-14 09:41:16.268 [INFO] [START] Console=False
+2026-10-14 09:41:16.900 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-14 09:41:16.901 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-14 09:41:16.901 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-14 09:41:16.901 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-14 09:41:16.902 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-14 09:41:16.902 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-14 09:41:17.294 [INFO] [CONFIG] Loaded: login.json
+2026-10-14 09:41:27.540 [INFO] [CONFIG] Saved: login.json
+2026-10-14 09:41:27.716 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-14 09:41:27.764 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-14 09:41:40.530 [INFO] [TGS] Query: type=0, input=650, jobs=10
+2026-10-14 09:41:47.120 [INFO] [TGS] Query: type=0, input=627, jobs=9
+2026-10-14 09:42:08.630 [INFO] [TGS] Query: type=0, input=599, jobs=9
+2026-10-14 09:42:14.602 [INFO] [TGS] Query: type=0, input=590, jobs=10
+2026-10-14 09:42:35.474 [INFO] [TGS] Query: type=0, input=557, jobs=12
+2026-10-14 09:42:42.351 [INFO] [TGS] Query: type=0, input=548, jobs=12
+2026-10-14 09:42:42.684 [INFO] [TGS] Query: type=0, input=548, jobs=12
+2026-10-14 09:42:44.744 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CHK_PRODUCT, RichTextBox=True
+2026-10-14 09:42:44.755 [INFO] [TGS] LoadSource got 2084 chars
+2026-10-14 09:42:44.778 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 09:44:03.111 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CHK_PRODUCT_NUC, RichTextBox=True
+2026-10-14 09:44:03.130 [INFO] [TGS] LoadSource got 1823 chars
+2026-10-14 09:44:03.134 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 09:44:12.172 [INFO] [TGS] Query: type=0, input=546, jobs=12
+2026-10-14 09:44:21.577 [INFO] [TGS] Query: type=0, input=488, jobs=9
+2026-10-14 09:44:28.196 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CHK_PRODUCT, RichTextBox=True
+2026-10-14 09:44:28.202 [INFO] [TGS] LoadSource got 2084 chars
+2026-10-14 09:44:28.205 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 09:45:19.524 [INFO] [TGS] Query: type=0, input=435, jobs=10
+2026-10-14 09:45:24.391 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CHKTECH, RichTextBox=True
+2026-10-14 09:45:24.399 [INFO] [TGS] LoadSource got 7881 chars
+2026-10-14 09:45:24.401 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 09:45:38.438 [INFO] [TGS] Query: type=0, input=420, jobs=13
+2026-10-14 09:45:44.665 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_PACK_CHK_CARTON_ERP, RichTextBox=True
+2026-10-14 09:45:44.671 [INFO] [TGS] LoadSource got 4162 chars
+2026-10-14 09:45:44.680 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 09:46:01.656 [INFO] [TGS] Query: type=0, input=657, jobs=9
+2026-10-14 09:46:05.287 [INFO] [TGS] Query: type=0, input=658, jobs=4
+2026-10-14 09:46:08.665 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_ROUTE, RichTextBox=True
+2026-10-14 09:46:08.672 [INFO] [TGS] LoadSource got 7381 chars
+2026-10-14 09:46:08.673 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 09:46:11.066 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_BIND_HDCP, RichTextBox=True
+2026-10-14 09:46:11.069 [INFO] [TGS] LoadSource got 3354 chars
+2026-10-14 09:46:11.071 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 09:58:51.724 [INFO] [TGS] Query: type=0, input=659, jobs=2
+2026-10-14 10:31:13.110 [INFO] [SHARE] Loaded 4 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-14 11:03:20.525 [INFO] [STATUS] No match for W7YVYZ02231596P
+2026-10-14 11:03:25.652 [INFO] [STATUS] Match: W7YVYZ02231596P -> 260776982683767
+2026-10-14 12:04:47.535 [INFO] [TGS] Query: type=0, input=576, jobs=4
+2026-10-14 12:04:48.977 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CHECK_HEAT_PIPE, RichTextBox=True
+2026-10-14 12:04:48.981 [INFO] [TGS] LoadSource got 2806 chars
+2026-10-14 12:04:48.983 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 12:11:00.792 [INFO] [TGS] Query: type=0, input=576, jobs=4
+2026-10-14 12:11:01.941 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CHECK_HEAT_PIPE, RichTextBox=True
+2026-10-14 12:11:01.945 [INFO] [TGS] LoadSource got 2804 chars
+2026-10-14 12:11:01.947 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 12:13:34.682 [ERROR] [TGS] Execute failed: ORA-01861: literal does not match format string
+ORA-06512: at line 1
+https://docs.oracle.com/error-help/db/ora-01861/
+2026-10-14 12:16:16.864 [INFO] [STATUS] No match for 260981098027922
+2026-10-14 12:16:20.177 [INFO] [STATUS] Match: 260981098027922 -> 260981098027922
+2026-10-14 12:23:27.993 [INFO] [TGS] Query: type=0, input=575, jobs=4
+2026-10-14 12:23:29.035 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CHECK_FAN_SET, RichTextBox=True
+2026-10-14 12:23:29.040 [INFO] [TGS] LoadSource got 2969 chars
+2026-10-14 12:23:29.040 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-14 13:58:41.577 [INFO] [STATUS] No match for W9ARG2000A8
+2026-10-14 13:58:44.053 [INFO] [STATUS] Match: W9ARG20000A8 -> W9ARG20000A8
+2026-10-14 14:01:54.933 [INFO] [STATUS] Match: 61407620 -> 61407620
+2026-10-14 14:04:53.696 [INFO] [FIND-ROUTE] SN=88AEDDC53AC7, routes=3
+2026-10-14 14:04:59.247 [INFO] [FIND-ROUTE] dip=DIP+DAOI+MDA-TEST, pack=P-CHKPART-CHKSSN-PACK-OQC, matched=1
+2026-10-14 14:05:35.753 [INFO] [CARTON] WQC result: carton=25AG040498, result=OK
+2026-10-14 14:39:44.117 [INFO] [STATUS] Match: 260372389353633 -> 260372389353633
+2026-10-14 14:55:19.289 [INFO] [STATUS] No match for WARRG2000631
+2026-10-14 14:55:29.658 [INFO] [STATUS] Match: WAARG2000631 -> WAARG2000631
+2026-10-14 15:55:23.966 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-14 15:57:16.675 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-14 16:12:59.374 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-14 16:15:11.039 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-14 17:53:16.334 [INFO] [STATUS] No match for DZR79TA001616010269600
+2026-10-14 17:53:24.138 [INFO] [STATUS] No match for DZR79TA001616010269600
+2026-10-14 17:53:51.300 [INFO] [STATUS] No match for DZR79TA001616010269600
+2026-10-14 17:53:55.279 [INFO] [STATUS] No match for DZR79TA001616010269600
+2026-10-14 17:54:15.921 [INFO] [STATUS] No match for DZR79TA00161600BC09600
+2026-10-14 17:54:20.055 [INFO] [STATUS] No match for DZR79TA00161600BC09600
