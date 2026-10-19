@@ -1,0 +1,64 @@
+﻿2026-10-16 09:46:50.889 [INFO] [START] Args=
+2026-10-16 09:46:50.891 [INFO] [START] Console=False
+2026-10-16 09:46:51.326 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-16 09:46:51.327 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-16 09:46:51.327 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-16 09:46:51.327 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-16 09:46:51.327 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-16 09:46:51.327 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-16 09:46:51.795 [INFO] [CONFIG] Loaded: login.json
+2026-10-16 09:47:01.997 [INFO] [CONFIG] Saved: login.json
+2026-10-16 09:47:02.179 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-16 09:47:02.204 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-16 09:47:11.817 [INFO] [SHARE] Loaded 4 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-16 11:29:38.745 [INFO] [TGS] Query: type=0, input=658, jobs=4
+2026-10-16 11:29:40.009 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKSYS_EMP_OUT, RichTextBox=True
+2026-10-16 11:29:40.014 [INFO] [TGS] LoadSource got 640 chars
+2026-10-16 11:29:40.019 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 11:29:42.736 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_SN, RichTextBox=True
+2026-10-16 11:29:42.740 [INFO] [TGS] LoadSource got 797 chars
+2026-10-16 11:29:42.741 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 11:29:57.521 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_ROUTE, RichTextBox=True
+2026-10-16 11:29:57.531 [INFO] [TGS] LoadSource got 7381 chars
+2026-10-16 11:29:57.532 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 11:30:06.091 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_BIND_HDCP, RichTextBox=True
+2026-10-16 11:30:06.095 [INFO] [TGS] LoadSource got 3354 chars
+2026-10-16 11:30:06.100 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 14:59:03.615 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_ROUTE, RichTextBox=True
+2026-10-16 14:59:04.101 [INFO] [TGS] LoadSource got 7381 chars
+2026-10-16 14:59:04.144 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 14:59:04.512 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_BIND_HDCP, RichTextBox=True
+2026-10-16 14:59:04.517 [INFO] [TGS] LoadSource got 3354 chars
+2026-10-16 14:59:04.520 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 15:04:24.100 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_ROUTE, RichTextBox=True
+2026-10-16 15:04:24.325 [INFO] [TGS] LoadSource got 7381 chars
+2026-10-16 15:04:24.340 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 15:04:27.493 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_BIND_HDCP, RichTextBox=True
+2026-10-16 15:04:27.512 [INFO] [TGS] LoadSource got 3354 chars
+2026-10-16 15:04:27.515 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 15:04:28.564 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_ROUTE, RichTextBox=True
+2026-10-16 15:04:28.572 [INFO] [TGS] LoadSource got 7381 chars
+2026-10-16 15:04:28.588 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 15:04:29.739 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_BIND_HDCP, RichTextBox=True
+2026-10-16 15:04:29.743 [INFO] [TGS] LoadSource got 3354 chars
+2026-10-16 15:04:29.745 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 16:00:05.152 [INFO] [TGS] Query: type=0, input=658, jobs=4
+2026-10-16 16:00:10.532 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_BIND_HDCP, RichTextBox=True
+2026-10-16 16:00:10.654 [INFO] [TGS] LoadSource got 3360 chars
+2026-10-16 16:00:10.655 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 16:01:38.794 [INFO] [TGS] Query: type=0, input=656, jobs=4
+2026-10-16 16:01:40.546 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_SVI_TWICE, RichTextBox=True
+2026-10-16 16:01:40.549 [INFO] [TGS] LoadSource got 6093 chars
+2026-10-16 16:01:40.574 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 16:01:54.533 [INFO] [TGS] Query: type=0, input=655, jobs=3
+2026-10-16 16:01:57.066 [INFO] [TGS] Query: type=0, input=656, jobs=4
+2026-10-16 16:01:59.722 [INFO] [TGS] Query: type=0, input=657, jobs=9
+2026-10-16 16:02:01.720 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_TRANSFER_SVI_BYCUSTOMER, RichTextBox=True
+2026-10-16 16:02:01.724 [INFO] [TGS] LoadSource got 2505 chars
+2026-10-16 16:02:01.725 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 16:04:00.034 [INFO] [TGS] Query: type=0, input=658, jobs=4
+2026-10-16 16:04:01.062 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_BIND_HDCP, RichTextBox=True
+2026-10-16 16:04:01.066 [INFO] [TGS] LoadSource got 3360 chars
+2026-10-16 16:04:01.071 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-16 16:22:19.805 [INFO] [EXIT] Program exit.
+2026-10-16 16:22:19.986 [INFO] [EXIT] Application exiting.

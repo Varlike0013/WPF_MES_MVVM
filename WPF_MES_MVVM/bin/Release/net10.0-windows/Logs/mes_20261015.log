@@ -1,0 +1,122 @@
+﻿2026-10-15 08:02:09.727 [INFO] [START] Args=
+2026-10-15 08:02:09.728 [INFO] [START] Console=False
+2026-10-15 08:02:09.988 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-15 08:02:09.988 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-15 08:02:09.988 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-15 08:02:09.988 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-15 08:02:09.988 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-15 08:02:09.988 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-15 08:02:10.293 [INFO] [CONFIG] Loaded: login.json
+2026-10-15 08:02:23.272 [INFO] [CONFIG] Saved: login.json
+2026-10-15 08:02:23.636 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-15 08:02:23.650 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-15 08:02:43.577 [INFO] [STATUS] Match: 260981098027058 -> 260981098027058
+2026-10-15 08:03:22.965 [INFO] [STATUS] Match: 260981098027133 -> 260981098027133
+2026-10-15 08:03:40.466 [INFO] [REWORK] Execute start: reworkNo=RWV2610150264, empNo=D360749
+2026-10-15 08:03:40.542 [INFO] [REWORK] Execute OK: reworkNo=RWV2610150264, affected=7
+2026-10-15 08:03:47.317 [INFO] [STATUS] Match: 260981098027133 -> 260981098027133
+2026-10-15 08:04:10.661 [INFO] [PCB] DeleteAll: affected=2
+2026-10-15 08:09:37.294 [INFO] [TGS] Query: type=0, input=10, jobs=6
+2026-10-15 08:09:38.515 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_TRANSFER2, RichTextBox=True
+2026-10-15 08:09:38.541 [INFO] [TGS] LoadSource got 4896 chars
+2026-10-15 08:09:38.546 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 08:09:45.053 [INFO] [TGS] Query: type=0, input=486, jobs=8
+2026-10-15 08:09:53.923 [INFO] [TGS] Query: type=0, input=15, jobs=27
+2026-10-15 08:10:28.014 [INFO] [TGS] Query: type=0, input=615, jobs=9
+2026-10-15 08:10:30.693 [INFO] [TGS] LoadSource start: procName=SAJET.CHK_SN_HOLD_PROCESS, RichTextBox=True
+2026-10-15 08:10:30.700 [INFO] [TGS] LoadSource got 4526 chars
+2026-10-15 08:10:30.703 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 08:10:31.822 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_PNY_MODEL, RichTextBox=True
+2026-10-15 08:10:31.861 [INFO] [TGS] LoadSource got 72915 chars
+2026-10-15 08:10:31.864 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 08:10:37.543 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_INPUT2_TRANSFER, RichTextBox=True
+2026-10-15 08:10:37.545 [INFO] [TGS] LoadSource got 1039 chars
+2026-10-15 08:10:37.579 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 08:11:07.571 [INFO] [TGS] LoadSource start: procName=SAJET.CHK_SN_HOLD_PROCESS, RichTextBox=True
+2026-10-15 08:11:07.577 [INFO] [TGS] LoadSource got 4526 chars
+2026-10-15 08:11:07.579 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 08:11:13.596 [INFO] [TGS] LoadSource start: procName=SAJET.CHK_PROCESS2, RichTextBox=True
+2026-10-15 08:11:13.600 [INFO] [TGS] LoadSource got 772 chars
+2026-10-15 08:11:13.607 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 08:11:53.065 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_SN, RichTextBox=True
+2026-10-15 08:11:53.069 [INFO] [TGS] LoadSource got 797 chars
+2026-10-15 08:11:53.069 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 08:28:45.530 [INFO] [STATUS] Match: 260981098027133 -> 260981098027133
+2026-10-15 08:29:05.658 [INFO] [STATUS] Match: 260981098027058 -> 260981098027058
+2026-10-15 08:29:46.713 [INFO] [PCB] Add: sn=260981098027058, qr=29990000E26371033026007UTK, affected=1
+2026-10-15 08:30:12.952 [INFO] [STATUS] Match: 260981098027133 -> 260981098027133
+2026-10-15 08:30:46.912 [INFO] [PCB] Add: sn=260981098027133, qr=29990000饿6371034098001778, affected=1
+2026-10-15 08:33:54.129 [INFO] [PCB] DeleteAll: affected=1
+2026-10-15 09:33:02.371 [INFO] [SERVER-IP] Export OK: C:\Users\leihuang.ECS\Desktop\TGS_SERVER_IPS.csv
+2026-10-15 10:43:06.098 [INFO] [SHARE] Loaded 4 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-15 10:43:50.834 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-15 10:45:13.730 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-15 10:46:36.297 [INFO] [EXIT] Program exit.
+2026-10-15 10:46:36.339 [INFO] [EXIT] Application exiting.
+2026-10-15 14:56:35.431 [INFO] [START] Args=
+2026-10-15 14:56:35.456 [INFO] [START] Console=False
+2026-10-15 14:56:35.883 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-15 14:56:35.884 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-15 14:56:35.884 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-15 14:56:35.884 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-15 14:56:35.884 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-15 14:56:35.884 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-15 14:56:36.385 [INFO] [CONFIG] Loaded: login.json
+2026-10-15 14:57:02.319 [INFO] [CONFIG] Saved: login.json
+2026-10-15 14:57:02.560 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-15 14:57:02.567 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-15 14:57:09.373 [INFO] [TGS] Query: type=0, input=305, jobs=7
+2026-10-15 14:57:11.237 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_TRANSFER2, RichTextBox=True
+2026-10-15 14:57:11.253 [INFO] [TGS] LoadSource got 4896 chars
+2026-10-15 14:57:11.261 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 14:57:13.959 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_ROUTE2, RichTextBox=True
+2026-10-15 14:57:13.963 [INFO] [TGS] LoadSource got 2595 chars
+2026-10-15 14:57:13.972 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 14:57:14.800 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_TRANSFER2, RichTextBox=True
+2026-10-15 14:57:14.805 [INFO] [TGS] LoadSource got 4896 chars
+2026-10-15 14:57:14.809 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 14:59:31.004 [INFO] [STATUS] Match: 260981098631903 -> 260981098631903
+2026-10-15 14:59:53.872 [INFO] [WO-DETAIL] Status SN count = 507
+2026-10-15 14:59:53.872 [INFO] [WO-DETAIL] 24527136-17.1-001-S loaded, mode=0
+2026-10-15 15:50:30.128 [INFO] [TGS] Query: type=0, input=615, jobs=9
+2026-10-15 15:50:32.585 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_PNY_MODEL, RichTextBox=True
+2026-10-15 15:50:33.187 [INFO] [TGS] LoadSource got 72915 chars
+2026-10-15 15:50:33.189 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 15:50:35.609 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_INPUT2_TRANSFER, RichTextBox=True
+2026-10-15 15:50:35.644 [INFO] [TGS] LoadSource got 1039 chars
+2026-10-15 15:50:35.831 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 15:50:42.996 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_PNY_MODEL, RichTextBox=True
+2026-10-15 15:50:43.025 [INFO] [TGS] LoadSource got 72915 chars
+2026-10-15 15:50:43.428 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 15:50:51.964 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_INPUT2_TRANSFER, RichTextBox=True
+2026-10-15 15:50:51.966 [INFO] [TGS] LoadSource got 1039 chars
+2026-10-15 15:50:51.982 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 15:50:54.642 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_PNY_MODEL, RichTextBox=True
+2026-10-15 15:50:54.857 [INFO] [TGS] LoadSource got 72915 chars
+2026-10-15 15:50:54.859 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 17:39:59.491 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_INPUT2_TRANSFER, RichTextBox=True
+2026-10-15 17:39:59.655 [INFO] [TGS] LoadSource got 1039 chars
+2026-10-15 17:39:59.712 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 17:40:00.470 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_PNY_MODEL, RichTextBox=True
+2026-10-15 17:40:00.526 [INFO] [TGS] LoadSource got 72915 chars
+2026-10-15 17:40:00.528 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-15 19:16:16.157 [INFO] [STATUS] Match: 260878989787673 -> 260878989787673
+2026-10-15 19:16:33.209 [INFO] [STATUS] Match: 260878989787673 -> 260168346493619
+2026-10-15 19:17:30.706 [INFO] [STATUS] Match: 260878989787673 -> 260878989787673
+2026-10-15 19:43:07.694 [INFO] [MAC] ========== DeleteAll Start ==========
+2026-10-15 19:43:07.694 [INFO] [MAC] Operator   : D360749
+2026-10-15 19:43:07.694 [INFO] [MAC] Serials    : (无)
+2026-10-15 19:43:07.694 [INFO] [MAC] Reworks    : RW2026101539734
+2026-10-15 19:43:07.694 [INFO] [MAC] SerialsCnt : 0
+2026-10-15 19:43:07.694 [INFO] [MAC] ReworksCnt : 1
+2026-10-15 19:43:08.050 [INFO] [MAC] DeleteAll Result: 14 records affected (success)
+2026-10-15 19:43:08.050 [INFO] [MAC] ========== DeleteAll End ==========
+2026-10-15 19:43:16.213 [INFO] [RQ] Search: floor=ALL, start=2026-10-08, kw=, unfinished=False, count=50
+2026-10-15 19:43:22.002 [INFO] [RQ] Reply: idx=822983, emp=D360749, reply=OK, affected=1
+2026-10-15 19:43:23.036 [INFO] [RQ] Search: floor=ALL, start=2026-10-08, kw=, unfinished=False, count=50
+2026-10-15 19:43:25.856 [INFO] [RQ] Reply: idx=822984, emp=D360749, reply=OK, affected=1
+2026-10-15 19:43:26.993 [INFO] [RQ] Search: floor=ALL, start=2026-10-08, kw=, unfinished=False, count=50
+2026-10-15 19:43:30.064 [INFO] [RQ] Reply: idx=822985, emp=D360749, reply=OK, affected=1
+2026-10-15 19:43:30.765 [INFO] [RQ] Search: floor=ALL, start=2026-10-08, kw=, unfinished=False, count=50
+2026-10-15 19:58:41.868 [INFO] [EXIT] Program exit.
+2026-10-15 19:58:42.749 [INFO] [EXIT] Application exiting.
