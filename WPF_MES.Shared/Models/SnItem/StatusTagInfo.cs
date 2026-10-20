@@ -40,7 +40,6 @@
         {
             0 => "Good",
             1 => "Repair",
-            2 => "Hold",
             _ => CurrentStatus,
         };
 
@@ -50,8 +49,8 @@
         public string WorkFlagText => WorkFlagCode switch
         {
             0 => "Good",
-            1 => "Fail",
-            2 => "Scap",
+            1 => "Scap",
+            2 => "Hold",
             _ => WorkFlag,
         };
     }

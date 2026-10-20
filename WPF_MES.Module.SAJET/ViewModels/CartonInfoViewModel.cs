@@ -119,48 +119,78 @@ public partial class CartonInfoViewModel : ObservableObject
                 MessageBoxButton.OK, MessageBoxImage.Warning);
             return;
         }
+        // 按空格拆分，自动去掉空项
+        var values = text.Split(
+            new[] { ' ', '\t' },
+            StringSplitOptions.RemoveEmptyEntries);
 
-        // 校验存在性
-        try
+        if (values.Length == 0) return;
+
+        // 逐个校验 + 去重 + 添加
+        var invalid = new List<string>();
+        var duplicated = new List<string>();
+        int added = 0;
+
+        foreach (var value in values)
         {
-            bool exists = SelectedInputType.Type switch
+            // 1. 校验存在性
+            bool exists;
+            try
             {
-                ConditionType.Carton => SajetCommonService.ExistsCarton(text),
-                ConditionType.WorkOrder => SajetCommonService.ExistsWorkOrder(text),
-                _ => false,
-            };
+                exists = SelectedInputType.Type switch
+                {
+                    ConditionType.SerialNumber => SajetCommonService.ExistsSerialNumber(value),
+                    ConditionType.Carton => SajetCommonService.ExistsCarton(value),
+                    ConditionType.Rework => SajetCommonService.ExistsRework(value),
+                    ConditionType.WorkOrder => SajetCommonService.ExistsWorkOrder(value),
+                    ConditionType.QcNo => SajetCommonService.ExistsQcNo(value),
+                    _ => false,
+                };
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"[REWORK] Check exists failed: {ex.Message}");
+                MessageBox.Show("校验失败：" + ex.Message, "错误",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             if (!exists)
             {
-                MessageBox.Show($"{SelectedInputType.Display}不存在。", "输入错误",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
+                invalid.Add(value);
+                continue;
             }
+
+            // 2. 去重
+            if (_conditions.Exists(SelectedInputType.Type, value))
+            {
+                duplicated.Add(value);
+                continue;
+            }
+
+            // 3. 添加
+            _conditions.Add(SelectedInputType.Type, value);
+            ConditionItems.Add(new ConditionItem(
+                SelectedInputType.Type, SelectedInputType.Display, value));
+            added++;
         }
-        catch (Exception ex)
+        // 4. 提示
+        if (invalid.Count > 0)
         {
-            Logger.Error($"[CARTON] Check exists failed: {ex.Message}");
-            MessageBox.Show("校验失败：" + ex.Message, "错误",
-                MessageBoxButton.OK, MessageBoxImage.Error);
-            return;
+            MessageBox.Show(
+                $"以下值不存在，未添加：\n{string.Join("\n", invalid)}",
+                "部分无效", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
-
-        // 去重
-        if (_conditions.Exists(SelectedInputType.Type, text))
+        else if (duplicated.Count > 0 && added == 0)
         {
-            MessageBox.Show("该条件已存在。", "提示",
-                MessageBoxButton.OK, MessageBoxImage.Information);
-            InputText = string.Empty;
-            return;
+            // 全部重复
+            MessageBox.Show(
+                $"以下值已存在：\n{string.Join("\n", duplicated)}",
+                "提示", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        // 添加
-        _conditions.Add(SelectedInputType.Type, text);
-        ConditionItems.Add(new ConditionItem(
-            SelectedInputType.Type, SelectedInputType.Display, text));
-
+        // 5. 清空输入
         InputText = string.Empty;
-
         // 自动查询
         Search();
     }

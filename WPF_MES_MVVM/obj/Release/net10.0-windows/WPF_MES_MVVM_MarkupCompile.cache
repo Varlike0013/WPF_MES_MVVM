@@ -1,5 +1,5 @@
 ﻿WPF_MES_MVVM
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;RELEASE;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0
 E:\Git\WPF_MES\WPF_MES_MVVM\App.xaml
 4-1186723175
 
-202114181526
+18-720516106
 209-1205967933
 Views\LoginWindow.xaml;Views\NetworkLoginWindow.xaml;Views\ShareInfoView.xaml;Views\ShellWindow.xaml;
 
-True
+False
 

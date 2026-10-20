@@ -392,3 +392,5 @@
 2026-10-19 15:18:18.128 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKSYS_EMP_OUT, RichTextBox=True
 2026-10-19 15:18:18.130 [INFO] [TGS] LoadSource got 640 chars
 2026-10-19 15:18:18.131 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-19 19:09:20.263 [INFO] [EXIT] Program exit.
+2026-10-19 19:09:20.340 [INFO] [EXIT] Application exiting.

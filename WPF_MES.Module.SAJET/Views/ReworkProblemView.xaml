@@ -1,0 +1,339 @@
+<UserControl x:Class="WPF_MES.Module.SAJET.Views.ReworkProblemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Microsoft YaHei"
+             FontSize="13">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPF_MES.Shared;component/Themes/SharedStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- 表单标签（统一左对齐，次要色） -->
+            <Style x:Key="FormLabel" TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Margin" Value="0,0,10,0"/>
+            </Style>
+
+            <!-- 详情标签 -->
+            <Style x:Key="DetailLabel" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <!-- 详情值 -->
+            <Style x:Key="DetailValue" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="{StaticResource PageBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 顶部标题 -->
+        <Border Grid.Row="0" Background="{StaticResource PrimaryBrush}" Padding="14,10">
+            <Grid>
+                <TextBlock Text="待处理问题区" FontSize="16" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="{Binding StatusText}" Foreground="White" Opacity="0.8" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                    <Button Content="立即刷新" Command="{Binding RefreshCommand}" Style="{StaticResource SecondaryButton}" Width="90" Height="28" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- 主体：三栏布局 -->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="380"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="1.2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ================= 左侧：问题列表 ================= -->
+            <Border Grid.Column="0"
+                    Background="{StaticResource CardBackgroundBrush}"
+                    BorderBrush="{StaticResource CardBorderBrush}"
+                    BorderThickness="1" CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Style="{StaticResource InfoCardHeaderStyle}">
+                        <TextBlock Text="实时问题列表" FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}"/>
+                    </Border>
+
+                    <DataGrid Grid.Row="1"
+                              ItemsSource="{Binding Problems}"
+                              SelectedItem="{Binding SelectedProblem}"
+                              Style="{StaticResource DataGridStyle}"
+                              BorderThickness="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="索引" Binding="{Binding NumberIndex}" Width="60"/>
+                            <DataGridTextColumn Header="线别" Binding="{Binding PdLineName}" Width="80"/>
+                            <DataGridTextColumn Header="序号" Binding="{Binding SerialNumber}" Width="*"/>
+                            <DataGridTextColumn Header="提交人" Binding="{Binding SubmitterName}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="Transparent"/>
+
+            <!-- ================= 中间：问题详情 ================= -->
+            <Border Grid.Column="2"
+                    Background="{StaticResource CardBackgroundBrush}"
+                    BorderBrush="{StaticResource CardBorderBrush}"
+                    BorderThickness="1" CornerRadius="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Style="{StaticResource SuccessCardHeaderStyle}">
+                        <TextBlock Text="问题详情" FontWeight="Bold" Foreground="{StaticResource SuccessTextBrush}"/>
+                    </Border>
+
+                    <ScrollViewer Grid.Row="1" Padding="20" VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <!-- 序号 -->
+                            <StackPanel Margin="0,0,0,16">
+                                <TextBlock Text="序号 (SERIAL_NUMBER)" Style="{StaticResource DetailLabel}" Margin="0,0,0,6"/>
+                                <Border Background="#FAFAFA" BorderBrush="{StaticResource CardBorderBrush}" BorderThickness="1" CornerRadius="4" Padding="10,8">
+                                    <TextBlock Text="{Binding DetailSerialNumber}" Style="{StaticResource DetailValue}" FontSize="16"/>
+                                </Border>
+                            </StackPanel>
+
+                            <!-- 线别与人员 -->
+                            <Grid Margin="0,0,0,16">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                                    <TextBlock Text="线别 (PDLINE)" Style="{StaticResource DetailLabel}" Margin="0,0,0,6"/>
+                                    <TextBlock Text="{Binding DetailPdLine}" Style="{StaticResource DetailValue}"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="报告人 (SUBMITTER)" Style="{StaticResource DetailLabel}" Margin="0,0,0,6"/>
+                                    <TextBlock Text="{Binding DetailSubmitter}" Style="{StaticResource DetailValue}"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <!-- 问题原因 -->
+                            <StackPanel Margin="0,0,0,16">
+                                <TextBlock Text="问题原因 (REASON || QUERY)" Style="{StaticResource DetailLabel}" Margin="0,0,0,6"/>
+                                <Border Background="#FFF6DC" BorderBrush="#E8A000" BorderThickness="1" CornerRadius="4" Padding="10,8">
+                                    <TextBlock Text="{Binding DetailReason}" Style="{StaticResource DetailValue}" Foreground="#B57000" TextWrapping="Wrap"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel>
+                                <TextBlock Text="确认人 (CONFIRMER)" Style="{StaticResource DetailLabel}" Margin="0,0,0,6"/>
+                                <TextBlock Text="{Binding DetailConfirmer}" Style="{StaticResource DetailValue}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="3" HorizontalAlignment="Stretch" Background="Transparent"/>
+
+            <!-- ================= 右侧：解决办法与处理提交 ================= -->
+            <Border Grid.Column="4"
+                    Background="{StaticResource CardBackgroundBrush}"
+                    BorderBrush="{StaticResource CardBorderBrush}"
+                    BorderThickness="1" CornerRadius="4">
+                <Grid>
+                    <!-- 修改行定义：让建议区和条件区按比例分配空间 -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <!-- 0: 标题 -->
+                        <RowDefinition Height="1*"/>
+                        <!-- 1: 建议文字区 -->
+                        <RowDefinition Height="1*"/>
+                        <!-- 2: 条件区 (输入+列表) -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 3: 处理表单 -->
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Style="{StaticResource InfoCardHeaderStyle}" Background="#E8F5E9" BorderBrush="#2E7D32">
+                        <TextBlock Text="解决建议处理" FontWeight="Bold" Foreground="#2E7D32"/>
+                    </Border>
+
+                    <!-- 建议文字区 -->
+                    <ScrollViewer Grid.Row="1" Padding="15" VerticalScrollBarVisibility="Auto">
+                        <TextBlock Text="{Binding SolutionText}"
+                                   FontFamily="Consolas"
+                                   FontSize="13"
+                                   Foreground="{StaticResource TextPrimaryBrush}"
+                                   TextWrapping="Wrap"
+                                   LineHeight="22"/>
+                    </ScrollViewer>
+
+                    <!-- ================= 条件输入与条件列表 ================= -->
+                    <Grid Grid.Row="2" Background="#F7F9FB" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <!-- 条件输入栏 -->
+                            <RowDefinition Height="*"/>
+                            <!-- 条件列表 -->
+                        </Grid.RowDefinitions>
+
+                        <!-- 条件输入 -->
+                        <Border Grid.Row="0" BorderBrush="{StaticResource CardBorderBrush}" BorderThickness="0,1,0,0" Padding="15,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" MinWidth="90"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <ComboBox Grid.Column="0"
+                                          ItemsSource="{Binding InputTypes}"
+                                          SelectedItem="{Binding SelectedInputType}"
+                                          DisplayMemberPath="Display"
+                                          Height="28"
+                                          MinWidth="90"
+                                          Margin="0,0,8,0"/>
+                                <TextBox x:Name="txtInput"
+                                         Grid.Column="1"
+                                         Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
+                                         Height="28"
+                                         MinWidth="0"
+                                         Padding="8,0"
+                                         VerticalContentAlignment="Center"
+                                         Margin="0,0,8,0"
+                                         KeyDown="InputText_KeyDown"/>
+                                <Button Grid.Column="2"
+                                        Content="清空"
+                                        Command="{Binding ClearConditionsCommand}"
+                                        Style="{StaticResource SecondaryButton}"
+                                        Width="60"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- 条件列表 -->
+                        <Border Grid.Row="1" 
+                                BorderBrush="{StaticResource CardBorderBrush}" 
+                                BorderThickness="0,1,0,0" 
+                                Margin="15,0,15,10"
+                                CornerRadius="4"
+                                ClipToBounds="True">
+                            <DataGrid ItemsSource="{Binding ConditionItems}"
+                                      Style="{StaticResource DataGridStyle}"
+                                      BorderThickness="1"
+                                      IsReadOnly="True"
+                                      RowHeight="26"
+                                      FontSize="12">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="条件" Binding="{Binding TypeName}" Width="100"/>
+                                    <DataGridTextColumn Header="值"   Binding="{Binding Value}"    Width="*"/>
+                                    <DataGridTemplateColumn Header="" Width="40">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="×"
+                                                        Width="24" Height="20"
+                                                        FontSize="14"
+                                                        Foreground="#8899AA"
+                                                        Background="Transparent"
+                                                        BorderThickness="0"
+                                                        Cursor="Hand"
+                                                        Click="RemoveCondition_Click"
+                                                        Tag="{Binding}">
+                                                    <Button.Style>
+                                                        <Style TargetType="Button">
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="Button">
+                                                                        <Border x:Name="Bd" Background="Transparent" CornerRadius="3">
+                                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                        </Border>
+                                                                        <ControlTemplate.Triggers>
+                                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                                <Setter TargetName="Bd" Property="Background" Value="#FDE7E7"/>
+                                                                                <Setter Property="Foreground" Value="#C83232"/>
+                                                                            </Trigger>
+                                                                        </ControlTemplate.Triggers>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Border>
+                    </Grid>
+
+                    <!-- ================= 处理表单区 ================= -->
+                    <Border Grid.Row="3" Background="#F7F9FB" BorderBrush="{StaticResource CardBorderBrush}" BorderThickness="0,1,0,0" Padding="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <!-- 标题 -->
+                                <RowDefinition Height="36"/>
+                                <!-- 处理人 -->
+                                <RowDefinition Height="36"/>
+                                <!-- 处理方式 -->
+                                <RowDefinition Height="Auto"/>
+                                <!-- 按钮 -->
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="处理提交" FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}" Margin="0,0,0,12"/>
+
+                            <!-- 处理人 (只读) -->
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="处理人" Style="{StaticResource FormLabel}"/>
+                                <TextBox Grid.Column="1" Text="{Binding InputEmpSfis}" IsReadOnly="True" Background="#E0E0E0" Height="28" Padding="8,0" VerticalContentAlignment="Center"/>
+                            </Grid>
+
+                            <!-- 处理方式 (预设下拉) -->
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="处理方式" Style="{StaticResource FormLabel}"/>
+                                <ComboBox Grid.Column="1" ItemsSource="{Binding SolutionTypes}" SelectedItem="{Binding InputSolutionType}" Height="28" VerticalContentAlignment="Center"/>
+                            </Grid>
+
+                            <!-- 提交按钮 -->
+                            <Button Grid.Row="3"
+                                    Content="执行处理"
+                                    Command="{Binding CompleteProblemCommand}"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Height="36"
+                                    Margin="0,16,0,0"
+                                    HorizontalAlignment="Stretch"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

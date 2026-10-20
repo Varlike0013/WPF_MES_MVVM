@@ -164,6 +164,11 @@ public class SajetModule : IModule
                     {
                         Title = "箱号管理",
                         ViewFactory = () => new CartonInfoView(),
+                    },
+                    new ModuleMenuNode
+                    {
+                        Title = "自动重工",
+                        ViewFactory = () => new ReworkProblemView(),
                     }
                 }
             },
