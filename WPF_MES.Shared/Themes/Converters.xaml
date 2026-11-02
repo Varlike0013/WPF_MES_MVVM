@@ -9,5 +9,6 @@
 
     <!-- 图片 -->
     <conv:Base64ToImageConverter   x:Key="Base64ToImage"/>
+    <conv:ColorToHexConverter x:Key="ColorToHexConverter"/>
     
 </ResourceDictionary>

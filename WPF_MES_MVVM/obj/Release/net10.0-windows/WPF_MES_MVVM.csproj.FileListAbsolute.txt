@@ -34,3 +34,5 @@ E:\Git\WPF_MES\WPF_MES_MVVM\obj\Release\net10.0-windows\Views\NetworkLoginWindow
 E:\Git\WPF_MES\WPF_MES_MVVM\obj\Release\net10.0-windows\Views\ShareInfoView.baml
 E:\Git\WPF_MES\WPF_MES_MVVM\obj\Release\net10.0-windows\Views\NetworkLoginWindow.g.cs
 E:\Git\WPF_MES\WPF_MES_MVVM\obj\Release\net10.0-windows\Views\ShareInfoView.g.cs
+E:\Git\WPF_MES\WPF_MES_MVVM\obj\Release\net10.0-windows\Views\PixelEditorView.baml
+E:\Git\WPF_MES\WPF_MES_MVVM\obj\Release\net10.0-windows\Views\PixelEditorView.g.cs

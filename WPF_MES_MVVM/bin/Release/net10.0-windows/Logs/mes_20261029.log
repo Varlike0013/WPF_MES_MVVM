@@ -1,0 +1,50 @@
+﻿2026-10-29 13:55:09.982 [INFO] [START] Args=
+2026-10-29 13:55:09.983 [INFO] [START] Console=False
+2026-10-29 13:55:10.399 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-29 13:55:10.400 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-29 13:55:10.400 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-29 13:55:10.400 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-29 13:55:10.400 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-29 13:55:10.400 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-29 13:55:10.727 [INFO] [CONFIG] Loaded: login.json
+2026-10-29 13:55:25.809 [INFO] [CONFIG] Saved: login.json
+2026-10-29 13:55:26.019 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-29 13:55:26.024 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-29 13:55:34.307 [INFO] [TGS] Query: type=0, input=389, jobs=9
+2026-10-29 13:55:42.678 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_PACK_CHK_TECH_NOBIOS_NEW, RichTextBox=True
+2026-10-29 13:55:42.696 [INFO] [TGS] LoadSource got 3001 chars
+2026-10-29 13:55:42.712 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-29 15:11:14.347 [INFO] [EXIT] Program exit.
+2026-10-29 15:11:14.392 [INFO] [EXIT] Application exiting.
+2026-10-29 15:42:14.393 [INFO] [START] Args=
+2026-10-29 15:42:14.417 [INFO] [START] Console=False
+2026-10-29 15:42:14.816 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-29 15:42:14.816 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-29 15:42:14.816 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-29 15:42:14.816 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-29 15:42:14.816 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-29 15:42:14.816 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-29 15:42:15.164 [INFO] [CONFIG] Loaded: login.json
+2026-10-29 15:42:26.247 [INFO] [CONFIG] Saved: login.json
+2026-10-29 15:42:26.451 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-29 15:42:26.465 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-29 15:42:50.507 [INFO] [MAC] ========== DeleteAll Start ==========
+2026-10-29 15:42:50.507 [INFO] [MAC] Operator   : D360749
+2026-10-29 15:42:50.507 [INFO] [MAC] Serials    : (无)
+2026-10-29 15:42:50.507 [INFO] [MAC] Reworks    : RW2026102939972
+2026-10-29 15:42:50.507 [INFO] [MAC] SerialsCnt : 0
+2026-10-29 15:42:50.507 [INFO] [MAC] ReworksCnt : 1
+2026-10-29 15:42:50.853 [INFO] [MAC] DeleteAll Result: 6 records affected (success)
+2026-10-29 15:42:50.853 [INFO] [MAC] ========== DeleteAll End ==========
+2026-10-29 16:35:30.745 [INFO] [MAC] ========== DeleteAll Start ==========
+2026-10-29 16:35:30.746 [INFO] [MAC] Operator   : D360749
+2026-10-29 16:35:30.746 [INFO] [MAC] Serials    : (无)
+2026-10-29 16:35:30.746 [INFO] [MAC] Reworks    : RW2026102939974
+2026-10-29 16:35:30.746 [INFO] [MAC] SerialsCnt : 0
+2026-10-29 16:35:30.746 [INFO] [MAC] ReworksCnt : 1
+2026-10-29 16:35:30.785 [INFO] [MAC] DeleteAll Result: 10 records affected (success)
+2026-10-29 16:35:30.785 [INFO] [MAC] ========== DeleteAll End ==========
+2026-10-29 16:35:36.375 [INFO] [RQ] Search: floor=ALL, start=2026-10-22, kw=, unfinished=False, count=50
+2026-10-29 16:35:41.232 [INFO] [RQ] Reply: idx=823170, emp=D360749, reply=OK, affected=1
+2026-10-29 16:35:41.982 [INFO] [RQ] Search: floor=ALL, start=2026-10-22, kw=, unfinished=False, count=50
+2026-10-29 17:38:58.463 [INFO] [SMTREEL] Query done: site=2-211L, line=B402F05L, count=11

@@ -1,0 +1,64 @@
+﻿2026-10-26 08:35:08.853 [INFO] [START] Args=
+2026-10-26 08:35:08.854 [INFO] [START] Console=False
+2026-10-26 08:35:09.187 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-26 08:35:09.188 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-26 08:35:09.188 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-26 08:35:09.188 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-26 08:35:09.188 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-26 08:35:09.189 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-26 08:35:09.557 [INFO] [CONFIG] Loaded: login.json
+2026-10-26 08:35:19.912 [INFO] [CONFIG] Saved: login.json
+2026-10-26 08:35:20.112 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-26 08:35:20.132 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-26 08:36:00.307 [INFO] [FIND-ROUTE] SN=88AEDDCCC7D1, routes=3
+2026-10-26 08:36:10.115 [INFO] [FIND-ROUTE] dip=DIP+DAOI+MDA-TEST, pack=P_TVI-PACK-OQC-ACER, matched=2
+2026-10-26 08:36:51.420 [INFO] [FIND-ROUTE] SN=88AEDDCBB09F, routes=3
+2026-10-26 08:36:56.413 [INFO] [FIND-ROUTE] dip=DIP+DAOI+MDA-TEST, pack=P_TVI-PACK-OQC-ACER, matched=2
+2026-10-26 08:40:15.023 [INFO] [MAC] ========== DeleteAll Start ==========
+2026-10-26 08:40:15.023 [INFO] [MAC] Operator   : D360749
+2026-10-26 08:40:15.023 [INFO] [MAC] Serials    : (无)
+2026-10-26 08:40:15.023 [INFO] [MAC] Reworks    : RW2026102639865,RW2026102639864,RW2026102639863
+2026-10-26 08:40:15.023 [INFO] [MAC] SerialsCnt : 0
+2026-10-26 08:40:15.023 [INFO] [MAC] ReworksCnt : 3
+2026-10-26 08:40:15.340 [INFO] [MAC] DeleteAll Result: 30 records affected (success)
+2026-10-26 08:40:15.341 [INFO] [MAC] ========== DeleteAll End ==========
+2026-10-26 08:56:32.847 [INFO] [TGS] Query: type=0, input=615, jobs=9
+2026-10-26 08:56:35.266 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_CKRT_PNY_MODEL, RichTextBox=True
+2026-10-26 08:56:35.317 [INFO] [TGS] LoadSource got 72915 chars
+2026-10-26 08:56:35.336 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-26 08:57:30.706 [INFO] [WO] Query input=24527156-20.1-001-d, type=0, status=7, count=0
+2026-10-26 08:57:34.042 [INFO] [WO] Query input=24527156-20.1-001-D, type=0, status=7, count=1
+2026-10-26 09:01:45.448 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_INPUT2_TRANSFER, RichTextBox=True
+2026-10-26 09:01:45.452 [INFO] [TGS] LoadSource got 1039 chars
+2026-10-26 09:01:45.469 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-26 13:38:04.517 [INFO] [PCB] DeleteAll: affected=2
+2026-10-26 14:34:14.531 [INFO] [WO] Query input=24527156-7.1-001-S, type=0, status=7, count=1
+2026-10-26 14:34:21.344 [INFO] [WO] Query input=24527156-7.1-001-D, type=0, status=7, count=1
+2026-10-26 14:38:39.443 [INFO] [TGS] Query: type=0, input=595, jobs=10
+2026-10-26 14:38:49.252 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_SVI_TWICE, RichTextBox=True
+2026-10-26 14:38:49.258 [INFO] [TGS] LoadSource got 5801 chars
+2026-10-26 14:38:49.280 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-26 14:39:13.069 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_SVI_KPSN_GBA, RichTextBox=True
+2026-10-26 14:39:13.104 [INFO] [TGS] LoadSource got 8422 chars
+2026-10-26 14:39:13.116 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-26 14:39:17.858 [INFO] [TGS] LoadSource start: procName=SAJET.SJ_SVI_TWICE, RichTextBox=True
+2026-10-26 14:39:17.876 [INFO] [TGS] LoadSource got 5801 chars
+2026-10-26 14:39:17.880 [INFO] [TGS] LoadSource written to RichTextBox
+2026-10-26 16:29:58.747 [INFO] [SHARE] Loaded 7 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-26 16:30:41.321 [INFO] [SHARE] PickImage called. SelectedNode=SJ_CKRT_ROUTE
+2026-10-26 16:31:37.635 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-26 16:32:07.322 [INFO] [SHARE] Saved to \\10.240.144.99\f\LeiHuang\share-info.json
+2026-10-26 18:52:36.660 [INFO] [FIND-ROUTE] SN=8SSB21D14182E1SZ6AC01RY, routes=3
+2026-10-26 18:52:41.932 [INFO] [FIND-ROUTE] dip=DIP+DAOI+ICT-P, pack=P_TVI-PACK-OQC-Lenovo, matched=4
+2026-10-26 18:54:12.191 [INFO] [FIND-ROUTE] SN=88AEDDCCED4F, routes=3
+2026-10-26 18:54:17.783 [INFO] [FIND-ROUTE] dip=DIP+DAOI+MDA-TEST, pack=P_TVI-PACK-OQC-ACER, matched=2
+2026-10-26 18:55:02.299 [INFO] [CARTON] BatchUpdateStatus 出库, affected=1
+2026-10-26 18:55:39.366 [INFO] [RQ] Search: floor=ALL, start=2026-10-19, kw=, unfinished=False, count=50
+2026-10-26 18:55:44.027 [INFO] [RQ] Reply: idx=823124, emp=D360749, reply=OK, affected=1
+2026-10-26 18:55:44.628 [INFO] [RQ] Search: floor=ALL, start=2026-10-19, kw=, unfinished=False, count=50
+2026-10-26 18:55:47.462 [INFO] [RQ] Reply: idx=823123, emp=D360749, reply=OK, affected=1
+2026-10-26 18:55:48.097 [INFO] [RQ] Search: floor=ALL, start=2026-10-19, kw=, unfinished=False, count=50
+2026-10-26 18:55:51.108 [INFO] [RQ] Reply: idx=823126, emp=D360749, reply=OK, affected=1
+2026-10-26 18:55:51.792 [INFO] [RQ] Search: floor=ALL, start=2026-10-19, kw=, unfinished=False, count=50
+2026-10-27 07:59:54.256 [INFO] [EXIT] Program exit.
+2026-10-27 07:59:55.353 [INFO] [EXIT] Application exiting.

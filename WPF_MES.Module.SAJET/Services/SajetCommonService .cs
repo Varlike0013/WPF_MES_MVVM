@@ -336,7 +336,6 @@ internal static class SajetCommonService
     => OracleHelper.Exists("SAJET.G_SN_STATUS", "SERIAL_NUMBER", sn);
     public static bool ExistsCarton(string carton)
         => OracleHelper.Exists("SAJET.G_SN_STATUS", "CARTON_NO", carton);
-
     public static bool ExistsRework(string rework)
         => OracleHelper.Exists("SAJET.G_SN_STATUS", "REWORK_NO", rework);
     public static bool ExistsWorkOrder(string wo)

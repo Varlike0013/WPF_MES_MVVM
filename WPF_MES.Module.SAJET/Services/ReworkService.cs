@@ -131,6 +131,9 @@ internal static class ReworkService
         if (hasNewWo)
         {
             sets.Add("S.WORK_ORDER = :newWo");
+            sets.Add(@"S.MODEL_ID = (SELECT B.MODEL_ID
+                              FROM SAJET.G_WO_BASE B
+                             WHERE B.WORK_ORDER = :newWo)");
             ps["newWo"] = newWorkOrder!;
         }
 

@@ -1,0 +1,51 @@
+﻿2026-10-27 09:37:19.148 [INFO] [START] Args=
+2026-10-27 09:37:19.170 [INFO] [START] Console=False
+2026-10-27 09:37:19.605 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-10-27 09:37:19.605 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-10-27 09:37:19.606 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-10-27 09:37:19.606 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-10-27 09:37:19.606 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-10-27 09:37:19.606 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-10-27 09:37:20.043 [INFO] [CONFIG] Loaded: login.json
+2026-10-27 09:37:36.349 [INFO] [CONFIG] Saved: login.json
+2026-10-27 09:37:36.515 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-10-27 09:37:36.521 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-10-27 09:37:48.006 [INFO] [WO-DETAIL] Status SN count = 0
+2026-10-27 09:37:48.006 [INFO] [WO-DETAIL] 24526707-1.1-002-D loaded, mode=0
+2026-10-27 09:37:52.167 [INFO] [WO-DETAIL] Travel SN count = 2000
+2026-10-27 09:37:52.713 [INFO] [WO-DETAIL] Travel SN count = 2000
+2026-10-27 09:37:52.713 [INFO] [WO-DETAIL] 24526707-1.1-002-D loaded, mode=1
+2026-10-27 09:37:54.102 [INFO] [WO-DETAIL] Travel SN count = 2000
+2026-10-27 09:37:54.102 [INFO] [WO-DETAIL] 24526707-1.1-002-D loaded, mode=1
+2026-10-27 09:38:11.075 [INFO] [WO-DETAIL] Exported 2000 rows to C:\Users\leihuang.ECS\Pictures\SN_24526707-1.1-002-D_20261027093802.csv
+2026-10-27 11:15:57.879 [INFO] [FIND-ROUTE] SN=8SSB21D14182E1SZ69G00CE, routes=3
+2026-10-27 11:16:03.374 [INFO] [FIND-ROUTE] dip=DIP+DAOI+ICT-P, pack=P_TVI-PACK-OQC-Lenovo, matched=4
+2026-10-27 14:40:25.908 [INFO] [CARTON] WQC result: carton=26AG004380, result=OK
+2026-10-27 14:41:09.382 [INFO] [CARTON] WQC result: carton=264G019134, result=OK
+2026-10-27 14:43:42.033 [INFO] [RQ] Search: floor=ALL, start=2026-10-20, kw=, unfinished=False, count=50
+2026-10-27 14:43:47.664 [INFO] [RQ] Reply: idx=823138, emp=D360749, reply=OK, affected=1
+2026-10-27 14:43:48.447 [INFO] [RQ] Search: floor=ALL, start=2026-10-20, kw=, unfinished=False, count=50
+2026-10-27 14:43:51.860 [INFO] [RQ] Reply: idx=823139, emp=D360749, reply=OK, affected=1
+2026-10-27 14:43:52.590 [INFO] [RQ] Search: floor=ALL, start=2026-10-20, kw=, unfinished=False, count=50
+2026-10-27 14:44:02.824 [INFO] [RQ] Reply: idx=823141, emp=D360749, reply=OK, affected=1
+2026-10-27 14:44:03.585 [INFO] [RQ] Search: floor=ALL, start=2026-10-20, kw=, unfinished=False, count=50
+2026-10-27 14:44:06.871 [INFO] [RQ] Reply: idx=823142, emp=D360749, reply=OK, affected=1
+2026-10-27 14:44:07.669 [INFO] [RQ] Search: floor=ALL, start=2026-10-20, kw=, unfinished=False, count=50
+2026-10-27 14:44:11.384 [INFO] [RQ] Reply: idx=823143, emp=D360749, reply=OK, affected=1
+2026-10-27 14:44:12.197 [INFO] [RQ] Search: floor=ALL, start=2026-10-20, kw=, unfinished=False, count=50
+2026-10-27 14:44:19.401 [INFO] [RQ] Reply: idx=823140, emp=D360749, reply=维修, affected=1
+2026-10-27 14:44:20.032 [INFO] [RQ] Search: floor=ALL, start=2026-10-20, kw=, unfinished=False, count=50
+2026-10-27 14:48:29.410 [INFO] [WO-DETAIL] Travel SN count = 688
+2026-10-27 14:48:29.410 [INFO] [WO-DETAIL] 24527167-7.1-001-D loaded, mode=1
+2026-10-27 14:48:38.274 [INFO] [WO-DETAIL] Status SN count = 187
+2026-10-27 14:48:39.208 [INFO] [WO-DETAIL] Status SN count = 187
+2026-10-27 14:48:39.208 [INFO] [WO-DETAIL] 24527167-7.1-001-D loaded, mode=0
+2026-10-27 14:48:40.846 [INFO] [WO-DETAIL] Travel SN count = 688
+2026-10-27 14:54:20.174 [INFO] [WO-DETAIL] Travel SN count = 688
+2026-10-27 14:54:20.174 [INFO] [WO-DETAIL] 24527167-7.1-001-D loaded, mode=1
+2026-10-27 14:55:01.843 [INFO] [WO-DETAIL] Travel SN count = 2240
+2026-10-27 14:55:01.843 [INFO] [WO-DETAIL] 24527156-20.1-001-D loaded, mode=1
+2026-10-27 14:55:42.049 [INFO] [WO-DETAIL] Travel SN count = 2240
+2026-10-27 14:55:42.049 [INFO] [WO-DETAIL] 24527156-20.1-001-D loaded, mode=1
+2026-10-27 19:56:52.696 [INFO] [EXIT] Program exit.
+2026-10-27 19:56:52.860 [INFO] [EXIT] Application exiting.

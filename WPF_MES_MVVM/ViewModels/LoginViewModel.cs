@@ -10,6 +10,8 @@ public partial class LoginViewModel : ObservableObject
 {
     private readonly List<IModule> _modules;
     private readonly JsonConfig<Models.LoginSettings> _settings;
+    private const string GuestUserNo = "Guest";
+    private const string GuestPassword = "123456";
 
     public event Action<IModule, LoginResult>? LoginSucceeded;
 
@@ -106,6 +108,9 @@ public partial class LoginViewModel : ObservableObject
 
     public void DoLogin(string? password)
     {
+        if (TryGuestLogin(UserNo, password))
+            return;
+
         if (SelectedModule == null)
         {
             MessageBox.Show("请选择要登录的系统。", "提示",
@@ -154,5 +159,46 @@ public partial class LoginViewModel : ObservableObject
             MessageBox.Show("登录失败：" + ex.Message, "错误",
                 MessageBoxButton.OK, MessageBoxImage.Error);
         }
+    }
+    /// <summary>
+    /// 尝试以硬编码公共账户登录。
+    /// 返回 true  —— 已由访客逻辑处理完毕（成功或失败），调用方应直接 return。
+    /// 返回 false —— 不是访客凭据，调用方继续走原有校验。
+    /// </summary>
+    private bool TryGuestLogin(string? username, string? password)
+    {
+        // 1) 未命中访客凭据 → 放行给原有逻辑
+        if (!string.Equals(username?.Trim(), GuestUserNo, StringComparison.OrdinalIgnoreCase)
+            || password != GuestPassword)
+        {
+            return false;
+        }
+
+        // 2) 命中访客：优先 UI 选中的模块，没选就给第一个
+        var guestModule = SelectedModule ?? Modules.FirstOrDefault();
+        if (guestModule is null)
+        {
+            MessageBox.Show("无可用模块。", "提示",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
+            Logger.Warn("[LOGIN GUEST] Matched guest credentials but no module available.");
+            return true;   // 已处理（失败），调用方不能再走 auth.Login
+        }
+
+        // 3) 构造结果
+        var guestResult = new LoginResult
+        {
+            Success = true,
+            UserNo = GuestUserNo,
+            UserName = GuestUserNo,
+        };
+
+        // 4) 同步全局当前用户
+        CurrentUser.UserNo = GuestUserNo;
+        CurrentUser.UserName = GuestUserNo;
+        CurrentUser.ModuleKey = guestModule.ModuleKey;
+
+        Logger.Info($"[LOGIN OK] Guest (hard-coded), Module={guestModule.ModuleKey}");
+        LoginSucceeded?.Invoke(guestModule, guestResult);
+        return true;
     }
 }

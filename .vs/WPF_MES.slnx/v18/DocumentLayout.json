@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "E:\\Git\\WPF_MES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\viewmodels\\reworkproblemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\viewmodels\\reworkproblemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\viewmodels\\pixeleditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\viewmodels\\pixeleditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\reworkproblemview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\reworkproblemview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\pixeleditorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\pixeleditorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\views\\reworkproblemview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\views\\reworkproblemview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\pixeleditorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\pixeleditorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\services\\globalmenuprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\services\\globalmenuprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,7 +52,7 @@
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\SajetModule.cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\SajetModule.cs",
               "RelativeToolTip": "WPF_MES.Module.SAJET\\SajetModule.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAYwKwAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAALoAAAAAAAAAAAAYwNAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-22T08:26:25.615Z",
               "IsPinned": true,
@@ -56,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "OracleHelper.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
@@ -65,78 +69,88 @@
               "ViewState": "AgIAAIwAAAAAAAAAAAAkwJMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-23T01:47:05.578Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReworkProblemView.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\ReworkProblemView.xaml",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\ReworkProblemView.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\ReworkProblemView.xaml",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\ReworkProblemView.xaml",
+              "DocumentIndex": 1,
+              "Title": "PixelEditorView.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\PixelEditorView.xaml",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\PixelEditorView.xaml",
+              "RelativeToolTip": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-20T06:52:14.283Z",
+              "WhenOpened": "2026-11-02T01:45:28.807Z",
               "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 211,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "SajetCommonService .cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "RelativeToolTip": "WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
-              "ViewState": "AgIAAEgBAAAAAAAAAAAowFkBAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAADgBAAAAAAAAAAAuwFABAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-24T01:59:04.928Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReworkProblemView.xaml.cs",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\ReworkProblemView.xaml.cs",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Views\\ReworkProblemView.xaml.cs",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Views\\ReworkProblemView.xaml.cs",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\Views\\ReworkProblemView.xaml.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAwA8AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "GlobalMenuProvider.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
+              "RelativeToolTip": "WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwBgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T07:02:40.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T00:38:36.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReworkProblemViewModel.cs",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\ReworkProblemViewModel.cs",
-              "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\ViewModels\\ReworkProblemViewModel.cs",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\ViewModels\\ReworkProblemViewModel.cs",
-              "RelativeToolTip": "WPF_MES.Module.SAJET\\ViewModels\\ReworkProblemViewModel.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAA7wHoAAABUAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "PixelEditorView.xaml.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
+              "RelativeToolTip": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T06:44:32.792Z",
+              "WhenOpened": "2026-11-02T00:33:39.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\App.xaml.cs",
               "RelativeDocumentMoniker": "WPF_MES_MVVM\\App.xaml.cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\App.xaml.cs",
               "RelativeToolTip": "WPF_MES_MVVM\\App.xaml.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAwB0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-10T00:43:55.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PixelEditorViewModel.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
+              "RelativeDocumentMoniker": "WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
+              "RelativeToolTip": "WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAnwGgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T00:32:04.364Z",
+              "EditorCaption": ""
             }
           ]
         }

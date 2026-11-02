@@ -25,6 +25,8 @@ public static class GlobalMenuProvider
         // 父节点任意深度都能定位到
         AddToParent(menus, "P13程序执行", "共享信息中心",
             () => new ShareInfoView());
+       AddToParent(menus, "P13程序执行", "PNG修改",
+            () => new PixelEditorView());
     }
 
     /// <summary>
