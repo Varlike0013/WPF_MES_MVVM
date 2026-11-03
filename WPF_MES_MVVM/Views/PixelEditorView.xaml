@@ -41,9 +41,35 @@
 
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="14">
                     <StackPanel>
+                        <TextBlock Text="{Binding ImageName, StringFormat='当前图片: {0}'}" 
+                           FontWeight="SemiBold" 
+                           Foreground="{StaticResource PrimaryBrush}" 
+                           Margin="0,0,0,10" 
+                           TextTrimming="CharacterEllipsis"/>
+                        <!-- 文件操作 -->
                         <Button Content="加载图片" Command="{Binding LoadImageCommand}" Style="{StaticResource PrimaryButton}" Height="32" Margin="0,0,0,10"/>
-                        <Button Content="保存为新 PNG" Command="{Binding SaveImageCommand}" Style="{StaticResource SecondaryButton}" Height="32" Margin="0,0,0,15"/>
-                        <Button Content="导出颜色信息 (TXT)" Command="{Binding ExportColorTxtCommand}" Style="{StaticResource SecondaryButton}" Height="32" Margin="0,0,0,15"/>
+                        <Button Content="保存为新 PNG" Command="{Binding SaveImageCommand}" Style="{StaticResource SecondaryButton}" Height="32" Margin="0,0,0,10"/>
+
+                        <!-- ★ 点阵导出与导入 -->
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="8"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Content="导出点阵 TXT" Command="{Binding ExportMatrixTxtCommand}" Style="{StaticResource SecondaryButton}" Height="32"/>
+                            <Button Grid.Column="2" Content="导入点阵 TXT" Command="{Binding ImportMatrixTxtCommand}" Style="{StaticResource SecondaryButton}" Height="32"/>
+                        </Grid>
+
+                        <Button Content="导出颜色统计 (TXT)" Command="{Binding ExportColorTxtCommand}" Style="{StaticResource SecondaryButton}" Height="32" Margin="0,0,0,15"/>
+
+                        <Rectangle Height="1" Fill="{StaticResource CardBorderBrush}" Margin="0,0,0,15"/>
+
+                        <!-- ★ 一键替换颜色区域 -->
+                        <TextBlock Text="一键批量替换颜色" FontWeight="SemiBold" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,8"/>
+                        <TextBox Text="{Binding ReplaceColorsText, UpdateSourceTrigger=PropertyChanged}" Height="50" TextWrapping="Wrap" AcceptsReturn="True" VerticalContentAlignment="Top" Padding="6,4" Margin="0,0,0,8"
+                                ToolTip="输入格式如：{[#FFFFFF,#000000],[#FF0000,#00FF00]}"/>
+                        <Button Content="执行颜色替换" Command="{Binding ExecuteColorReplaceCommand}" Style="{StaticResource PrimaryButton}" Height="32" Margin="0,0,0,15"/>
 
                         <Rectangle Height="1" Fill="{StaticResource CardBorderBrush}" Margin="0,0,0,15"/>
 

@@ -55,8 +55,7 @@
               "ViewState": "AgIAALoAAAAAAAAAAAAYwNAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-22T08:26:25.615Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -124,8 +123,7 @@
               "RelativeToolTip": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T00:33:39.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T00:33:39.485Z"
             },
             {
               "$type": "Document",
@@ -147,7 +145,7 @@
               "RelativeDocumentMoniker": "WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
               "RelativeToolTip": "WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAnwGgAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAIoBAAAAAAAAAIAwwKABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-02T00:32:04.364Z",
               "EditorCaption": ""

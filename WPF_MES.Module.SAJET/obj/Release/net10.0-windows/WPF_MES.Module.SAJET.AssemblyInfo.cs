@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WPF_MES.Module.SAJET")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ddaa45f8c39685b89ce9ef4afd5944b05d6cdb8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7cb5e6b821b8d0081943ddf3e7cf3cb90a9f128f")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPF_MES.Module.SAJET")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPF_MES.Module.SAJET")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

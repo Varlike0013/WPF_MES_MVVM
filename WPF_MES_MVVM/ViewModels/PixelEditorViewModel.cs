@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -21,6 +22,8 @@ public partial class PixelEditorViewModel : ObservableObject
     public ObservableCollection<ColorGroup> ColorGroups { get; } = new();
     private bool _isUpdatingHex;
     private string _hexInput = "#000000";
+    [ObservableProperty] private string _imageName = "未加载图片";
+    [ObservableProperty] private string _replaceColorsText = "{[#FFFFFF,#000000],[#FF0000,#00FF00]}";
 
     [ObservableProperty] private int _gridRows;
     [ObservableProperty] private int _gridCols;
@@ -253,6 +256,8 @@ public partial class PixelEditorViewModel : ObservableObject
                 return;
             }
 
+            ImageName = Path.GetFileName(dlg.FileName);
+
             GridRows = bitmap.PixelHeight;
             GridCols = bitmap.PixelWidth;
 
@@ -346,6 +351,7 @@ public partial class PixelEditorViewModel : ObservableObject
 
             // 头部信息
             sb.AppendLine("================= 颜色导出报告 =================");
+            sb.AppendLine($"ImageName={ImageName}");
             sb.AppendLine($"图片分辨率: {GridCols} x {GridRows}");
             sb.AppendLine($"总像素数量: {Pixels.Count}");
             sb.AppendLine($"不同颜色数: {colorStats.Count}");
@@ -379,6 +385,217 @@ public partial class PixelEditorViewModel : ObservableObject
         catch (Exception ex)
         {
             MessageBox.Show($"导出失败: {ex.Message}", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+    // ========== 1. 导出点阵 TXT ==========
+    [RelayCommand]
+    private void ExportMatrixTxt()
+    {
+        if (Pixels.Count == 0) return;
+
+        var dlg = new SaveFileDialog { Filter = "点阵文件|*.txt", DefaultExt = ".txt", FileName = "PixelMatrix" };
+        if (dlg.ShowDialog() != true) return;
+
+        try
+        {
+            // 1. 统计颜色并按出现次数排序（出现最多的分配 '.'，依次分配 1-9, A-Z, a-z）
+            var colorStats = Pixels.GroupBy(p => p.Color)
+                                   .Select(g => new { Color = g.Key, Count = g.Count() })
+                                   .OrderByDescending(x => x.Count)
+                                   .ToList();
+
+            string charPool = ".123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            if (colorStats.Count > charPool.Length)
+            {
+                MessageBox.Show($"颜色种类超过了 {charPool.Length} 种，无法生成点阵字符！", "错误");
+                return;
+            }
+
+            var colorToChar = new Dictionary<Color, char>();
+            var charToColor = new Dictionary<char, Color>();
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("[ImageInfo]");
+            sb.AppendLine($"InputName={ImageName}");
+            sb.AppendLine($"OutputName={Path.GetFileName(dlg.FileName)}");
+            sb.AppendLine($"Width={GridCols}");
+            sb.AppendLine($"Height={GridRows}");
+            sb.AppendLine();
+
+            sb.AppendLine("[Colors]");
+            for (int i = 0; i < colorStats.Count; i++)
+            {
+                var c = colorStats[i].Color;
+                char ch = charPool[i];
+                colorToChar[c] = ch;
+                charToColor[ch] = c;
+                sb.AppendLine($"#{c.A:X2}{c.R:X2}{c.G:X2}{c.B:X2}={ch}");
+            }
+            sb.AppendLine();
+
+            sb.AppendLine("[Matrix]");
+            for (int y = 0; y < GridRows; y++)
+            {
+                for (int x = 0; x < GridCols; x++)
+                {
+                    var pixel = Pixels[y * GridCols + x];
+                    sb.Append(colorToChar[pixel.Color]);
+                }
+                sb.AppendLine();
+            }
+
+            File.WriteAllText(dlg.FileName, sb.ToString(), Encoding.UTF8);
+            MessageBox.Show("点阵文件导出成功！", "成功");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"导出失败: {ex.Message}");
+        }
+    }
+
+    // ========== 2. 导入点阵 TXT ==========
+    [RelayCommand]
+    private void ImportMatrixTxt()
+    {
+        var dlg = new OpenFileDialog { Filter = "点阵文件|*.txt" };
+        if (dlg.ShowDialog() != true) return;
+
+        try
+        {
+            var lines = File.ReadAllLines(dlg.FileName);
+            var charToColor = new Dictionary<char, Color>();
+            List<string> matrixLines = new List<string>();
+            int width = 0, height = 0;
+
+            string section = "";
+            foreach (var line in lines)
+            {
+                string trim = line.Trim();
+                if (string.IsNullOrEmpty(trim)) continue;
+
+                if (trim.StartsWith("[") && trim.EndsWith("]"))
+                {
+                    section = trim;
+                    continue;
+                }
+
+                if (section == "[ImageInfo]")
+                {
+                    if (trim.StartsWith("Width=")) width = int.Parse(trim.Substring(6));
+                    if (trim.StartsWith("Height=")) height = int.Parse(trim.Substring(7));
+                }
+                else if (section == "[Colors]")
+                {
+                    var parts = trim.Split('=');
+                    if (parts.Length == 2 && parts[0].StartsWith("#") && parts[1].Length == 1)
+                    {
+                        string hex = parts[0].TrimStart('#');
+                        byte a = 255, r = 0, g = 0, b = 0;
+                        if (hex.Length == 6)
+                        {
+                            r = Convert.ToByte(hex.Substring(0, 2), 16);
+                            g = Convert.ToByte(hex.Substring(2, 2), 16);
+                            b = Convert.ToByte(hex.Substring(4, 2), 16);
+                        }
+                        else if (hex.Length == 8)
+                        {
+                            a = Convert.ToByte(hex.Substring(0, 2), 16);
+                            r = Convert.ToByte(hex.Substring(2, 2), 16);
+                            g = Convert.ToByte(hex.Substring(4, 2), 16);
+                            b = Convert.ToByte(hex.Substring(6, 2), 16);
+                        }
+                        charToColor[parts[1][0]] = Color.FromArgb(a, r, g, b);
+                    }
+                }
+                else if (section == "[Matrix]")
+                {
+                    matrixLines.Add(trim);
+                }
+            }
+
+            if (width <= 0 || height <= 0 || matrixLines.Count != height)
+            {
+                MessageBox.Show("文件格式不正确或尺寸不匹配！", "解析失败");
+                return;
+            }
+
+            // 重置画布
+            Pixels.Clear();
+            GridCols = width;
+            GridRows = height;
+
+            foreach (var line in matrixLines)
+            {
+                foreach (var ch in line)
+                {
+                    if (charToColor.TryGetValue(ch, out Color c))
+                    {
+                        Pixels.Add(new PixelItem(0, 0, c)); // X,Y 这里不影响显示，只是为了占位
+                    }
+                    else
+                    {
+                        Pixels.Add(new PixelItem(0, 0, Colors.Transparent)); // 找不到的字符用透明替代
+                    }
+                }
+            }
+            RefreshColorGroups();
+            MessageBox.Show("点阵文件导入成功！", "成功");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"导入失败: {ex.Message}");
+        }
+    }
+
+    // ========== 3. 一键批量替换颜色 ==========
+    [RelayCommand]
+    private void ExecuteColorReplace()
+    {
+        if (string.IsNullOrWhiteSpace(ReplaceColorsText) || Pixels.Count == 0) return;
+
+        try
+        {
+            // 使用正则匹配 [{#111111,#222222},{#333333,#444444}] 或 [[#111111,#222222],[#333333,#444444]]
+            var regex = new Regex(@"\[?(#[0-9A-Fa-f]{6,8})\s*,\s*(#[0-9A-Fa-f]{6,8})\]?");
+            var matches = regex.Matches(ReplaceColorsText);
+
+            if (matches.Count == 0)
+            {
+                MessageBox.Show("替换格式不正确，请使用 {[#FFFFFF,#000000]} 格式", "提示");
+                return;
+            }
+
+            var replaceDict = new Dictionary<Color, Color>();
+            foreach (Match m in matches)
+            {
+                Color oldC = (Color)ColorConverter.ConvertFromString(m.Groups[1].Value);
+                Color newC = (Color)ColorConverter.ConvertFromString(m.Groups[2].Value);
+                replaceDict[oldC] = newC;
+            }
+
+            int replaceCount = 0;
+            foreach (var p in Pixels)
+            {
+                if (replaceDict.TryGetValue(p.Color, out Color newC))
+                {
+                    p.Color = newC;
+                    replaceCount++;
+                }
+            }
+
+            if (replaceCount > 0)
+            {
+                RefreshColorGroups();
+                MessageBox.Show($"成功替换了 {replaceCount} 个像素的颜色！", "完成");
+            }
+            else
+            {
+                MessageBox.Show("画布上没有找到需要替换的旧颜色。", "提示");
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"替换失败，请检查颜色格式。错误: {ex.Message}");
         }
     }
 }
