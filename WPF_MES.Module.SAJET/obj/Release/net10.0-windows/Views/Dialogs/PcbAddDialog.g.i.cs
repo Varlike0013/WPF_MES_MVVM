@@ -100,7 +100,7 @@ namespace WPF_MES.Module.SAJET.Views.Dialogs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.SAJET;component/views/dialogs/pcbadddialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.SAJET;V1.0.0.0;component/views/dialogs/pcbadddialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Dialogs\PcbAddDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

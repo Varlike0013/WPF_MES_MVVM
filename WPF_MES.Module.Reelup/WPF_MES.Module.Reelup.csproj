@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.26.400" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WPF_MES.Contracts\WPF_MES.Contracts.csproj" />
+    <ProjectReference Include="..\WPF_MES.Shared\WPF_MES.Shared.csproj" />
+  </ItemGroup>
+
+  <!-- 构建后自动将 DLL 和 PDB 复制到宿主程序的 Modules 目录 -->
+  <Target Name="CopyToHostModules" AfterTargets="Build">
+    <PropertyGroup>
+      <!-- MSBuildThisFileDirectory 是 csproj 所在目录 -->
+      <HostBinDir>$(MSBuildThisFileDirectory)..\WPF_MES_MVVM\bin\$(Configuration)\$(TargetFramework)\</HostBinDir>
+      <HostModulesDir>$(HostBinDir)Modules\</HostModulesDir>
+    </PropertyGroup>
+
+    <!-- 确保 Modules 目录存在 -->
+    <MakeDir Directories="$(HostModulesDir)" />
+
+    <ItemGroup>
+      <ModuleFiles Include="$(TargetDir)*.dll" />
+      <ModuleFiles Include="$(TargetDir)*.pdb" />
+    </ItemGroup>
+
+    <!-- 复制且跳过未更改的文件 -->
+    <Copy SourceFiles="@(ModuleFiles)" DestinationFolder="$(HostModulesDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

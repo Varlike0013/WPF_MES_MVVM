@@ -3,16 +3,88 @@
   "WorkspaceRootPath": "E:\\Git\\WPF_MES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\viewmodels\\pixeleditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\viewmodels\\pixeleditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\views\\reelupmainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\views\\reelupmainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\pixeleditorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\pixeleditorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\viewmodels\\reelupmainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\viewmodels\\reelupmainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|e:\\git\\wpf_mes\\wpf_mes_mvvm\\views\\pixeleditorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\views\\pixeleditorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\models\\reelupconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\models\\reelupconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\models\\treenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\models\\treenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\models\\floorinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\models\\floorinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\services\\outdatatask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\services\\outdatatask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\services\\iodatatask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\services\\iodatatask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\services\\reelupcommunicationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\services\\reelupcommunicationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\services\\reelupauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\services\\reelupauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\views\\reelupmainview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\views\\reelupmainview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\views\\reelupmainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\views\\reelupmainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\views\\reelupmainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\views\\reelupmainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\views\\addterminalwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\views\\addterminalwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\services\\trayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\services\\trayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\reelupmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\reelupmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\services\\wlscore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\services\\wlscore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\services\\guntimeoutmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\services\\guntimeoutmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\services\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\services\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\wpf_mes.module.reelup.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\wpf_mes.module.reelup.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|e:\\git\\wpf_mes\\wpf_mes.module.reelup\\views\\addterminalwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{647D5306-D658-4417-85E6-677A65330A68}|WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj|solutionrelative:wpf_mes.module.reelup\\views\\addterminalwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\sajetmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,10 +99,6 @@
       "RelativeMoniker": "D:0:0:{10185681-A2DF-47F7-64B1-5FE7F191E6EC}|WPF_MES_MVVM\\WPF_MES_MVVM.csproj|solutionrelative:wpf_mes_mvvm\\services\\globalmenuprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\sajetcommonservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|e:\\git\\wpf_mes\\wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60D4D22A-51A8-E51E-4AF6-ACDD147F8B41}|WPF_MES.Module.SAJET\\WPF_MES.Module.SAJET.csproj|solutionrelative:wpf_mes.module.sajet\\services\\oraclehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -42,24 +110,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 189,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 21,
               "Title": "SajetModule.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\SajetModule.cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\SajetModule.cs",
               "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\SajetModule.cs",
               "RelativeToolTip": "WPF_MES.Module.SAJET\\SajetModule.cs",
-              "ViewState": "AgIAALoAAAAAAAAAAAAYwNAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAALoAAAAAAAAAAAAiwNAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-22T08:26:25.615Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 24,
               "Title": "OracleHelper.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\OracleHelper.cs",
@@ -69,28 +138,16 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-23T01:47:05.578Z",
               "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PixelEditorView.xaml",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\PixelEditorView.xaml",
-              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\PixelEditorView.xaml",
-              "RelativeToolTip": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-11-02T01:45:28.807Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 211,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 20,
               "Title": "SajetCommonService .cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
               "RelativeDocumentMoniker": "WPF_MES.Module.SAJET\\Services\\SajetCommonService .cs",
@@ -99,11 +156,269 @@
               "ViewState": "AgIAADgBAAAAAAAAAAAuwFABAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-24T01:59:04.928Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReelUpConfig.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Models\\ReelUpConfig.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Models\\ReelUpConfig.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Models\\ReelUpConfig.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Models\\ReelUpConfig.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA2wAwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T08:37:08.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FloorInfo.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Models\\FloorInfo.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Models\\FloorInfo.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Models\\FloorInfo.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Models\\FloorInfo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T08:22:29.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TrayService.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\TrayService.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Services\\TrayService.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\TrayService.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Services\\TrayService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T05:43:41.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Logger.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\Logger.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Services\\Logger.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\Logger.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Services\\Logger.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T05:43:15.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddTerminalWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\AddTerminalWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Views\\AddTerminalWindow.xaml.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\AddTerminalWindow.xaml.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Views\\AddTerminalWindow.xaml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAnwB8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T05:36:17.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AddTerminalWindow.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\AddTerminalWindow.xaml",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Views\\AddTerminalWindow.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\AddTerminalWindow.xaml",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Views\\AddTerminalWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-04T05:35:37.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TreeNode.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Models\\TreeNode.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Models\\TreeNode.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Models\\TreeNode.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Models\\TreeNode.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA9wCYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T05:34:15.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReelUpMainView.xaml.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\ReelUpMainView.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Views\\ReelUpMainView.xaml.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\ReelUpMainView.xaml.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Views\\ReelUpMainView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T05:33:01.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReelUpMainView.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\ReelUpMainView.xaml",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Views\\ReelUpMainView.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\ReelUpMainView.xaml",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Views\\ReelUpMainView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-04T05:31:43.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReelUpMainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\ReelUpMainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Views\\ReelUpMainWindow.xaml.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\ReelUpMainWindow.xaml.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Views\\ReelUpMainWindow.xaml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA0wCMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T05:31:10.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ReelUpMainWindow.xaml",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\ReelUpMainWindow.xaml",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Views\\ReelUpMainWindow.xaml",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Views\\ReelUpMainWindow.xaml",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Views\\ReelUpMainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-04T03:30:47.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReelUpMainViewModel.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\ViewModels\\ReelUpMainViewModel.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\ViewModels\\ReelUpMainViewModel.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\ViewModels\\ReelUpMainViewModel.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\ViewModels\\ReelUpMainViewModel.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAgwFYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T03:30:09.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "WPF_MES.Module.Reelup",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\WPF_MES.Module.Reelup.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-04T03:29:30.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReelUpModule.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\ReelUpModule.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\ReelUpModule.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\ReelUpModule.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\ReelUpModule.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T03:29:35.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReelUpAuthService.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\ReelUpAuthService.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Services\\ReelUpAuthService.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\ReelUpAuthService.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Services\\ReelUpAuthService.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAQwCQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T03:27:20.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReelUpCommunicationManager.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\ReelUpCommunicationManager.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Services\\ReelUpCommunicationManager.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\ReelUpCommunicationManager.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Services\\ReelUpCommunicationManager.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAswDsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T03:26:36.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GunTimeoutMonitor.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\GunTimeoutMonitor.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Services\\GunTimeoutMonitor.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\GunTimeoutMonitor.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Services\\GunTimeoutMonitor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T03:26:14.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IoDataTask.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\IoDataTask.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Services\\IoDataTask.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\IoDataTask.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Services\\IoDataTask.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAuwGQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T03:17:13.958Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "OutDataTask.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\OutDataTask.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Services\\OutDataTask.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\OutDataTask.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Services\\OutDataTask.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAuwHEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T03:16:33.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "WlsCore.cs",
+              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\WlsCore.cs",
+              "RelativeDocumentMoniker": "WPF_MES.Module.Reelup\\Services\\WlsCore.cs",
+              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES.Module.Reelup\\Services\\WlsCore.cs",
+              "RelativeToolTip": "WPF_MES.Module.Reelup\\Services\\WlsCore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T03:16:06.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "GlobalMenuProvider.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
               "RelativeDocumentMoniker": "WPF_MES_MVVM\\Services\\GlobalMenuProvider.cs",
@@ -115,19 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PixelEditorView.xaml.cs",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
-              "RelativeDocumentMoniker": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
-              "RelativeToolTip": "WPF_MES_MVVM\\Views\\PixelEditorView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T00:33:39.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 22,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\App.xaml.cs",
               "RelativeDocumentMoniker": "WPF_MES_MVVM\\App.xaml.cs",
@@ -136,19 +439,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-10T00:43:55.861Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PixelEditorViewModel.cs",
-              "DocumentMoniker": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
-              "RelativeDocumentMoniker": "WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
-              "ToolTip": "E:\\Git\\WPF_MES\\WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
-              "RelativeToolTip": "WPF_MES_MVVM\\ViewModels\\PixelEditorViewModel.cs",
-              "ViewState": "AgIAAIoBAAAAAAAAAIAwwKUBAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T00:32:04.364Z",
-              "EditorCaption": ""
             }
           ]
         }

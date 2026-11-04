@@ -1,0 +1,277 @@
+﻿2026-11-04 14:06:55.176 [INFO] [START] Args=
+2026-11-04 14:06:55.177 [INFO] [START] Console=False
+2026-11-04 14:06:55.369 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 14:06:55.370 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 14:06:55.370 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 14:06:55.370 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 14:06:55.370 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 14:06:55.370 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 14:06:55.370 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 14:06:55.370 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 14:06:55.564 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 14:11:42.665 [INFO] [CONFIG] Saved: login.json
+2026-11-04 14:11:42.769 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-11-04 14:11:42.773 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-11-04 14:12:10.763 [INFO] [SMTREEL] Query done: site=0-100, line=B402F06L, count=9
+2026-11-04 14:12:52.896 [INFO] [SMTREEL] Query done: site=0-100, line=B402F06L, count=9
+2026-11-04 14:13:07.528 [INFO] [SMTREEL] Query done: site=0-100, line=B402F06L, count=9
+2026-11-04 14:13:12.522 [INFO] [SMTREEL] Query done: site=0-100, line=B402F06L, count=9
+2026-11-04 14:14:32.305 [INFO] [SMTREEL] Query done: site=0-100, line=B402F06L, count=9
+2026-11-04 14:14:50.590 [INFO] [SMTREEL] Query done: site=0-100, line=B402F06L, count=9
+2026-11-04 14:21:13.240 [INFO] [EXIT] Program exit.
+2026-11-04 14:21:13.271 [INFO] [EXIT] Application exiting.
+2026-11-04 14:22:16.947 [INFO] [START] Args=
+2026-11-04 14:22:16.948 [INFO] [START] Console=False
+2026-11-04 14:22:17.116 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 14:22:17.116 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 14:22:17.116 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 14:22:17.117 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 14:22:17.117 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 14:22:17.117 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 14:22:17.117 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 14:22:17.117 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 14:22:17.281 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 14:22:36.509 [INFO] [CONFIG] Saved: login.json
+2026-11-04 14:22:36.575 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 14:22:36.577 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 14:24:36.185 [INFO] [EXIT] Standalone window closed.
+2026-11-04 14:24:36.185 [INFO] [EXIT] Program exit.
+2026-11-04 14:24:36.216 [INFO] [EXIT] Application exiting.
+2026-11-04 14:24:46.490 [INFO] [START] Args=
+2026-11-04 14:24:46.491 [INFO] [START] Console=False
+2026-11-04 14:24:46.553 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 14:24:46.553 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 14:24:46.553 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 14:24:46.553 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 14:24:46.553 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 14:24:46.553 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 14:24:46.553 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 14:24:46.553 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 14:24:46.661 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 14:24:56.849 [INFO] [CONFIG] Saved: login.json
+2026-11-04 14:24:56.938 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 14:24:56.938 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 14:25:57.782 [INFO] [EXIT] Standalone window closed.
+2026-11-04 14:25:57.782 [INFO] [EXIT] Program exit.
+2026-11-04 14:25:57.796 [INFO] [EXIT] Application exiting.
+2026-11-04 14:53:55.338 [INFO] [START] Args=
+2026-11-04 14:53:55.339 [INFO] [START] Console=False
+2026-11-04 14:53:55.393 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 14:53:55.393 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 14:53:55.394 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 14:53:55.394 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 14:53:55.394 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 14:53:55.394 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 14:53:55.394 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 14:53:55.394 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 14:53:55.495 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 14:54:10.283 [INFO] [CONFIG] Saved: login.json
+2026-11-04 14:54:10.363 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-11-04 14:54:10.367 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-11-04 14:54:15.651 [INFO] [SHARE] Loaded 8 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-11-04 15:19:39.612 [INFO] [EXIT] Program exit.
+2026-11-04 15:19:39.639 [INFO] [EXIT] Application exiting.
+2026-11-04 15:19:50.506 [INFO] [START] Args=
+2026-11-04 15:19:50.507 [INFO] [START] Console=False
+2026-11-04 15:19:50.723 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 15:19:50.724 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 15:19:50.724 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 15:19:50.724 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 15:19:50.724 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 15:19:50.724 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 15:19:50.724 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 15:19:50.724 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 15:19:50.937 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 15:20:01.021 [INFO] [CONFIG] Saved: login.json
+2026-11-04 15:20:01.089 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 15:20:01.093 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 15:21:53.861 [INFO] [EXIT] Standalone window closed.
+2026-11-04 15:21:53.862 [INFO] [EXIT] Program exit.
+2026-11-04 15:21:53.889 [INFO] [EXIT] Application exiting.
+2026-11-04 15:28:50.325 [INFO] [START] Args=
+2026-11-04 15:28:50.326 [INFO] [START] Console=False
+2026-11-04 15:28:50.386 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 15:28:50.386 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 15:28:50.386 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 15:28:50.387 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 15:28:50.387 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 15:28:50.387 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 15:28:50.387 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 15:28:50.387 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 15:28:50.508 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 15:28:56.162 [INFO] [CONFIG] Saved: login.json
+2026-11-04 15:28:56.268 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 15:28:56.269 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 15:39:58.966 [INFO] [EXIT] Standalone window closed.
+2026-11-04 15:39:58.977 [INFO] [EXIT] Program exit.
+2026-11-04 15:39:58.996 [INFO] [EXIT] Application exiting.
+2026-11-04 16:03:13.103 [INFO] [START] Args=
+2026-11-04 16:03:13.104 [INFO] [START] Console=False
+2026-11-04 16:03:13.154 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 16:03:13.154 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 16:03:13.154 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 16:03:13.154 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 16:03:13.154 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 16:03:13.155 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 16:03:13.155 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 16:03:13.155 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 16:03:13.271 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 16:03:26.752 [INFO] [CONFIG] Saved: login.json
+2026-11-04 16:03:26.810 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-11-04 16:03:26.817 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-11-04 16:03:40.248 [INFO] [SHARE] Loaded 8 root nodes from \\10.240.144.99\f\LeiHuang\share-info.json
+2026-11-04 16:10:13.736 [INFO] [EXIT] Program exit.
+2026-11-04 16:10:13.740 [INFO] [EXIT] Application exiting.
+2026-11-04 16:10:25.468 [INFO] [START] Args=
+2026-11-04 16:10:25.469 [INFO] [START] Console=False
+2026-11-04 16:10:25.528 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 16:10:25.528 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 16:10:25.528 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 16:10:25.529 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 16:10:25.529 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 16:10:25.529 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 16:10:25.529 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 16:10:25.529 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 16:10:25.628 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 16:10:42.550 [INFO] [CONFIG] Saved: login.json
+2026-11-04 16:10:42.630 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 16:10:42.631 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 16:13:51.417 [INFO] [EXIT] Standalone window closed.
+2026-11-04 16:13:51.417 [INFO] [EXIT] Program exit.
+2026-11-04 16:13:51.454 [INFO] [EXIT] Application exiting.
+2026-11-04 16:19:23.057 [INFO] [START] Args=
+2026-11-04 16:19:23.058 [INFO] [START] Console=False
+2026-11-04 16:19:23.262 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 16:19:23.262 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 16:19:23.262 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 16:19:23.262 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 16:19:23.262 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 16:19:23.262 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 16:19:23.262 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 16:19:23.262 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 16:19:23.491 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 16:19:29.875 [INFO] [CONFIG] Saved: login.json
+2026-11-04 16:19:30.003 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 16:19:30.004 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 16:19:59.433 [INFO] [EXIT] Standalone window closed.
+2026-11-04 16:19:59.434 [INFO] [EXIT] Program exit.
+2026-11-04 16:19:59.464 [INFO] [EXIT] Application exiting.
+2026-11-04 16:24:40.378 [INFO] [START] Args=
+2026-11-04 16:24:40.379 [INFO] [START] Console=False
+2026-11-04 16:24:40.430 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 16:24:40.430 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 16:24:40.431 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 16:24:40.431 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 16:24:40.431 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 16:24:40.431 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 16:24:40.431 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 16:24:40.431 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 16:24:40.534 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 16:24:46.350 [INFO] [CONFIG] Saved: login.json
+2026-11-04 16:24:46.444 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 16:24:46.444 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 16:28:14.722 [INFO] [EXIT] Standalone window closed.
+2026-11-04 16:28:14.722 [INFO] [EXIT] Program exit.
+2026-11-04 16:28:14.740 [INFO] [EXIT] Application exiting.
+2026-11-04 16:29:20.930 [INFO] [START] Args=
+2026-11-04 16:29:20.931 [INFO] [START] Console=False
+2026-11-04 16:29:20.982 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 16:29:20.982 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 16:29:20.982 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 16:29:20.983 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 16:29:20.983 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 16:29:20.983 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 16:29:20.983 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 16:29:20.983 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 16:29:21.079 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 16:29:25.478 [INFO] [CONFIG] Saved: login.json
+2026-11-04 16:29:25.553 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 16:29:25.554 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 16:30:54.061 [INFO] [EXIT] Standalone window closed.
+2026-11-04 16:30:54.061 [INFO] [EXIT] Program exit.
+2026-11-04 16:30:54.127 [INFO] [EXIT] Application exiting.
+2026-11-04 16:31:47.162 [INFO] [START] Args=
+2026-11-04 16:31:47.163 [INFO] [START] Console=False
+2026-11-04 16:31:47.217 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 16:31:47.218 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 16:31:47.218 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 16:31:47.218 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 16:31:47.218 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 16:31:47.218 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 16:31:47.219 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 16:31:47.219 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 16:31:47.328 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 16:31:51.667 [INFO] [CONFIG] Saved: login.json
+2026-11-04 16:31:51.753 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 16:31:51.755 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 16:37:56.729 [INFO] [EXIT] Standalone window closed.
+2026-11-04 16:37:56.729 [INFO] [EXIT] Program exit.
+2026-11-04 16:37:56.761 [INFO] [EXIT] Application exiting.
+2026-11-04 19:27:30.113 [INFO] [START] Args=
+2026-11-04 19:27:30.140 [INFO] [START] Console=False
+2026-11-04 19:27:30.611 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 19:27:30.611 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 19:27:30.611 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 19:27:30.612 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 19:27:30.612 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 19:27:30.612 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 19:27:30.612 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 19:27:30.612 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 19:27:31.018 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 19:27:38.615 [INFO] [CONFIG] Saved: login.json
+2026-11-04 19:27:38.805 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 19:27:38.806 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 19:27:53.660 [INFO] [EXIT] Standalone window closed.
+2026-11-04 19:27:53.660 [INFO] [EXIT] Program exit.
+2026-11-04 19:27:53.680 [INFO] [EXIT] Application exiting.
+2026-11-04 19:28:55.440 [INFO] [START] Args=
+2026-11-04 19:28:55.469 [INFO] [START] Console=False
+2026-11-04 19:28:55.519 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 19:28:55.520 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 19:28:55.520 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 19:28:55.520 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 19:28:55.520 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 19:28:55.520 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 19:28:55.520 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 19:28:55.520 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 19:28:55.619 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 19:28:59.789 [INFO] [CONFIG] Saved: login.json
+2026-11-04 19:28:59.864 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 19:28:59.865 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 19:30:04.038 [INFO] [EXIT] Standalone window closed.
+2026-11-04 19:30:04.038 [INFO] [EXIT] Program exit.
+2026-11-04 19:30:04.053 [INFO] [EXIT] Application exiting.
+2026-11-04 19:33:45.344 [INFO] [START] Args=
+2026-11-04 19:33:45.344 [INFO] [START] Console=False
+2026-11-04 19:33:45.397 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 19:33:45.397 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 19:33:45.398 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 19:33:45.398 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 19:33:45.398 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 19:33:45.398 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 19:33:45.398 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 19:33:45.398 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 19:33:45.495 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 19:33:50.033 [INFO] [CONFIG] Saved: login.json
+2026-11-04 19:33:50.126 [INFO] [LOGIN OK] Module=ReelUp, UserNo=varlike
+2026-11-04 19:33:50.127 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 19:38:37.513 [INFO] [EXIT] Standalone window closed.
+2026-11-04 19:38:37.514 [INFO] [EXIT] Program exit.
+2026-11-04 19:38:37.539 [INFO] [EXIT] Application exiting.
+2026-11-04 19:38:43.991 [INFO] [START] Args=
+2026-11-04 19:38:43.992 [INFO] [START] Console=False
+2026-11-04 19:38:44.048 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-04 19:38:44.049 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-04 19:38:44.051 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-04 19:38:44.051 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-04 19:38:44.051 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-04 19:38:44.051 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-04 19:38:44.051 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-04 19:38:44.051 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-04 19:38:44.157 [INFO] [CONFIG] Loaded: login.json
+2026-11-04 19:38:57.660 [INFO] [LOGIN OK] Guest (hard-coded), Module=ReelUp
+2026-11-04 19:38:57.716 [INFO] [LOGIN OK] Module=ReelUp, UserNo=Guest
+2026-11-04 19:38:57.718 [INFO] [OPEN] Standalone window for ReelUpModule
+2026-11-04 19:39:35.220 [INFO] [EXIT] Standalone window closed.
+2026-11-04 19:39:35.220 [INFO] [EXIT] Program exit.
+2026-11-04 19:39:35.249 [INFO] [EXIT] Application exiting.
