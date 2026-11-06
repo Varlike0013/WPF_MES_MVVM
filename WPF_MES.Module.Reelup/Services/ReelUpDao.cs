@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using WPF_MES.Module.ReelUp.Models;
+using WPF_MES.Shared;
 
 namespace WPF_MES.Module.ReelUp.Services;
 
@@ -306,7 +307,7 @@ public sealed class ReelUpDao
         }
         catch (Exception ex)
         {
-            Services.Logger.Error($"[ReelUpDao] GetProcName 失败: {ex.Message}");
+            Logger.Error($"[ReelUpDao] GetProcName 失败: {ex.Message}");
             return null;
         }
     }

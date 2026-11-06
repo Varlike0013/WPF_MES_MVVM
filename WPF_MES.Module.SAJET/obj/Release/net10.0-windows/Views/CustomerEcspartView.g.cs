@@ -52,7 +52,7 @@ namespace WPF_MES.Module.SAJET.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.SAJET;component/views/customerecspartview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.SAJET;V26.11.05.1121;component/views/customerecspartview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\CustomerEcspartView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

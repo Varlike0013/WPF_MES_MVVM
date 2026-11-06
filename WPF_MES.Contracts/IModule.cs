@@ -5,6 +5,7 @@ public interface IModule
 {
     string ModuleKey { get; }
     string DisplayName { get; }
+    Version ModuleVersion => GetType().Assembly.GetName().Version!;
     IAuthService CreateAuthService();
     UserControl? CreateMainView(string userName);
     /// <summary>返回菜单树（支持任意层级）</summary>

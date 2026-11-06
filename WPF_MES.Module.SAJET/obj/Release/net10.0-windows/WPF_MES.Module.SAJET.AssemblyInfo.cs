@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("WPF_MES.Module.SAJET")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+300ef3af82afc8a0554c85f8d6bec639d3aea166")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("26.11.05.1121")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee62e0d348d9a9e82e471810f84edb1c66a2149b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPF_MES.Module.SAJET")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPF_MES.Module.SAJET")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("26.11.05.1121")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

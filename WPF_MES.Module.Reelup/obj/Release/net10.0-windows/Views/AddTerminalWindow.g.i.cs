@@ -93,7 +93,7 @@ namespace WPF_MES.Module.ReelUp.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.Reelup;component/views/addterminalwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_MES.Module.Reelup;V1.0.0.0;component/views/addterminalwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddTerminalWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

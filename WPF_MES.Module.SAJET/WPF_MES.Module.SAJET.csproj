@@ -6,12 +6,20 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		
+		<!-- 关闭确定性编译，允许基于时间动态生成 -->
+		<Deterministic>false</Deterministic>
+		
+		<!-- ★ 修改：利用年月日时分拆分，生成合法的递增版本号 (例如 26.11.05.1120) -->
+		<ModuleBuildVersion>$([System.DateTime]::Now.ToString("yy.MM.dd.HHmm"))</ModuleBuildVersion>
+		<AssemblyVersion>$(ModuleBuildVersion)</AssemblyVersion>
+		<FileVersion>$(ModuleBuildVersion)</FileVersion>
 	</PropertyGroup>
 
-  <ItemGroup>
-	<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-	<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.26.301" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.26.301" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\WPF_MES.Contracts\WPF_MES.Contracts.csproj" />
@@ -20,14 +28,20 @@
 
 	<Target Name="CopyToHostModules" AfterTargets="Build">
 		<PropertyGroup>
-			<!-- MSBuildThisFileDirectory 是 csproj 所在目录，非常可靠 -->
 			<HostBinDir>$(MSBuildThisFileDirectory)..\WPF_MES_MVVM\bin\$(Configuration)\$(TargetFramework)\</HostBinDir>
 			<HostModulesDir>$(HostBinDir)Modules\</HostModulesDir>
+			<ModuleName>$(MSBuildProjectName)</ModuleName>
+			<VersionFilePath>$(TargetDir)$(ModuleName).version</VersionFilePath>
 		</PropertyGroup>
 
 		<MakeDir Directories="$(HostModulesDir)" />
 
+		<!-- ★ 生成版本文件 (写入刚才定义的时间版本) -->
+		<WriteLinesToFile File="$(VersionFilePath)" Lines="$(ModuleBuildVersion)" Overwrite="true" />
+
 		<ItemGroup>
+			<!-- 把 version 文件也加入拷贝列表 -->
+			<ModuleFiles Include="$(VersionFilePath)" />
 			<ModuleFiles Include="$(TargetDir)*.dll" />
 			<ModuleFiles Include="$(TargetDir)*.pdb" />
 		</ItemGroup>
@@ -36,4 +50,3 @@
 	</Target>
 
 </Project>
-    

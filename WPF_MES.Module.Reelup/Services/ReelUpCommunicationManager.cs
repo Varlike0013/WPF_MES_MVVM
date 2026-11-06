@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using WPF_MES.Module.ReelUp.Models;
+using WPF_MES.Shared;
 
 namespace WPF_MES.Module.ReelUp.Services;
 

@@ -1,4 +1,5 @@
 ﻿using WPF_MES.Contracts;
+using WPF_MES.Shared;
 using WPF_MES.Module.ReelUp.Models;
 
 namespace WPF_MES.Module.ReelUp.Services;
