@@ -1,0 +1,17 @@
+﻿2026-11-09 09:52:10.560 [INFO] [START] Args=
+2026-11-09 09:52:10.562 [INFO] [START] Console=False
+2026-11-09 09:52:11.208 [INFO] [MODULE LOADED] Key=AOI, Name=AOI 自动光学检测
+2026-11-09 09:52:11.208 [INFO] [MODULE LOADED] Key=GEDTA, Name=GEDTA 制造执行系统
+2026-11-09 09:52:11.208 [INFO] [MODULE LOADED] Key=ReelUp, Name=ReelUp 上料与投入产出
+2026-11-09 09:52:11.208 [INFO] [MODULE LOADED] Key=SAJET, Name=SAJET 制造执行系统
+2026-11-09 09:52:11.208 [INFO] [MODULE] Loaded: AOI - AOI 自动光学检测
+2026-11-09 09:52:11.209 [INFO] [MODULE] Loaded: GEDTA - GEDTA 制造执行系统
+2026-11-09 09:52:11.209 [INFO] [MODULE] Loaded: ReelUp - ReelUp 上料与投入产出
+2026-11-09 09:52:11.209 [INFO] [MODULE] Loaded: SAJET - SAJET 制造执行系统
+2026-11-09 09:52:11.754 [INFO] [CONFIG] Loaded: login.json
+2026-11-09 09:52:25.204 [INFO] [CONFIG] Saved: login.json
+2026-11-09 09:52:25.478 [INFO] [LOGIN OK] Module=SAJET, UserNo=D360749
+2026-11-09 09:52:25.482 [INFO] [CONFIG] File not found, use default: favorites.json
+2026-11-09 09:53:39.238 [INFO] [CLEAR-KP] DeleteAll OK: 2 items, affected=4
+2026-11-09 09:56:22.400 [INFO] [EXIT] Program exit.
+2026-11-09 09:56:22.447 [INFO] [EXIT] Application exiting.
